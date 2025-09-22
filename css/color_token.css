@@ -26,11 +26,11 @@
 :root,
 :root[data-palette="5"] {
     /* Core palette */
-    --primary:   #fb93c2; /*  Background layer */
-    --secondary: #ed78dc; /*  Foreground/surface layer */
-    --tertiary:  #ed78dc; /*  Borders/structure layer */
-    --quaternary:#a966f5; /*  Accent layer */
-    --quinary:   #9b64f4; /*  Emphasis layer */
+    --primary:   #264653; /*  Background layer */
+    --secondary: #E9C46A; /*  Foreground/surface layer */
+    --tertiary:  #287271; /*  Borders/structure layer */
+    --quaternary:#EFB366; /*  Accent layer */
+    --quinary:   #2A9D8F; /*  Emphasis layer */
 }
 
 /* ==========================================================================
@@ -40,9 +40,9 @@
    ========================================================================== */
 :root[data-palette="10"] {
     /* Enhancers / semantics */
-    --senary:    #8e62f3; /* utility overlay */
-    --septenary: #9f9be4; /* danger */
-    --octonary:  #a2b1f6; /* info (blue) */
-    --nonary:    #a4caf7; /* warning / neutral accent */
-    --denary:    #a5e5f8; /* text anchor on light surfaces */
+    --senary:    #F4A261; /* utility overlay */
+    --septenary: #8AB17D; /* danger */
+    --octonary:  #EE8959; /* info (blue) */
+    --nonary:    #BABB74; /* warning / neutral accent */
+    --denary:    #E76F51; /* text anchor on light surfaces */
 }
