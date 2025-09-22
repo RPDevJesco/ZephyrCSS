@@ -1,674 +1,1431 @@
 <!DOCTYPE html>
-<html lang="en" data-palette="5">
+<html lang="en" data-palette="10">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X-Framework Showcase</title>
+    <title>Color System Showcase</title>
     <link rel="stylesheet" href="./css/site.css">
     <style>
-        .container {
-            color: var(--black);
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary-base);
+            color: var(--text-base);
+            line-height: 1.6;
         }
-        .feature-card {
-            background: var(--white);
-            padding: 2rem;
+
+        /* Card Components */
+        .card {
             border-radius: var(--x-radius);
-            border: 1px solid var(--x-border-light);
-            box-shadow: var(--x-shadow);
-            text-align: center;
             transition: var(--x-transition);
+            overflow: hidden;
         }
 
-        .feature-card:hover {
+        .card-primary {
+            background: var(--bg-primary-subtle);
+            border: 1px solid var(--border-primary-subtle);
+            box-shadow: var(--elevation-primary-sm);
+        }
+        .card-primary:hover {
+            background: var(--bg-primary-hover);
+            border-color: var(--border-primary-light);
+            box-shadow: var(--elevation-primary-md);
             transform: var(--motion-hover);
-            box-shadow: var(--x-shadow-hover);
         }
 
+        .card-secondary {
+            background: var(--bg-secondary-subtle);
+            border: 1px solid var(--border-secondary-subtle);
+            box-shadow: var(--elevation-secondary-sm);
+        }
+        .card-secondary:hover {
+            background: var(--bg-secondary-hover);
+            border-color: var(--border-secondary-light);
+            box-shadow: var(--elevation-secondary-md);
+            transform: var(--motion-hover);
+        }
+
+        .card-accent {
+            background: var(--bg-quaternary-subtle);
+            border: 1px solid var(--border-quaternary-subtle);
+            box-shadow: var(--elevation-quaternary-sm);
+        }
+        .card-accent:hover {
+            background: var(--bg-quaternary-hover);
+            border-color: var(--border-quaternary-light);
+            box-shadow: var(--elevation-quaternary-md);
+            transform: var(--motion-hover);
+        }
+
+        .card-emphasis {
+            background: var(--bg-quinary-subtle);
+            border: 1px solid var(--border-quinary-subtle);
+            box-shadow: var(--elevation-quinary-sm);
+        }
+        .card-emphasis:hover {
+            background: var(--bg-quinary-hover);
+            border-color: var(--border-quinary-light);
+            box-shadow: var(--elevation-quinary-md);
+            transform: var(--motion-hover);
+        }
+
+        /* Button Components */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
             padding: 0.75rem 1.5rem;
-            border: 2px solid;
+            border: none;
             border-radius: var(--x-radius);
             font-weight: 500;
-            text-decoration: none;
-            color: var(--black);
-            transition: var(--x-transition);
             cursor: pointer;
-            font-family: inherit;
+            transition: var(--x-transition);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
         .btn-primary {
-            background: var(--primary);
-            color: var(--quinary);
-            border-color: var(--primary);
+            background: var(--bg-primary-base);
+            color: var(--text-on-primary);
+            border: 1px solid var(--border-primary-base);
         }
-
         .btn-primary:hover {
-            background: var(--primary-shade);
+            background: var(--bg-primary-hover);
+            border-color: var(--border-primary-light);
             transform: var(--motion-hover);
-            box-shadow: var(--elevation-primary-lg);
+        }
+        .btn-primary:active {
+            background: var(--bg-primary-active);
+            transform: var(--motion-active);
+        }
+        .btn-primary:focus {
+            outline: none;
+            box-shadow: var(--focus-ring-primary);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
+            background: var(--bg-secondary-base);
+            color: var(--text-on-secondary);
+            border: 1px solid var(--border-secondary-base);
         }
-
         .btn-secondary:hover {
-            background: var(--primary-highlight);
-            color: var(--primary-shade);
+            background: var(--bg-secondary-hover);
+            border-color: var(--border-secondary-light);
+            transform: var(--motion-hover);
         }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--quinary);
-            border-color: var(--quinary);
+        .btn-secondary:active {
+            background: var(--bg-secondary-active);
+            transform: var(--motion-active);
         }
-
-        .btn-outline:hover {
-            background: var(--quinary);
-            color: var(--black);
-        }
-
-        .demo-card {
-            background: var(--white);
-            border: 1px solid var(--x-border-light);
-            border-radius: var(--x-radius);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .demo-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid var(--x-border-light);
-            border-radius: var(--x-radius);
-            font-family: inherit;
-            transition: var(--x-transition);
-        }
-
-        .demo-input:focus {
-            border-color: var(--primary);
-            box-shadow: var(--focus-ring-secondary);
+        .btn-secondary:focus {
             outline: none;
+            box-shadow: var(--focus-ring-secondary);
         }
 
-        .color-swatch {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-            border: 2px solid var(--white);
-            box-shadow: var(--x-shadow);
-            margin-bottom: 0.5rem;
+        .btn-accent {
+            background: var(--bg-quaternary-base);
+            color: var(--text-on-quaternary);
+            border: 1px solid var(--border-quaternary-base);
+        }
+        .btn-accent:hover {
+            background: var(--bg-quaternary-hover);
+            border-color: var(--border-quaternary-light);
+            transform: var(--motion-hover);
         }
 
-        .toggle-palette {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 100;
-            background: var(--white);
-            border: 2px solid var(--primary);
-            border-radius: var(--x-radius);
-            padding: 0.5rem 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            box-shadow: var(--x-shadow);
+        .btn-emphasis {
+            background: var(--bg-quinary-base);
+            color: var(--text-on-quinary);
+            border: 1px solid var(--border-quinary-base);
+        }
+        .btn-emphasis:hover {
+            background: var(--bg-quinary-hover);
+            border-color: var(--border-quinary-light);
+            transform: var(--motion-hover);
         }
 
-        .code-preview {
-            background: var(--quinary);
-            color: var(--tertiary);
+        /* Status Components */
+        .alert {
             padding: 1rem;
             border-radius: var(--x-radius);
+            border-left: 4px solid;
             margin: 1rem 0;
-            overflow-x: auto;
-            font-family: Monaco, Menlo, 'Ubuntu Mono', monospace;
-            font-size: 0.875rem;
-            line-height: 1.5;
         }
 
+        .alert-success {
+            background: var(--status-success-bg);
+            border-color: var(--status-success);
+            color: var(--text-on-quinary);
+        }
+
+        .alert-warning {
+            background: var(--status-warning-bg);
+            border-color: var(--status-warning);
+            color: var(--text-on-tertiary);
+        }
+
+        .alert-error {
+            background: var(--status-error-bg);
+            border-color: var(--status-error);
+            color: var(--text-on-secondary);
+        }
+
+        .alert-info {
+            background: var(--status-info-bg);
+            border-color: var(--status-info);
+            color: var(--text-on-quaternary);
+        }
+
+        /* Badge Components */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            border: 1px solid;
+        }
+
+        .badge-utility {
+            background: var(--bg-senary-subtle);
+            color: var(--text-on-senary);
+            border-color: var(--border-senary-subtle);
+        }
+
+        .badge-danger {
+            background: var(--bg-septenary-subtle);
+            color: var(--text-on-septenary);
+            border-color: var(--border-septenary-subtle);
+        }
+
+        .badge-info {
+            background: var(--bg-octonary-subtle);
+            color: var(--text-on-octonary);
+            border-color: var(--border-octonary-subtle);
+        }
+
+        .badge-neutral {
+            background: var(--bg-nonary-subtle);
+            color: var(--text-on-nonary);
+            border-color: var(--border-nonary-subtle);
+        }
+
+        /* Glass Effects */
+        .glass-card {
+            background: var(--glass-primary-medium);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-primary-subtle);
+            border-radius: var(--x-radius-lg);
+        }
+
+        .glass-overlay {
+            background: var(--glass-secondary-light);
+            backdrop-filter: var(--glass-blur-hero);
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--glass-tertiary-medium);
+            backdrop-filter: var(--glass-blur);
+            border-bottom: 1px solid var(--border-tertiary-subtle);
+        }
+
+        .nav-link {
+            padding: 0.75rem 1rem;
+            color: var(--text-on-tertiary);
+            text-decoration: none;
+            border-radius: var(--x-radius-sm);
+            transition: var(--x-transition);
+        }
+        .nav-link:hover {
+            background: var(--hover-overlay-tertiary);
+            color: var(--text-on-tertiary);
+        }
+        .nav-link.active {
+            background: var(--bg-tertiary-subtle);
+            color: var(--text-on-tertiary);
+        }
+
+        /* Form Elements */
+        .form-input {
+            padding: 0.75rem;
+            border: 1px solid var(--border-tertiary-base);
+            border-radius: var(--x-radius);
+            background: var(--bg-tertiary-subtle);
+            color: var(--text-on-tertiary);
+            transition: var(--x-transition);
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--border-quaternary-base);
+            box-shadow: var(--focus-ring-quaternary);
+        }
+
+        /* Color Palette Display */
+        .color-swatch {
+            width: 100%;
+            height: 60px;
+            border-radius: var(--x-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 0.875rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-alternate {
+            background: var(--bg-secondary-subtle);
+        }
+
+        /* Demo specific styles */
         .demo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin: 2rem 0;
         }
 
-        .utility-demo {
-            display: flex;
-            flex-wrap: wrap;
+        .color-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 0.5rem;
             margin: 1rem 0;
         }
 
-        .utility-chip {
-            background: var(--primary-highlight);
-            color: var(--primary-shade);
-            padding: 0.25rem 0.75rem;
-            border-radius: 999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
-        .gradient-demo {
-            height: 100px;
-            border-radius: var(--x-radius);
-            margin: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--black);
-            font-weight: 600;
+        .palette-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
         }
     </style>
 </head>
 <body>
 <!-- Palette Toggle -->
-<button class="toggle-palette" onclick="togglePalette()">
-    Toggle 5/10 Token Mode
-</button>
+<div class="palette-toggle">
+    <button id="togglePalette" class="btn btn-accent">
+        Switch to 5-Color Mode
+    </button>
+</div>
 
-<!-- Header -->
-<header class="demo-header">
-    <div class="container">
-        <nav class="demo-nav">
-            <a href="#" class="demo-logo">X-Framework</a>
-            <div class="demo-nav-links">
-                <a href="#colors" class="demo-nav-link">Colors</a>
-                <a href="#components" class="demo-nav-link">Components</a>
-                <a href="#layout" class="demo-nav-link">Layout</a>
-                <a href="#utilities" class="demo-nav-link">Utilities</a>
+<!-- Navigation -->
+<nav class="nav sticky">
+    <div class="container flex items-center justify-between py-3">
+        <div class="flex items-center gap-6">
+            <h3 class="m-0">Color System</h3>
+            <div class="flex gap-2">
+                <a href="#cards" class="nav-link">Cards</a>
+                <a href="#buttons" class="nav-link">Buttons</a>
+                <a href="#status" class="nav-link">Components</a>
+                <a href="#elevations" class="nav-link">Elevations</a>
+                <a href="#forms" class="nav-link">Forms</a>
+                <a href="#palette" class="nav-link">Palette</a>
             </div>
-        </nav>
+        </div>
     </div>
-</header>
+</nav>
 
 <!-- Hero Section -->
-<section class="demo-hero">
+<section class="section">
     <div class="container">
-        <h1>X-Framework Design System</h1>
-        <p>A comprehensive CSS framework with dual-mode color tokens, utility classes, and component styling. Built for modern web applications with accessibility and performance in mind.</p>
-        <div class="flex gap-4 justify-center">
-            <button class="btn btn-primary">Get Started</button>
-            <button class="btn btn-outline">View Documentation</button>
+        <div class="glass-card p-8 text-center">
+            <h1 class="m-0 mb-4" style="color: var(--text-on-primary);">
+                Advanced Color System Showcase
+            </h1>
+            <p class="mb-6" style="color: var(--text-on-primary-muted);">
+                Demonstrating a comprehensive 10-color palette with proper variations,
+                tints, shades, and semantic usage across real UI components.
+            </p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="#cards" class="btn btn-primary">Explore Cards</a>
+                <a href="#buttons" class="btn btn-secondary">View Buttons</a>
+                <a href="#status" class="btn btn-accent">See Status</a>
+            </div>
         </div>
     </div>
 </section>
 
-<main class="main-content">
-    <!-- Color System Section -->
-    <section id="colors" class="demo-section">
-        <div class="container">
-            <div class="demo-section-header">
-                <h2 class="demo-section-title">Color System</h2>
-                <p class="demo-section-subtitle">Dual-mode color tokens: 5-token minimal or 10-token extended palette</p>
-            </div>
-
-            <div class="demo-grid">
-                <!-- Primary Colors -->
-                <div class="demo-card">
-                    <h3>Core Palette</h3>
-                    <div class="grid grid-cols-5 gap-3">
-                        <div class="text-center">
-                            <div class="color-swatch" style="background: var(--primary);"></div>
-                            <small>Primary</small>
-                            <div class="code-preview">--primary</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="color-swatch" style="background: var(--secondary);"></div>
-                            <small>Secondary</small>
-                            <div class="code-preview">--secondary</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="color-swatch" style="background: var(--tertiary);"></div>
-                            <small>Tertiary</small>
-                            <div class="code-preview">--tertiary</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="color-swatch" style="background: var(--quaternary);"></div>
-                            <small>Quaternary</small>
-                            <div class="code-preview">--quaternary</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="color-swatch" style="background: var(--quinary);"></div>
-                            <small>Quinary</small>
-                            <div class="code-preview">--quinary</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Color Variations -->
-                <div class="demo-card">
-                    <h3>Tints & Shades</h3>
-                    <div class="grid grid-cols-3 gap-2">
-                        <div class="text-center">
-                            <div class="color-swatch" style="background: var(--primary-highlight);"></div>
-                            <small>Highlight</small>
-                        </div>
-                        <div class="text-center">
-                            <div class="color-swatch" style="background: var(--primary);"></div>
-                            <small>Base</small>
-                        </div>
-                        <div class="text-center">
-                            <div class="color-swatch" style="background: var(--primary-shade);"></div>
-                            <small>Shade</small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gradients -->
-                <div class="demo-card">
-                    <h3>Gradients</h3>
-                    <div class="gradient-demo bg-gradient-primary">Primary Gradient</div>
-                    <div class="gradient-demo bg-gradient-hero">Hero Gradient</div>
-                    <div class="gradient-demo bg-gradient-sunset">Sunset Gradient</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Components Section -->
-    <section id="components" class="demo-section">
-        <div class="container">
-            <div class="demo-section-header">
-                <h2 class="demo-section-title">Components</h2>
-                <p class="demo-section-subtitle">Ready-to-use component styles and interactive elements</p>
-            </div>
-
-            <div class="demo-grid">
-                <!-- Buttons -->
-                <div class="demo-card">
-                    <h3>Buttons</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <button class="btn btn-primary">Primary</button>
-                        <button class="btn btn-secondary">Secondary</button>
-                        <button class="btn btn-outline">Outline</button>
-                    </div>
-                    <div class="code-preview">
-                        &lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
-                        &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
-                        &lt;button class="btn btn-outline"&gt;Outline&lt;/button&gt;
-                    </div>
-                </div>
-
-                <!-- Forms -->
-                <div class="demo-card">
-                    <h3>Form Elements</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Text Input</label>
-                            <input type="text" class="demo-input" placeholder="Enter text...">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Select Dropdown</label>
-                            <select class="demo-input">
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cards -->
-                <div class="demo-card">
-                    <h3>Cards & Containers</h3>
-                    <div class="feature-card">
-                        <h4 class="text-lg font-semibold mb-2">Feature Card</h4>
-                        <p class="text-quaternary">This card has hover effects and elevation shadows.</p>
-                    </div>
-                </div>
-
-                <!-- Status Indicators -->
-                <div class="demo-card">
-                    <h3>Status Indicators</h3>
-                    <div class="flex flex-wrap gap-2">
-                            <span class="status-indicator success">
-                                <span class="status-dot"></span>
-                                Success
-                            </span>
-                        <span class="status-indicator warning">
-                                <span class="status-dot"></span>
-                                Warning
-                            </span>
-                        <span class="status-indicator error">
-                                <span class="status-dot"></span>
-                                Error
-                            </span>
-                        <span class="status-indicator info">
-                                <span class="status-dot"></span>
-                                Info
-                            </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Layout Section -->
-    <section id="layout" class="demo-section bg-tertiary">
-        <div class="container">
-            <div class="demo-section-header">
-                <h2 class="demo-section-title">Layout System</h2>
-                <p class="demo-section-subtitle">Flexible grid system and layout utilities</p>
-            </div>
-
-            <!-- Grid System Demo -->
-            <div class="demo-card">
-                <h3>Grid System</h3>
-                <div class="grid grid-cols-4 gap-4 mb-6">
-                    <div class="bg-primary-highlight p-4 rounded text-center">Col 1</div>
-                    <div class="bg-primary-highlight p-4 rounded text-center">Col 2</div>
-                    <div class="bg-primary-highlight p-4 rounded text-center">Col 3</div>
-                    <div class="bg-primary-highlight p-4 rounded text-center">Col 4</div>
-                </div>
-
-                <div class="grid grid-cols-12 gap-2">
-                    <div class="col-span-6 bg-secondary-tint p-3 rounded text-center">6 columns</div>
-                    <div class="col-span-4 bg-secondary-tint p-3 rounded text-center">4 columns</div>
-                    <div class="col-span-2 bg-secondary-tint p-3 rounded text-center">2</div>
-                </div>
-
-                <div class="code-preview mt-4">
-                    &lt;div class="grid grid-cols-4 gap-4"&gt;...&lt;/div&gt;
-                    &lt;div class="grid grid-cols-12 gap-2"&gt;
-                    &lt;div class="col-span-6"&gt;...&lt;/div&gt;
-                    &lt;div class="col-span-4"&gt;...&lt;/div&gt;
-                    &lt;div class="col-span-2"&gt;...&lt;/div&gt;
-                    &lt;/div&gt;
-                </div>
-            </div>
-
-            <!-- Flexbox Demo -->
-            <div class="demo-card">
-                <h3>Flexbox Utilities</h3>
-                <div class="flex justify-between items-center p-4 bg-primary-highlight rounded mb-4">
-                    <span>Left</span>
-                    <span>Center</span>
-                    <span>Right</span>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <div class="bg-tertiary-tint p-2 rounded">Flex item 1</div>
-                    <div class="bg-tertiary-tint p-2 rounded">Flex item 2</div>
-                    <div class="bg-tertiary-tint p-2 rounded">Flex item 3</div>
-                </div>
-
-                <div class="code-preview mt-4">
-                    &lt;div class="flex justify-between items-center"&gt;...&lt;/div&gt;
-                    &lt;div class="flex flex-col gap-2"&gt;...&lt;/div&gt;
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Utilities Section -->
-    <section id="utilities" class="demo-section">
-        <div class="container">
-            <div class="demo-section-header">
-                <h2 class="demo-section-title">Utility Classes</h2>
-                <p class="demo-section-subtitle">Comprehensive utility classes for rapid development</p>
-            </div>
-
-            <div class="demo-grid">
-                <!-- Typography -->
-                <div class="demo-card">
-                    <h3>Typography</h3>
-                    <div class="space-y-2">
-                        <p class="text-xs">Extra Small Text</p>
-                        <p class="text-sm">Small Text</p>
-                        <p class="text-base">Base Text</p>
-                        <p class="text-lg">Large Text</p>
-                        <p class="text-xl font-semibold">Extra Large Bold</p>
-                    </div>
-                    <div class="utility-demo">
-                        <span class="utility-chip">text-xs</span>
-                        <span class="utility-chip">text-lg</span>
-                        <span class="utility-chip">font-bold</span>
-                        <span class="utility-chip">text-center</span>
-                    </div>
-                </div>
-
-                <!-- Spacing -->
-                <div class="demo-card">
-                    <h3>Spacing</h3>
-                    <div class="bg-primary-highlight p-4 rounded mb-2">Padding 4</div>
-                    <div class="bg-secondary-highlight m-2 p-2 rounded">Margin 2</div>
-                    <div class="bg-tertiary-highlight p-6 rounded">Padding 6</div>
-                    <div class="utility-demo">
-                        <span class="utility-chip">p-4</span>
-                        <span class="utility-chip">m-2</span>
-                        <span class="utility-chip">p-6</span>
-                        <span class="utility-chip">gap-4</span>
-                    </div>
-                </div>
-
-                <!-- Colors -->
-                <div class="demo-card">
-                    <h3>Background Colors</h3>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="bg-primary p-3 rounded text-center text-white">Primary</div>
-                        <div class="bg-secondary p-3 rounded text-center">Secondary</div>
-                        <div class="bg-quaternary p-3 rounded text-center">Quaternary</div>
-                        <div class="bg-quinary p-3 rounded text-center text-white">Quinary</div>
-                    </div>
-                    <div class="utility-demo">
-                        <span class="utility-chip">bg-primary</span>
-                        <span class="utility-chip">bg-secondary</span>
-                        <span class="utility-chip">text-white</span>
-                    </div>
-                </div>
-
-                <!-- Effects -->
-                <div class="demo-card">
-                    <h3>Effects & Transforms</h3>
-                    <div class="flex gap-4">
-                        <div class="shadow p-4 rounded bg-white">Shadow</div>
-                        <div class="shadow-hover p-4 rounded bg-white">Shadow Hover</div>
-                        <div class="rounded-full w-16 h-16 bg-primary flex items-center justify-center text-white">Round</div>
-                    </div>
-                    <div class="utility-demo">
-                        <span class="utility-chip">shadow</span>
-                        <span class="utility-chip">rounded-full</span>
-                        <span class="utility-chip">transition</span>
-                        <span class="utility-chip">hover:scale-105</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="demo-section bg-gradient-hero text-white">
-        <div class="container">
-            <div class="demo-section-header">
-                <h2 class="demo-section-title text-white">Framework Features</h2>
-                <p class="demo-section-subtitle text-white opacity-90">Built for modern web development</p>
-            </div>
-
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3 class="feature-title">Dual Color Modes</h3>
-                    <p class="feature-description">Switch between 5-token minimal and 10-token extended palettes</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Performance First</h3>
-                    <p class="feature-description">Optimized CSS with minimal runtime overhead and efficient selectors</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">Responsive Design</h3>
-                    <p class="feature-description">Mobile-first approach with comprehensive breakpoint utilities</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">♿</div>
-                    <h3 class="feature-title">Accessible</h3>
-                    <p class="feature-description">WCAG compliant with proper focus states and screen reader support</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🧩</div>
-                    <h3 class="feature-title">Component Ready</h3>
-                    <p class="feature-description">Pre-styled components for X-Component web components</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">⚙️</div>
-                    <h3 class="feature-title">Customizable</h3>
-                    <p class="feature-description">CSS custom properties make theming and customization simple</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Code Example Section -->
-    <section class="demo-section">
-        <div class="container">
-            <div class="demo-section-header">
-                <h2 class="demo-section-title">Getting Started</h2>
-                <p class="demo-section-subtitle">Quick setup and usage examples</p>
-            </div>
-
-            <div class="example-tabs">
-                <div class="tab-content">
-                    <h3>Installation</h3>
-                    <div class="code-example" data-lang="html">
-                        <code>&lt;!-- Include the framework --&gt;
-                            &lt;link rel="stylesheet" href="site.css"&gt;
-
-                            &lt;!-- Optional: Set palette mode --&gt;
-                            &lt;html data-palette="5"&gt; &lt;!-- or "10" for extended --&gt;</code>
-                    </div>
-
-                    <h3>Basic Usage</h3>
-                    <div class="code-example" data-lang="html">
-                        <code>&lt;div class="container"&gt;
-                            &lt;div class="grid grid-cols-3 gap-4"&gt;
-                            &lt;div class="bg-white p-6 rounded shadow"&gt;
-                            &lt;h3 class="text-xl font-semibold mb-2"&gt;Card Title&lt;/h3&gt;
-                            &lt;p class="text-quaternary"&gt;Card content...&lt;/p&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;/div&gt;</code>
-                    </div>
-
-                    <h3>Custom Properties</h3>
-                    <div class="code-example" data-lang="css">
-                        <code>/* Use framework colors in custom CSS */
-                            .my-component {
-                            background: var(--primary);
-                            color: var(--white);
-                            border: 2px solid var(--primary-shade);
-                            border-radius: var(--x-radius);
-                            box-shadow: var(--primary-elevation-accent);
-                            }</code>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<!-- Footer -->
-<footer class="demo-footer">
+<!-- Complete Card Showcase - All 10 Colors -->
+<section id="cards" class="section section-alternate">
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>X-Framework</h3>
-                <p>A modern CSS framework for building beautiful, accessible web applications.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Features</h3>
-                <ul>
-                    <li><a href="#">Color System</a></li>
-                    <li><a href="#">Components</a></li>
-                    <li><a href="#">Layout Grid</a></li>
-                    <li><a href="#">Utilities</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Examples</a></li>
-                    <li><a href="#">GitHub</a></li>
-                </ul>
+        <h2>Complete Card System - All 10 Colors</h2>
+        <p>Every color from Primary to Denary with proper variations, tints for backgrounds, and shades for borders/depth.</p>
+
+        <!-- Core Colors 1-5 -->
+        <div class="mb-8">
+            <h3>Core Functional Colors (1-5)</h3>
+            <div class="grid grid-cols-1 gap-6">
+                <div class="card card-primary p-6">
+                    <h4 style="color: var(--text-primary);">1. Primary - Background Layer</h4>
+                    <p style="color: var(--text-secondary);">
+                        Main background layer using --bg-primary-subtle with --border-primary-subtle.
+                        Hover: --bg-primary-hover and --border-primary-light. Active: --bg-primary-active.
+                    </p>
+                    <div class="flex gap-3">
+                        <button class="btn btn-primary">Primary Action</button>
+                        <span class="badge" style="background: var(--primary-tint); color: var(--text-on-primary); border-color: var(--primary-tint);">Primary Badge</span>
+                    </div>
+                </div>
+
+                <div class="card card-secondary p-6">
+                    <h4 style="color: var(--text-primary);">2. Secondary - Foreground/Surface</h4>
+                    <p style="color: var(--text-secondary);">
+                        Foreground and surface accent layer using --bg-secondary-subtle.
+                        Perfect for elevated surfaces and content areas.
+                    </p>
+                    <div class="flex gap-3">
+                        <button class="btn btn-secondary">Secondary Action</button>
+                        <span class="badge" style="background: var(--secondary-tint); color: var(--text-on-secondary); border-color: var(--secondary-tint);">Secondary Badge</span>
+                    </div>
+                </div>
+
+                <div class="card" style="background: var(--bg-tertiary-subtle); border: 1px solid var(--border-tertiary-subtle); box-shadow: var(--elevation-tertiary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-tertiary-hover)'; this.style.borderColor='var(--border-tertiary-light)'; this.style.boxShadow='var(--elevation-tertiary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-tertiary-subtle)'; this.style.borderColor='var(--border-tertiary-subtle)'; this.style.boxShadow='var(--elevation-tertiary-sm)'; this.style.transform='none';">
+                    <div class="p-6">
+                        <h4 style="color: var(--text-primary);">3. Tertiary - Borders/Structure</h4>
+                        <p style="color: var(--text-secondary);">
+                            Borders and structural elements using --bg-tertiary-subtle.
+                            Essential for form elements, dividers, and layout structure.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="btn" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-base);">Tertiary Action</button>
+                            <span class="badge" style="background: var(--tertiary-tint); color: var(--text-on-tertiary); border-color: var(--tertiary-tint);">Structure Badge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-accent p-6">
+                    <h4 style="color: var(--text-primary);">4. Quaternary - Accent (Calm Emphasis)</h4>
+                    <p style="color: var(--text-secondary);">
+                        Calm accent layer using --bg-quaternary-subtle.
+                        Perfect for highlighting without overwhelming, info states.
+                    </p>
+                    <div class="flex gap-3">
+                        <button class="btn btn-accent">Accent Action</button>
+                        <span class="badge" style="background: var(--quaternary-tint); color: var(--text-on-quaternary); border-color: var(--quaternary-tint);">Accent Badge</span>
+                    </div>
+                </div>
+
+                <div class="card card-emphasis p-6">
+                    <h4 style="color: var(--text-primary);">5. Quinary - Emphasis/Positive</h4>
+                    <p style="color: var(--text-secondary);">
+                        Emphasis and positive tone using --bg-quinary-subtle.
+                        Used for success states, CTAs, and important positive actions.
+                    </p>
+                    <div class="flex gap-3">
+                        <button class="btn btn-emphasis">Emphasis Action</button>
+                        <span class="badge" style="background: var(--quinary-tint); color: var(--text-on-quinary); border-color: var(--quinary-tint);">Success Badge</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 ZephyrCSS. Showcasing modern CSS architecture.</p>
+
+        <!-- Extended Colors 6-10 -->
+        <div>
+            <h3>Extended Semantic Colors (6-10)</h3>
+            <div class="grid grid-cols-1 gap-6">
+                <div class="card" style="background: var(--bg-senary-subtle); border: 1px solid var(--border-senary-subtle); box-shadow: var(--elevation-senary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-senary-hover)'; this.style.borderColor='var(--border-senary-light)'; this.style.boxShadow='var(--elevation-senary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-senary-subtle)'; this.style.borderColor='var(--border-senary-subtle)'; this.style.boxShadow='var(--elevation-senary-sm)'; this.style.transform='none';">
+                    <div class="p-6">
+                        <h4 style="color: var(--text-primary);">6. Senary - Utility Overlay</h4>
+                        <p style="color: var(--text-secondary);">
+                            Utility overlay layer using --bg-senary-subtle.
+                            Perfect for tool tips, utility menus, and overlay content.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="btn" style="background: var(--bg-senary-base); color: var(--text-on-senary); border: 1px solid var(--border-senary-base);">Utility Action</button>
+                            <span class="badge badge-utility">Utility Badge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: var(--bg-septenary-subtle); border: 1px solid var(--border-septenary-subtle); box-shadow: var(--elevation-septenary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-septenary-hover)'; this.style.borderColor='var(--border-septenary-light)'; this.style.boxShadow='var(--elevation-septenary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-septenary-subtle)'; this.style.borderColor='var(--border-septenary-subtle)'; this.style.boxShadow='var(--elevation-septenary-sm)'; this.style.transform='none';">
+                    <div class="p-6">
+                        <h4 style="color: var(--text-primary);">7. Septenary - Danger</h4>
+                        <p style="color: var(--text-secondary);">
+                            Danger and error states using --bg-septenary-subtle.
+                            Essential for destructive actions, errors, and critical warnings.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="btn" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-base);">Danger Action</button>
+                            <span class="badge badge-danger">Danger Badge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: var(--bg-octonary-subtle); border: 1px solid var(--border-octonary-subtle); box-shadow: var(--elevation-octonary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-octonary-hover)'; this.style.borderColor='var(--border-octonary-light)'; this.style.boxShadow='var(--elevation-octonary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-octonary-subtle)'; this.style.borderColor='var(--border-octonary-subtle)'; this.style.boxShadow='var(--elevation-octonary-sm)'; this.style.transform='none';">
+                    <div class="p-6">
+                        <h4 style="color: var(--text-primary);">8. Octonary - Info (Blue)</h4>
+                        <p style="color: var(--text-secondary);">
+                            Information and neutral positive states using --bg-octonary-subtle.
+                            Perfect for informational messages, help text, and guidance.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="btn" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-base);">Info Action</button>
+                            <span class="badge badge-info">Info Badge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: var(--bg-nonary-subtle); border: 1px solid var(--border-nonary-subtle); box-shadow: var(--elevation-nonary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-nonary-hover)'; this.style.borderColor='var(--border-nonary-light)'; this.style.boxShadow='var(--elevation-nonary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-nonary-subtle)'; this.style.borderColor='var(--border-nonary-subtle)'; this.style.boxShadow='var(--elevation-nonary-sm)'; this.style.transform='none';">
+                    <div class="p-6">
+                        <h4 style="color: var(--text-primary);">9. Nonary - Warning/Neutral Accent</h4>
+                        <p style="color: var(--text-secondary);">
+                            Warning and neutral accent using --bg-nonary-subtle.
+                            Used for caution states, pending actions, and neutral emphasis.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="btn" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-base);">Warning Action</button>
+                            <span class="badge badge-neutral">Warning Badge</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: var(--bg-denary-subtle); border: 1px solid var(--border-denary-subtle); box-shadow: var(--elevation-denary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-denary-hover)'; this.style.borderColor='var(--border-denary-light)'; this.style.boxShadow='var(--elevation-denary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-denary-subtle)'; this.style.borderColor='var(--border-denary-subtle)'; this.style.boxShadow='var(--elevation-denary-sm)'; this.style.transform='none';">
+                    <div class="p-6">
+                        <h4 style="color: var(--text-primary);">10. Denary - Text Anchor</h4>
+                        <p style="color: var(--text-secondary);">
+                            Text anchor on light surfaces using --bg-denary-subtle.
+                            Essential for readable text on light backgrounds and content areas.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="btn" style="background: var(--bg-denary-base); color: var(--text-on-denary); border: 1px solid var(--border-denary-base);">Text Action</button>
+                            <span class="badge" style="background: var(--denary-tint); color: var(--text-on-denary); border-color: var(--denary-tint);">Text Badge</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</footer>
+</section>
 
+<!-- Complete Button Showcase - All 10 Colors -->
+<section id="buttons" class="section">
+    <div class="container">
+        <h2>Complete Button System - All 10 Colors</h2>
+        <p>Every color demonstrating base states, hover states, active states, and focus rings.</p>
+
+        <!-- Core Colors 1-5 -->
+        <div class="mb-8">
+            <h3>Core Functional Buttons (1-5)</h3>
+            <div class="demo-grid grid-cols-5">
+                <div>
+                    <h4>1. Primary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn btn-primary">Default</button>
+                        <button class="btn btn-primary" style="background: var(--bg-primary-hover);">Hover</button>
+                        <button class="btn btn-primary" style="background: var(--bg-primary-active);">Active</button>
+                        <button class="btn btn-primary" style="background: var(--bg-primary-disabled); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>2. Secondary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn btn-secondary">Default</button>
+                        <button class="btn btn-secondary" style="background: var(--bg-secondary-hover);">Hover</button>
+                        <button class="btn btn-secondary" style="background: var(--bg-secondary-active);">Active</button>
+                        <button class="btn btn-secondary" style="background: var(--bg-secondary-disabled); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>3. Tertiary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-tertiary-hover); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-tertiary-active); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-tertiary-disabled); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>4. Quaternary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn btn-accent">Default</button>
+                        <button class="btn btn-accent" style="background: var(--bg-quaternary-hover);">Hover</button>
+                        <button class="btn btn-accent" style="background: var(--bg-quaternary-active);">Active</button>
+                        <button class="btn btn-accent" style="background: var(--bg-quaternary-disabled); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>5. Quinary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn btn-emphasis">Default</button>
+                        <button class="btn btn-emphasis" style="background: var(--bg-quinary-hover);">Hover</button>
+                        <button class="btn btn-emphasis" style="background: var(--bg-quinary-active);">Active</button>
+                        <button class="btn btn-emphasis" style="background: var(--bg-quinary-disabled); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extended Colors 6-10 -->
+        <div>
+            <h3>Extended Semantic Buttons (6-10)</h3>
+            <div class="demo-grid grid-cols-5">
+                <div>
+                    <h4>6. Senary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn" style="background: var(--bg-senary-base); color: var(--text-on-senary); border: 1px solid var(--border-senary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-senary-hover); color: var(--text-on-senary); border: 1px solid var(--border-senary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-senary-active); color: var(--text-on-senary); border: 1px solid var(--border-senary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-senary-disabled); color: var(--text-on-senary); border: 1px solid var(--border-senary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>7. Septenary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-septenary-hover); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-septenary-active); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-septenary-disabled); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>8. Octonary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-octonary-hover); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-octonary-active); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-octonary-disabled); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>9. Nonary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-nonary-hover); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-nonary-active); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-nonary-disabled); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>10. Denary</h4>
+                    <div class="flex flex-col gap-3">
+                        <button class="btn" style="background: var(--bg-denary-base); color: var(--text-on-denary); border: 1px solid var(--border-denary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-denary-hover); color: var(--text-on-denary); border: 1px solid var(--border-denary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-denary-active); color: var(--text-on-denary); border: 1px solid var(--border-denary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-denary-disabled); color: var(--text-on-denary); border: 1px solid var(--border-denary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Focus Ring Examples -->
+        <div class="mt-8">
+            <h3>Focus Ring Examples</h3>
+            <p>Click and tab through these buttons to see the focus rings for each color.</p>
+            <div class="flex gap-3 flex-wrap">
+                <button class="btn btn-primary" style="box-shadow: var(--focus-ring-primary);">Primary Focus</button>
+                <button class="btn btn-secondary" style="box-shadow: var(--focus-ring-secondary);">Secondary Focus</button>
+                <button class="btn" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-base); box-shadow: var(--focus-ring-tertiary);">Tertiary Focus</button>
+                <button class="btn btn-accent" style="box-shadow: var(--focus-ring-quaternary);">Quaternary Focus</button>
+                <button class="btn btn-emphasis" style="box-shadow: var(--focus-ring-quinary);">Quinary Focus</button>
+                <button class="btn" style="background: var(--bg-senary-base); color: var(--text-on-senary); border: 1px solid var(--border-senary-base); box-shadow: var(--focus-ring-senary);">Senary Focus</button>
+                <button class="btn" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-base); box-shadow: var(--focus-ring-septenary);">Septenary Focus</button>
+                <button class="btn" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-base); box-shadow: var(--focus-ring-octonary);">Octonary Focus</button>
+                <button class="btn" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-base); box-shadow: var(--focus-ring-nonary);">Nonary Focus</button>
+                <button class="btn" style="background: var(--bg-denary-base); color: var(--text-on-denary); border: 1px solid var(--border-denary-base); box-shadow: var(--focus-ring-denary);">Denary Focus</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Complete Status & Components System -->
+<section id="status" class="section section-alternate">
+    <div class="container">
+        <h2>Complete Component System - All 10 Colors</h2>
+        <p>Status alerts, badges, and interactive components using all colors with their semantic roles.</p>
+
+        <!-- Status Alerts for All Colors -->
+        <div class="mb-8">
+            <h3>Status Alerts & Notifications</h3>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="alert" style="background: var(--bg-primary-subtle); border-left: 4px solid var(--primary); color: var(--text-primary); padding: 1rem; border-radius: var(--x-radius);">
+                    <strong>Primary Alert:</strong> Main background layer notification using primary color variations.
+                </div>
+
+                <div class="alert" style="background: var(--bg-secondary-subtle); border-left: 4px solid var(--secondary); color: var(--text-primary); padding: 1rem; border-radius: var(--x-radius);">
+                    <strong>Secondary Alert:</strong> Foreground/surface accent notification for elevated content.
+                </div>
+
+                <div class="alert" style="background: var(--bg-tertiary-subtle); border-left: 4px solid var(--tertiary-shade); color: var(--text-on-tertiary); padding: 1rem; border-radius: var(--x-radius);">
+                    <strong>Tertiary Alert:</strong> Structural information using border/structure layer colors.
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Quaternary Alert:</strong> Calm accent information using quaternary (accent) color variations.
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>Quinary Alert:</strong> Success and positive emphasis using quinary color variations.
+                </div>
+
+                <div class="alert" style="background: var(--bg-senary-subtle); border-left: 4px solid var(--senary); color: var(--text-on-senary); padding: 1rem; border-radius: var(--x-radius);">
+                    <strong>Senary Alert:</strong> Utility overlay information for tool tips and secondary content.
+                </div>
+
+                <div class="alert" style="background: var(--bg-septenary-subtle); border-left: 4px solid var(--septenary); color: var(--text-on-septenary); padding: 1rem; border-radius: var(--x-radius);">
+                    <strong>Septenary Alert:</strong> Danger and critical warnings using septenary color variations.
+                </div>
+
+                <div class="alert" style="background: var(--bg-octonary-subtle); border-left: 4px solid var(--octonary); color: var(--text-on-octonary); padding: 1rem; border-radius: var(--x-radius);">
+                    <strong>Octonary Alert:</strong> Informational content using info blue color variations.
+                </div>
+
+                <div class="alert" style="background: var(--bg-nonary-subtle); border-left: 4px solid var(--nonary); color: var(--text-on-nonary); padding: 1rem; border-radius: var(--x-radius);">
+                    <strong>Nonary Alert:</strong> Warning and neutral accent notifications.
+                </div>
+
+                <div class="alert" style="background: var(--bg-denary-subtle); border-left: 4px solid var(--denary); color: var(--text-on-denary); padding: 1rem; border-radius: var(--x-radius);">
+                    <strong>Denary Alert:</strong> Text anchor notifications for content-heavy messages.
+                </div>
+            </div>
+        </div>
+
+        <!-- Complete Badge System -->
+        <div class="mb-8">
+            <h3>Complete Badge System</h3>
+            <div class="grid grid-cols-2 gap-6">
+                <div>
+                    <h4>Core Functional Badges (1-5)</h4>
+                    <div class="flex gap-3 flex-wrap">
+                        <span class="badge" style="background: var(--primary-tint); color: var(--text-on-primary); border-color: var(--primary-tint);">Primary Badge</span>
+                        <span class="badge" style="background: var(--secondary-tint); color: var(--text-on-secondary); border-color: var(--secondary-tint);">Secondary Badge</span>
+                        <span class="badge" style="background: var(--tertiary-tint); color: var(--text-on-tertiary); border-color: var(--tertiary-tint);">Tertiary Badge</span>
+                        <span class="badge" style="background: var(--quaternary-tint); color: var(--text-on-quaternary); border-color: var(--quaternary-tint);">Quaternary Badge</span>
+                        <span class="badge" style="background: var(--quinary-tint); color: var(--text-on-quinary); border-color: var(--quinary-tint);">Quinary Badge</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Extended Semantic Badges (6-10)</h4>
+                    <div class="flex gap-3 flex-wrap">
+                        <span class="badge badge-utility">Senary Utility</span>
+                        <span class="badge badge-danger">Septenary Danger</span>
+                        <span class="badge badge-info">Octonary Info</span>
+                        <span class="badge badge-neutral">Nonary Warning</span>
+                        <span class="badge" style="background: var(--denary-tint); color: var(--text-on-denary); border-color: var(--denary-tint);">Denary Text</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Component Grid -->
+        <div class="mb-8">
+            <h3>Interactive Components Grid</h3>
+            <div class="grid grid-cols-5 gap-4">
+                <!-- Primary Column -->
+                <div class="p-4" style="background: var(--bg-primary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-primary-subtle);">
+                    <h5 style="color: var(--text-primary);">Primary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn btn-primary" style="font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-primary-base); border-color: var(--border-primary-base); color: var(--text-on-primary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--primary-highlight); color: var(--text-on-primary); border-color: var(--primary-highlight); font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+
+                <!-- Secondary Column -->
+                <div class="p-4" style="background: var(--bg-secondary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-secondary-subtle);">
+                    <h5 style="color: var(--text-primary);">Secondary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-secondary-base); border-color: var(--border-secondary-base); color: var(--text-on-secondary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--secondary-highlight); color: var(--text-on-secondary); border-color: var(--secondary-highlight); font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+
+                <!-- Tertiary Column -->
+                <div class="p-4" style="background: var(--bg-tertiary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-tertiary-strong);">
+                    <h5 style="color: var(--text-on-tertiary);">Tertiary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-tertiary-highlight); border-color: var(--border-tertiary-base); color: var(--text-on-tertiary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--tertiary-highlight); color: var(--text-on-tertiary); border-color: var(--tertiary-highlight); font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+
+                <!-- Quaternary Column -->
+                <div class="p-4" style="background: var(--bg-quaternary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-quaternary-subtle);">
+                    <h5 style="color: var(--text-primary);">Quaternary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn btn-accent" style="font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-quaternary-base); border-color: var(--border-quaternary-base); color: var(--text-on-quaternary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--quaternary-highlight); color: var(--text-on-quaternary); border-color: var(--quaternary-highlight); font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+
+                <!-- Quinary Column -->
+                <div class="p-4" style="background: var(--bg-quinary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-quinary-subtle);">
+                    <h5 style="color: var(--text-primary);">Quinary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn btn-emphasis" style="font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-quinary-base); border-color: var(--border-quinary-base); color: var(--text-on-quinary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--quinary-highlight); color: var(--text-on-quinary); border-color: var(--quinary-highlight); font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+
+                <!-- Senary Column -->
+                <div class="p-4" style="background: var(--bg-senary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-senary-subtle);">
+                    <h5 style="color: var(--text-primary);">Senary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn" style="background: var(--bg-senary-base); color: var(--text-on-senary); border: 1px solid var(--border-senary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-senary-base); border-color: var(--border-senary-base); color: var(--text-on-senary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge badge-utility" style="font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+
+                <!-- Septenary Column -->
+                <div class="p-4" style="background: var(--bg-septenary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-septenary-subtle);">
+                    <h5 style="color: var(--text-primary);">Septenary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-septenary-base); border-color: var(--border-septenary-base); color: var(--text-on-septenary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge badge-danger" style="font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+
+                <!-- Octonary Column -->
+                <div class="p-4" style="background: var(--bg-octonary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-octonary-subtle);">
+                    <h5 style="color: var(--text-primary);">Octonary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-octonary-base); border-color: var(--border-octonary-base); color: var(--text-on-octonary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge badge-info" style="font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+
+                <!-- Nonary Column -->
+                <div class="p-4" style="background: var(--bg-nonary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-nonary-subtle);">
+                    <h5 style="color: var(--text-primary);">Nonary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-nonary-base); border-color: var(--border-nonary-base); color: var(--text-on-nonary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge badge-neutral" style="font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+
+                <!-- Denary Column -->
+                <div class="p-4" style="background: var(--bg-denary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-denary-subtle);">
+                    <h5 style="color: var(--text-primary);">Denary</h5>
+                    <div class="flex flex-col gap-2">
+                        <button class="btn" style="background: var(--bg-denary-base); color: var(--text-on-denary); border: 1px solid var(--border-denary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-denary-base); border-color: var(--border-denary-base); color: var(--text-on-denary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--denary-highlight); color: var(--text-on-denary); border-color: var(--denary-highlight); font-size: 0.625rem;">Badge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glass Effects for All Colors -->
+        <div>
+            <h3>Glass Effects - All Colors</h3>
+            <div class="grid grid-cols-5 gap-4">
+                <div class="p-4 text-center" style="background: var(--glass-primary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-primary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-primary);">Primary Glass</h6>
+                </div>
+                <div class="p-4 text-center" style="background: var(--glass-secondary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-secondary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-secondary);">Secondary Glass</h6>
+                </div>
+                <div class="p-4 text-center" style="background: var(--glass-tertiary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-tertiary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-tertiary);">Tertiary Glass</h6>
+                </div>
+                <div class="p-4 text-center" style="background: var(--glass-quaternary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-quaternary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-quaternary);">Quaternary Glass</h6>
+                </div>
+                <div class="p-4 text-center" style="background: var(--glass-quinary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-quinary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-quinary);">Quinary Glass</h6>
+                </div>
+                <div class="p-4 text-center" style="background: var(--senary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-senary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-senary);">Senary Glass</h6>
+                </div>
+                <div class="p-4 text-center" style="background: var(--septenary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-septenary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-septenary);">Septenary Glass</h6>
+                </div>
+                <div class="p-4 text-center" style="background: var(--octonary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-octonary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-octonary);">Octonary Glass</h6>
+                </div>
+                <div class="p-4 text-center" style="background: var(--nonary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-nonary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-nonary);">Nonary Glass</h6>
+                </div>
+                <div class="p-4 text-center" style="background: var(--denary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-denary-subtle); border-radius: var(--x-radius-lg);">
+                    <h6 style="color: var(--text-on-denary);">Denary Glass</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Color Palette Display -->
+<section id="palette" class="section">
+    <div class="container">
+        <h2>Complete Color Palette</h2>
+        <p>All 10 colors with their variations: base, tints, highlights, and shades.</p>
+
+        <div class="grid grid-cols-2 gap-8">
+            <!-- Primary Colors (1-5) -->
+            <div>
+                <h3>Core Colors (1-5)</h3>
+
+                <div class="mb-6">
+                    <h4>Primary - Background Layer</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--primary); color: var(--text-on-primary);">Base</div>
+                        <div class="color-swatch" style="background: var(--primary-tint); color: var(--text-on-primary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--primary-highlight); color: var(--text-on-primary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--primary-shade); color: var(--text-on-primary);">Shade</div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4>Secondary - Foreground/Surface</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--secondary); color: var(--text-on-secondary);">Base</div>
+                        <div class="color-swatch" style="background: var(--secondary-tint); color: var(--text-on-secondary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--secondary-highlight); color: var(--text-on-secondary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--secondary-shade); color: var(--text-on-secondary);">Shade</div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4>Tertiary - Borders/Structure</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--tertiary); color: var(--text-on-tertiary);">Base</div>
+                        <div class="color-swatch" style="background: var(--tertiary-tint); color: var(--text-on-tertiary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--tertiary-highlight); color: var(--text-on-tertiary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--tertiary-shade); color: var(--text-on-tertiary);">Shade</div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4>Quaternary - Accent</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--quaternary); color: var(--text-on-quaternary);">Base</div>
+                        <div class="color-swatch" style="background: var(--quaternary-tint); color: var(--text-on-quaternary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--quaternary-highlight); color: var(--text-on-quaternary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--quaternary-shade); color: var(--text-on-quaternary);">Shade</div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4>Quinary - Emphasis</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--quinary); color: var(--text-on-quinary);">Base</div>
+                        <div class="color-swatch" style="background: var(--quinary-tint); color: var(--text-on-quinary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--quinary-highlight); color: var(--text-on-quinary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--quinary-shade); color: var(--text-on-quinary);">Shade</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extended Colors (6-10) -->
+            <div>
+                <h3>Extended Colors (6-10)</h3>
+
+                <div class="mb-6">
+                    <h4>Senary - Utility Overlay</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--senary); color: var(--text-on-senary);">Base</div>
+                        <div class="color-swatch" style="background: var(--senary-tint); color: var(--text-on-senary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--senary-highlight); color: var(--text-on-senary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--senary-shade); color: var(--text-on-senary);">Shade</div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4>Septenary - Danger</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--septenary); color: var(--text-on-septenary);">Base</div>
+                        <div class="color-swatch" style="background: var(--septenary-tint); color: var(--text-on-septenary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--septenary-highlight); color: var(--text-on-septenary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--septenary-shade); color: var(--text-on-septenary);">Shade</div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4>Octonary - Info Blue</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--octonary); color: var(--text-on-octonary);">Base</div>
+                        <div class="color-swatch" style="background: var(--octonary-tint); color: var(--text-on-octonary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--octonary-highlight); color: var(--text-on-octonary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--octonary-shade); color: var(--text-on-octonary);">Shade</div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4>Nonary - Warning/Neutral</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--nonary); color: var(--text-on-nonary);">Base</div>
+                        <div class="color-swatch" style="background: var(--nonary-tint); color: var(--text-on-nonary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--nonary-highlight); color: var(--text-on-nonary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--nonary-shade); color: var(--text-on-nonary);">Shade</div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4>Denary - Text Anchor</h4>
+                    <div class="color-demo">
+                        <div class="color-swatch" style="background: var(--denary); color: var(--text-on-denary);">Base</div>
+                        <div class="color-swatch" style="background: var(--denary-tint); color: var(--text-on-denary);">Tint</div>
+                        <div class="color-swatch" style="background: var(--denary-highlight); color: var(--text-on-denary);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--denary-shade); color: var(--text-on-denary);">Shade</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Complete Elevation System -->
+<section id="elevations" class="section">
+    <div class="container">
+        <h2>Elevation System - All 10 Colors</h2>
+        <p>Shadow and elevation effects for all colors demonstrating depth and layering.</p>
+
+        <div class="grid grid-cols-2 gap-8">
+            <!-- Core Colors Elevations -->
+            <div>
+                <h3>Core Colors Elevations (1-5)</h3>
+                <div class="grid gap-6">
+                    <div>
+                        <h4>Primary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-primary-base); color: var(--text-on-primary); border-radius: var(--x-radius); box-shadow: var(--elevation-primary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-primary-base); color: var(--text-on-primary); border-radius: var(--x-radius); box-shadow: var(--elevation-primary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-primary-base); color: var(--text-on-primary); border-radius: var(--x-radius); box-shadow: var(--elevation-primary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Secondary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-secondary-base); color: var(--text-on-secondary); border-radius: var(--x-radius); box-shadow: var(--elevation-secondary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-secondary-base); color: var(--text-on-secondary); border-radius: var(--x-radius); box-shadow: var(--elevation-secondary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-secondary-base); color: var(--text-on-secondary); border-radius: var(--x-radius); box-shadow: var(--elevation-secondary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Tertiary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border-radius: var(--x-radius); box-shadow: var(--elevation-tertiary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border-radius: var(--x-radius); box-shadow: var(--elevation-tertiary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border-radius: var(--x-radius); box-shadow: var(--elevation-tertiary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Quaternary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-quaternary-base); color: var(--text-on-quaternary); border-radius: var(--x-radius); box-shadow: var(--elevation-quaternary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-quaternary-base); color: var(--text-on-quaternary); border-radius: var(--x-radius); box-shadow: var(--elevation-quaternary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-quaternary-base); color: var(--text-on-quaternary); border-radius: var(--x-radius); box-shadow: var(--elevation-quaternary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Quinary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-quinary-base); color: var(--text-on-quinary); border-radius: var(--x-radius); box-shadow: var(--elevation-quinary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-quinary-base); color: var(--text-on-quinary); border-radius: var(--x-radius); box-shadow: var(--elevation-quinary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-quinary-base); color: var(--text-on-quinary); border-radius: var(--x-radius); box-shadow: var(--elevation-quinary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extended Colors Elevations -->
+            <div>
+                <h3>Extended Colors Elevations (6-10)</h3>
+                <div class="grid gap-6">
+                    <div>
+                        <h4>Senary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-senary-base); color: var(--text-on-senary); border-radius: var(--x-radius); box-shadow: var(--elevation-senary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-senary-base); color: var(--text-on-senary); border-radius: var(--x-radius); box-shadow: var(--elevation-senary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-senary-base); color: var(--text-on-senary); border-radius: var(--x-radius); box-shadow: var(--elevation-senary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Septenary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border-radius: var(--x-radius); box-shadow: var(--elevation-septenary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border-radius: var(--x-radius); box-shadow: var(--elevation-septenary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border-radius: var(--x-radius); box-shadow: var(--elevation-septenary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Octonary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border-radius: var(--x-radius); box-shadow: var(--elevation-octonary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border-radius: var(--x-radius); box-shadow: var(--elevation-octonary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border-radius: var(--x-radius); box-shadow: var(--elevation-octonary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Nonary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border-radius: var(--x-radius); box-shadow: var(--elevation-nonary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border-radius: var(--x-radius); box-shadow: var(--elevation-nonary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border-radius: var(--x-radius); box-shadow: var(--elevation-nonary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Denary Elevations</h4>
+                        <div class="flex gap-4 items-end">
+                            <div class="p-4 text-center" style="background: var(--bg-denary-base); color: var(--text-on-denary); border-radius: var(--x-radius); box-shadow: var(--elevation-denary-sm);">
+                                <div class="text-sm">Small</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-denary-base); color: var(--text-on-denary); border-radius: var(--x-radius); box-shadow: var(--elevation-denary-md);">
+                                <div class="text-sm">Medium</div>
+                            </div>
+                            <div class="p-4 text-center" style="background: var(--bg-denary-base); color: var(--text-on-denary); border-radius: var(--x-radius); box-shadow: var(--elevation-denary-lg);">
+                                <div class="text-sm">Large</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Complete Form System -->
+<section id="forms" class="section section-alternate">
+    <div class="container">
+        <h2>Complete Form System - All 10 Colors</h2>
+        <p>Form elements demonstrating all color variations for inputs, selects, and form states.</p>
+
+        <!-- Core Color Forms -->
+        <div class="mb-8">
+            <h3>Core Color Forms (1-5)</h3>
+            <div class="grid grid-cols-1 gap-6">
+                <!-- Primary Form -->
+                <div class="card card-primary p-6">
+                    <h4 style="color: var(--text-primary);">Primary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Primary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-primary-highlight); border-color: var(--border-primary-base); color: var(--text-primary);" placeholder="Primary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Primary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-primary-highlight); border-color: var(--border-primary-base); color: var(--text-primary);">
+                                <option>Primary Option 1</option>
+                                <option>Primary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Secondary Form -->
+                <div class="card card-secondary p-6">
+                    <h4 style="color: var(--text-primary);">Secondary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Secondary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-secondary-highlight); border-color: var(--border-secondary-base); color: var(--text-primary);" placeholder="Secondary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Secondary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-secondary-highlight); border-color: var(--border-secondary-base); color: var(--text-primary);">
+                                <option>Secondary Option 1</option>
+                                <option>Secondary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tertiary Form -->
+                <div class="card" style="background: var(--bg-tertiary-subtle); border: 1px solid var(--border-tertiary-subtle); box-shadow: var(--elevation-tertiary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
+                    <h4 style="color: var(--text-on-tertiary);">Tertiary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-on-tertiary);">Tertiary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-tertiary-highlight); border-color: var(--border-tertiary-strong); color: var(--text-on-tertiary);" placeholder="Tertiary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-on-tertiary);">Tertiary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-tertiary-highlight); border-color: var(--border-tertiary-strong); color: var(--text-on-tertiary);">
+                                <option>Tertiary Option 1</option>
+                                <option>Tertiary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Quaternary Form -->
+                <div class="card card-accent p-6">
+                    <h4 style="color: var(--text-primary);">Quaternary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Quaternary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-quaternary-highlight); border-color: var(--border-quaternary-base); color: var(--text-primary);" placeholder="Quaternary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Quaternary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-quaternary-highlight); border-color: var(--border-quaternary-base); color: var(--text-primary);">
+                                <option>Quaternary Option 1</option>
+                                <option>Quaternary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Quinary Form -->
+                <div class="card card-emphasis p-6">
+                    <h4 style="color: var(--text-primary);">Quinary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Quinary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-quinary-highlight); border-color: var(--border-quinary-base); color: var(--text-primary);" placeholder="Quinary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Quinary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-quinary-highlight); border-color: var(--border-quinary-base); color: var(--text-primary);">
+                                <option>Quinary Option 1</option>
+                                <option>Quinary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extended Color Forms -->
+        <div class="mb-8">
+            <h3>Extended Color Forms (6-10)</h3>
+            <div class="grid grid-cols-1 gap-6">
+                <!-- Senary Form -->
+                <div class="card" style="background: var(--bg-senary-subtle); border: 1px solid var(--border-senary-subtle); box-shadow: var(--elevation-senary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
+                    <h4 style="color: var(--text-primary);">Senary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Senary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-senary-highlight); border-color: var(--border-senary-base); color: var(--text-primary);" placeholder="Senary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Senary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-senary-highlight); border-color: var(--border-senary-base); color: var(--text-primary);">
+                                <option>Senary Option 1</option>
+                                <option>Senary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Septenary Form -->
+                <div class="card" style="background: var(--bg-septenary-subtle); border: 1px solid var(--border-septenary-subtle); box-shadow: var(--elevation-septenary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
+                    <h4 style="color: var(--text-primary);">Septenary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Septenary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-septenary-highlight); border-color: var(--border-septenary-base); color: var(--text-primary);" placeholder="Septenary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Septenary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-septenary-highlight); border-color: var(--border-septenary-base); color: var(--text-primary);">
+                                <option>Septenary Option 1</option>
+                                <option>Septenary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Octonary Form -->
+                <div class="card" style="background: var(--bg-octonary-subtle); border: 1px solid var(--border-octonary-subtle); box-shadow: var(--elevation-octonary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
+                    <h4 style="color: var(--text-primary);">Octonary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Octonary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-octonary-highlight); border-color: var(--border-octonary-base); color: var(--text-primary);" placeholder="Octonary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Octonary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-octonary-highlight); border-color: var(--border-octonary-base); color: var(--text-primary);">
+                                <option>Octonary Option 1</option>
+                                <option>Octonary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Nonary Form -->
+                <div class="card" style="background: var(--bg-nonary-subtle); border: 1px solid var(--border-nonary-subtle); box-shadow: var(--elevation-nonary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
+                    <h4 style="color: var(--text-primary);">Nonary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Nonary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-nonary-highlight); border-color: var(--border-nonary-base); color: var(--text-primary);" placeholder="Nonary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Nonary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-nonary-highlight); border-color: var(--border-nonary-base); color: var(--text-primary);">
+                                <option>Nonary Option 1</option>
+                                <option>Nonary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Denary Form -->
+                <div class="card" style="background: var(--bg-denary-subtle); border: 1px solid var(--border-denary-subtle); box-shadow: var(--elevation-denary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
+                    <h4 style="color: var(--text-primary);">Denary Form Theme</h4>
+                    <form class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Denary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-denary-highlight); border-color: var(--border-denary-base); color: var(--text-primary);" placeholder="Denary themed input">
+                        </div>
+                        <div>
+                            <label class="block mb-2" style="color: var(--text-primary);">Denary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-denary-highlight); border-color: var(--border-denary-base); color: var(--text-primary);">
+                                <option>Denary Option 1</option>
+                                <option>Denary Option 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form State Examples -->
+        <div>
+            <h3>Form States - Focus & Validation</h3>
+            <p>Interactive form elements showing focus rings and validation states using all color variations.</p>
+
+            <div class="grid grid-cols-2 gap-6">
+                <div class="p-6" style="background: var(--bg-primary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-primary-subtle);">
+                    <h4 style="color: var(--text-primary);">Focus Ring Examples</h4>
+                    <div class="grid gap-4">
+                        <input type="text" placeholder="Primary Focus" style="padding: 0.75rem; border: 1px solid var(--border-primary-base); border-radius: var(--x-radius); background: var(--bg-primary-highlight); color: var(--text-primary); box-shadow: var(--focus-ring-primary);">
+                        <input type="text" placeholder="Secondary Focus" style="padding: 0.75rem; border: 1px solid var(--border-secondary-base); border-radius: var(--x-radius); background: var(--bg-secondary-highlight); color: var(--text-primary); box-shadow: var(--focus-ring-secondary);">
+                        <input type="text" placeholder="Tertiary Focus" style="padding: 0.75rem; border: 1px solid var(--border-tertiary-base); border-radius: var(--x-radius); background: var(--bg-tertiary-highlight); color: var(--text-on-tertiary); box-shadow: var(--focus-ring-tertiary);">
+                        <input type="text" placeholder="Quaternary Focus" style="padding: 0.75rem; border: 1px solid var(--border-quaternary-base); border-radius: var(--x-radius); background: var(--bg-quaternary-highlight); color: var(--text-primary); box-shadow: var(--focus-ring-quaternary);">
+                        <input type="text" placeholder="Quinary Focus" style="padding: 0.75rem; border: 1px solid var(--border-quinary-base); border-radius: var(--x-radius); background: var(--bg-quinary-highlight); color: var(--text-primary); box-shadow: var(--focus-ring-quinary);">
+                    </div>
+                </div>
+
+                <div class="p-6" style="background: var(--bg-secondary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-secondary-subtle);">
+                    <h4 style="color: var(--text-primary);">Extended Focus Rings</h4>
+                    <div class="grid gap-4">
+                        <input type="text" placeholder="Senary Focus" style="padding: 0.75rem; border: 1px solid var(--border-senary-base); border-radius: var(--x-radius); background: var(--bg-senary-highlight); color: var(--text-primary); box-shadow: var(--focus-ring-senary);">
+                        <input type="text" placeholder="Septenary Focus" style="padding: 0.75rem; border: 1px solid var(--border-septenary-base); border-radius: var(--x-radius); background: var(--bg-septenary-highlight); color: var(--text-primary); box-shadow: var(--focus-ring-septenary);">
+                        <input type="text" placeholder="Octonary Focus" style="padding: 0.75rem; border: 1px solid var(--border-octonary-base); border-radius: var(--x-radius); background: var(--bg-octonary-highlight); color: var(--text-primary); box-shadow: var(--focus-ring-octonary);">
+                        <input type="text" placeholder="Nonary Focus" style="padding: 0.75rem; border: 1px solid var(--border-nonary-base); border-radius: var(--x-radius); background: var(--bg-nonary-highlight); color: var(--text-primary); box-shadow: var(--focus-ring-nonary);">
+                        <input type="text" placeholder="Denary Focus" style="padding: 0.75rem; border: 1px solid var(--border-denary-base); border-radius: var(--x-radius); background: var(--bg-denary-highlight); color: var(--text-primary); box-shadow: var(--focus-ring-denary);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <script>
-    function togglePalette() {
-        const html = document.documentElement;
-        const currentMode = html.getAttribute('data-palette') || '5';
-        const newMode = currentMode === '5' ? '10' : '5';
-        html.setAttribute('data-palette', newMode);
+<!-- Color Palette Display -->
+// Palette toggle functionality
+const toggleButton = document.getElementById('togglePalette');
+const html = document.documentElement;
+let is10Color = true;
 
-        // Update button text to show current mode
-        const button = document.querySelector('.toggle-palette');
-        button.textContent = `Current: ${newMode}-Token Mode`;
+toggleButton.addEventListener('click', () => {
+    if (is10Color) {
+        html.setAttribute('data-palette', '5');
+        toggleButton.textContent = 'Switch to 10-Color Mode';
+        is10Color = false;
+    } else {
+        html.setAttribute('data-palette', '10');
+        toggleButton.textContent = 'Switch to 5-Color Mode';
+        is10Color = true;
     }
+});
 
-    // Smooth scrolling for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+// Add active states to nav links
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        navLinks.forEach(l => l.classList.remove('active'));
+        e.target.classList.add('active');
     });
+});
 
-    // Add some interactive demo functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        // Add loading states to buttons on click
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                if (!this.classList.contains('loading')) {
-                    this.classList.add('loading');
-                    setTimeout(() => {
-                        this.classList.remove('loading');
-                    }, 2000);
-                }
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
-        });
-
-        // Animate feature cards on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.style.opacity = '0';
-            observer.observe(card);
-        });
+        }
     });
+});
 </script>
 </body>
 </html>

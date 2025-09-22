@@ -91,6 +91,8 @@
     --text-on-denary: var(--white);
     --text-on-denary-muted: color-mix(in oklab, var(--white), transparent 30%);
 
+    --text-base: var(--black);
+
     /* === BORDERS - All 10 colors === */
     --border-primary-base: var(--primary);
     --border-primary-light: var(--primary-tint);
