@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" data-palette="5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-Framework Showcase</title>
+    <link rel="stylesheet" href="./css/site.css">
+    <style>
+        .container {
+            color: var(--black);
+        }
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--x-radius);
+            border: 1px solid var(--x-border-light);
+            box-shadow: var(--x-shadow);
+            text-align: center;
+            transition: var(--x-transition);
+        }
+
+        .feature-card:hover {
+            transform: var(--motion-hover);
+            box-shadow: var(--x-shadow-hover);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid;
+            border-radius: var(--x-radius);
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--black);
+            transition: var(--x-transition);
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--quinary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-shade);
+            transform: var(--motion-hover);
+            box-shadow: var(--elevation-primary-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-highlight);
+            color: var(--primary-shade);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--quinary);
+            border-color: var(--quinary);
+        }
+
+        .btn-outline:hover {
+            background: var(--quinary);
+            color: var(--black);
+        }
+
+        .demo-card {
+            background: var(--white);
+            border: 1px solid var(--x-border-light);
+            border-radius: var(--x-radius);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--x-border-light);
+            border-radius: var(--x-radius);
+            font-family: inherit;
+            transition: var(--x-transition);
+        }
+
+        .demo-input:focus {
+            border-color: var(--primary);
+            box-shadow: var(--focus-ring-secondary);
+            outline: none;
+        }
+
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            border: 2px solid var(--white);
+            box-shadow: var(--x-shadow);
+            margin-bottom: 0.5rem;
+        }
+
+        .toggle-palette {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            border-radius: var(--x-radius);
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: var(--x-shadow);
+        }
+
+        .code-preview {
+            background: var(--quinary);
+            color: var(--tertiary);
+            padding: 1rem;
+            border-radius: var(--x-radius);
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: Monaco, Menlo, 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .utility-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .utility-chip {
+            background: var(--primary-highlight);
+            color: var(--primary-shade);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .gradient-demo {
+            height: 100px;
+            border-radius: var(--x-radius);
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<!-- Palette Toggle -->
+<button class="toggle-palette" onclick="togglePalette()">
+    Toggle 5/10 Token Mode
+</button>
+
+<!-- Header -->
+<header class="demo-header">
+    <div class="container">
+        <nav class="demo-nav">
+            <a href="#" class="demo-logo">X-Framework</a>
+            <div class="demo-nav-links">
+                <a href="#colors" class="demo-nav-link">Colors</a>
+                <a href="#components" class="demo-nav-link">Components</a>
+                <a href="#layout" class="demo-nav-link">Layout</a>
+                <a href="#utilities" class="demo-nav-link">Utilities</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="demo-hero">
+    <div class="container">
+        <h1>X-Framework Design System</h1>
+        <p>A comprehensive CSS framework with dual-mode color tokens, utility classes, and component styling. Built for modern web applications with accessibility and performance in mind.</p>
+        <div class="flex gap-4 justify-center">
+            <button class="btn btn-primary">Get Started</button>
+            <button class="btn btn-outline">View Documentation</button>
+        </div>
+    </div>
+</section>
+
+<main class="main-content">
+    <!-- Color System Section -->
+    <section id="colors" class="demo-section">
+        <div class="container">
+            <div class="demo-section-header">
+                <h2 class="demo-section-title">Color System</h2>
+                <p class="demo-section-subtitle">Dual-mode color tokens: 5-token minimal or 10-token extended palette</p>
+            </div>
+
+            <div class="demo-grid">
+                <!-- Primary Colors -->
+                <div class="demo-card">
+                    <h3>Core Palette</h3>
+                    <div class="grid grid-cols-5 gap-3">
+                        <div class="text-center">
+                            <div class="color-swatch" style="background: var(--primary);"></div>
+                            <small>Primary</small>
+                            <div class="code-preview">--primary</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="color-swatch" style="background: var(--secondary);"></div>
+                            <small>Secondary</small>
+                            <div class="code-preview">--secondary</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="color-swatch" style="background: var(--tertiary);"></div>
+                            <small>Tertiary</small>
+                            <div class="code-preview">--tertiary</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="color-swatch" style="background: var(--quaternary);"></div>
+                            <small>Quaternary</small>
+                            <div class="code-preview">--quaternary</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="color-swatch" style="background: var(--quinary);"></div>
+                            <small>Quinary</small>
+                            <div class="code-preview">--quinary</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Variations -->
+                <div class="demo-card">
+                    <h3>Tints & Shades</h3>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="text-center">
+                            <div class="color-swatch" style="background: var(--primary-highlight);"></div>
+                            <small>Highlight</small>
+                        </div>
+                        <div class="text-center">
+                            <div class="color-swatch" style="background: var(--primary);"></div>
+                            <small>Base</small>
+                        </div>
+                        <div class="text-center">
+                            <div class="color-swatch" style="background: var(--primary-shade);"></div>
+                            <small>Shade</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gradients -->
+                <div class="demo-card">
+                    <h3>Gradients</h3>
+                    <div class="gradient-demo bg-gradient-primary">Primary Gradient</div>
+                    <div class="gradient-demo bg-gradient-hero">Hero Gradient</div>
+                    <div class="gradient-demo bg-gradient-sunset">Sunset Gradient</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="demo-section">
+        <div class="container">
+            <div class="demo-section-header">
+                <h2 class="demo-section-title">Components</h2>
+                <p class="demo-section-subtitle">Ready-to-use component styles and interactive elements</p>
+            </div>
+
+            <div class="demo-grid">
+                <!-- Buttons -->
+                <div class="demo-card">
+                    <h3>Buttons</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-secondary">Secondary</button>
+                        <button class="btn btn-outline">Outline</button>
+                    </div>
+                    <div class="code-preview">
+                        &lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+                        &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+                        &lt;button class="btn btn-outline"&gt;Outline&lt;/button&gt;
+                    </div>
+                </div>
+
+                <!-- Forms -->
+                <div class="demo-card">
+                    <h3>Form Elements</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Text Input</label>
+                            <input type="text" class="demo-input" placeholder="Enter text...">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Select Dropdown</label>
+                            <select class="demo-input">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards -->
+                <div class="demo-card">
+                    <h3>Cards & Containers</h3>
+                    <div class="feature-card">
+                        <h4 class="text-lg font-semibold mb-2">Feature Card</h4>
+                        <p class="text-quaternary">This card has hover effects and elevation shadows.</p>
+                    </div>
+                </div>
+
+                <!-- Status Indicators -->
+                <div class="demo-card">
+                    <h3>Status Indicators</h3>
+                    <div class="flex flex-wrap gap-2">
+                            <span class="status-indicator success">
+                                <span class="status-dot"></span>
+                                Success
+                            </span>
+                        <span class="status-indicator warning">
+                                <span class="status-dot"></span>
+                                Warning
+                            </span>
+                        <span class="status-indicator error">
+                                <span class="status-dot"></span>
+                                Error
+                            </span>
+                        <span class="status-indicator info">
+                                <span class="status-dot"></span>
+                                Info
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layout Section -->
+    <section id="layout" class="demo-section bg-tertiary">
+        <div class="container">
+            <div class="demo-section-header">
+                <h2 class="demo-section-title">Layout System</h2>
+                <p class="demo-section-subtitle">Flexible grid system and layout utilities</p>
+            </div>
+
+            <!-- Grid System Demo -->
+            <div class="demo-card">
+                <h3>Grid System</h3>
+                <div class="grid grid-cols-4 gap-4 mb-6">
+                    <div class="bg-primary-highlight p-4 rounded text-center">Col 1</div>
+                    <div class="bg-primary-highlight p-4 rounded text-center">Col 2</div>
+                    <div class="bg-primary-highlight p-4 rounded text-center">Col 3</div>
+                    <div class="bg-primary-highlight p-4 rounded text-center">Col 4</div>
+                </div>
+
+                <div class="grid grid-cols-12 gap-2">
+                    <div class="col-span-6 bg-secondary-tint p-3 rounded text-center">6 columns</div>
+                    <div class="col-span-4 bg-secondary-tint p-3 rounded text-center">4 columns</div>
+                    <div class="col-span-2 bg-secondary-tint p-3 rounded text-center">2</div>
+                </div>
+
+                <div class="code-preview mt-4">
+                    &lt;div class="grid grid-cols-4 gap-4"&gt;...&lt;/div&gt;
+                    &lt;div class="grid grid-cols-12 gap-2"&gt;
+                    &lt;div class="col-span-6"&gt;...&lt;/div&gt;
+                    &lt;div class="col-span-4"&gt;...&lt;/div&gt;
+                    &lt;div class="col-span-2"&gt;...&lt;/div&gt;
+                    &lt;/div&gt;
+                </div>
+            </div>
+
+            <!-- Flexbox Demo -->
+            <div class="demo-card">
+                <h3>Flexbox Utilities</h3>
+                <div class="flex justify-between items-center p-4 bg-primary-highlight rounded mb-4">
+                    <span>Left</span>
+                    <span>Center</span>
+                    <span>Right</span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <div class="bg-tertiary-tint p-2 rounded">Flex item 1</div>
+                    <div class="bg-tertiary-tint p-2 rounded">Flex item 2</div>
+                    <div class="bg-tertiary-tint p-2 rounded">Flex item 3</div>
+                </div>
+
+                <div class="code-preview mt-4">
+                    &lt;div class="flex justify-between items-center"&gt;...&lt;/div&gt;
+                    &lt;div class="flex flex-col gap-2"&gt;...&lt;/div&gt;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Utilities Section -->
+    <section id="utilities" class="demo-section">
+        <div class="container">
+            <div class="demo-section-header">
+                <h2 class="demo-section-title">Utility Classes</h2>
+                <p class="demo-section-subtitle">Comprehensive utility classes for rapid development</p>
+            </div>
+
+            <div class="demo-grid">
+                <!-- Typography -->
+                <div class="demo-card">
+                    <h3>Typography</h3>
+                    <div class="space-y-2">
+                        <p class="text-xs">Extra Small Text</p>
+                        <p class="text-sm">Small Text</p>
+                        <p class="text-base">Base Text</p>
+                        <p class="text-lg">Large Text</p>
+                        <p class="text-xl font-semibold">Extra Large Bold</p>
+                    </div>
+                    <div class="utility-demo">
+                        <span class="utility-chip">text-xs</span>
+                        <span class="utility-chip">text-lg</span>
+                        <span class="utility-chip">font-bold</span>
+                        <span class="utility-chip">text-center</span>
+                    </div>
+                </div>
+
+                <!-- Spacing -->
+                <div class="demo-card">
+                    <h3>Spacing</h3>
+                    <div class="bg-primary-highlight p-4 rounded mb-2">Padding 4</div>
+                    <div class="bg-secondary-highlight m-2 p-2 rounded">Margin 2</div>
+                    <div class="bg-tertiary-highlight p-6 rounded">Padding 6</div>
+                    <div class="utility-demo">
+                        <span class="utility-chip">p-4</span>
+                        <span class="utility-chip">m-2</span>
+                        <span class="utility-chip">p-6</span>
+                        <span class="utility-chip">gap-4</span>
+                    </div>
+                </div>
+
+                <!-- Colors -->
+                <div class="demo-card">
+                    <h3>Background Colors</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="bg-primary p-3 rounded text-center text-white">Primary</div>
+                        <div class="bg-secondary p-3 rounded text-center">Secondary</div>
+                        <div class="bg-quaternary p-3 rounded text-center">Quaternary</div>
+                        <div class="bg-quinary p-3 rounded text-center text-white">Quinary</div>
+                    </div>
+                    <div class="utility-demo">
+                        <span class="utility-chip">bg-primary</span>
+                        <span class="utility-chip">bg-secondary</span>
+                        <span class="utility-chip">text-white</span>
+                    </div>
+                </div>
+
+                <!-- Effects -->
+                <div class="demo-card">
+                    <h3>Effects & Transforms</h3>
+                    <div class="flex gap-4">
+                        <div class="shadow p-4 rounded bg-white">Shadow</div>
+                        <div class="shadow-hover p-4 rounded bg-white">Shadow Hover</div>
+                        <div class="rounded-full w-16 h-16 bg-primary flex items-center justify-center text-white">Round</div>
+                    </div>
+                    <div class="utility-demo">
+                        <span class="utility-chip">shadow</span>
+                        <span class="utility-chip">rounded-full</span>
+                        <span class="utility-chip">transition</span>
+                        <span class="utility-chip">hover:scale-105</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="demo-section bg-gradient-hero text-white">
+        <div class="container">
+            <div class="demo-section-header">
+                <h2 class="demo-section-title text-white">Framework Features</h2>
+                <p class="demo-section-subtitle text-white opacity-90">Built for modern web development</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Dual Color Modes</h3>
+                    <p class="feature-description">Switch between 5-token minimal and 10-token extended palettes</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Performance First</h3>
+                    <p class="feature-description">Optimized CSS with minimal runtime overhead and efficient selectors</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Responsive Design</h3>
+                    <p class="feature-description">Mobile-first approach with comprehensive breakpoint utilities</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3 class="feature-title">Accessible</h3>
+                    <p class="feature-description">WCAG compliant with proper focus states and screen reader support</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🧩</div>
+                    <h3 class="feature-title">Component Ready</h3>
+                    <p class="feature-description">Pre-styled components for X-Component web components</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">Customizable</h3>
+                    <p class="feature-description">CSS custom properties make theming and customization simple</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Example Section -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="demo-section-header">
+                <h2 class="demo-section-title">Getting Started</h2>
+                <p class="demo-section-subtitle">Quick setup and usage examples</p>
+            </div>
+
+            <div class="example-tabs">
+                <div class="tab-content">
+                    <h3>Installation</h3>
+                    <div class="code-example" data-lang="html">
+                        <code>&lt;!-- Include the framework --&gt;
+                            &lt;link rel="stylesheet" href="site.css"&gt;
+
+                            &lt;!-- Optional: Set palette mode --&gt;
+                            &lt;html data-palette="5"&gt; &lt;!-- or "10" for extended --&gt;</code>
+                    </div>
+
+                    <h3>Basic Usage</h3>
+                    <div class="code-example" data-lang="html">
+                        <code>&lt;div class="container"&gt;
+                            &lt;div class="grid grid-cols-3 gap-4"&gt;
+                            &lt;div class="bg-white p-6 rounded shadow"&gt;
+                            &lt;h3 class="text-xl font-semibold mb-2"&gt;Card Title&lt;/h3&gt;
+                            &lt;p class="text-quaternary"&gt;Card content...&lt;/p&gt;
+                            &lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;/div&gt;</code>
+                    </div>
+
+                    <h3>Custom Properties</h3>
+                    <div class="code-example" data-lang="css">
+                        <code>/* Use framework colors in custom CSS */
+                            .my-component {
+                            background: var(--primary);
+                            color: var(--white);
+                            border: 2px solid var(--primary-shade);
+                            border-radius: var(--x-radius);
+                            box-shadow: var(--primary-elevation-accent);
+                            }</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="demo-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>X-Framework</h3>
+                <p>A modern CSS framework for building beautiful, accessible web applications.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="#">Color System</a></li>
+                    <li><a href="#">Components</a></li>
+                    <li><a href="#">Layout Grid</a></li>
+                    <li><a href="#">Utilities</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Examples</a></li>
+                    <li><a href="#">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 X-Framework. Showcasing modern CSS architecture.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function togglePalette() {
+        const html = document.documentElement;
+        const currentMode = html.getAttribute('data-palette') || '5';
+        const newMode = currentMode === '5' ? '10' : '5';
+        html.setAttribute('data-palette', newMode);
+
+        // Update button text to show current mode
+        const button = document.querySelector('.toggle-palette');
+        button.textContent = `Current: ${newMode}-Token Mode`;
+    }
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add some interactive demo functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add loading states to buttons on click
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (!this.classList.contains('loading')) {
+                    this.classList.add('loading');
+                    setTimeout(() => {
+                        this.classList.remove('loading');
+                    }, 2000);
+                }
+            });
+        });
+
+        // Animate feature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            observer.observe(card);
+        });
+    });
+</script>
+</body>
+</html>

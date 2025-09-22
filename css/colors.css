@@ -1,0 +1,332 @@
+:root {
+    /* === BACKGROUNDS - All 10 color slots === */
+    --bg-primary-base: var(--primary);
+    --bg-primary-hover: var(--primary-tint);
+    --bg-primary-active: var(--primary-shade);
+    --bg-primary-subtle: var(--primary-highlight);
+    --bg-primary-disabled: var(--primary-subtle);
+
+    --bg-secondary-base: var(--secondary);
+    --bg-secondary-hover: var(--secondary-tint);
+    --bg-secondary-active: var(--secondary-shade);
+    --bg-secondary-subtle: var(--secondary-highlight);
+    --bg-secondary-disabled: var(--secondary-subtle);
+
+    --bg-tertiary-base: var(--tertiary);
+    --bg-tertiary-hover: var(--tertiary-tint);
+    --bg-tertiary-active: var(--tertiary-shade);
+    --bg-tertiary-subtle: var(--tertiary-highlight);
+    --bg-tertiary-disabled: var(--tertiary-subtle);
+
+    --bg-quaternary-base: var(--quaternary);
+    --bg-quaternary-hover: var(--quaternary-tint);
+    --bg-quaternary-active: var(--quaternary-shade);
+    --bg-quaternary-subtle: var(--quaternary-highlight);
+    --bg-quaternary-disabled: var(--quaternary-subtle);
+
+    --bg-quinary-base: var(--quinary);
+    --bg-quinary-hover: var(--quinary-tint);
+    --bg-quinary-active: var(--quinary-shade);
+    --bg-quinary-subtle: var(--quinary-highlight);
+    --bg-quinary-disabled: var(--quinary-subtle);
+
+    --bg-senary-base: var(--senary);
+    --bg-senary-hover: var(--senary-tint);
+    --bg-senary-active: var(--senary-shade);
+    --bg-senary-subtle: var(--senary-highlight);
+    --bg-senary-disabled: var(--senary-subtle);
+
+    --bg-septenary-base: var(--septenary);
+    --bg-septenary-hover: var(--septenary-tint);
+    --bg-septenary-active: var(--septenary-shade);
+    --bg-septenary-subtle: var(--septenary-highlight);
+    --bg-septenary-disabled: var(--septenary-subtle);
+
+    --bg-octonary-base: var(--octonary);
+    --bg-octonary-hover: var(--octonary-tint);
+    --bg-octonary-active: var(--octonary-shade);
+    --bg-octonary-subtle: var(--octonary-highlight);
+    --bg-octonary-disabled: var(--octonary-subtle);
+
+    --bg-nonary-base: var(--nonary);
+    --bg-nonary-hover: var(--nonary-tint);
+    --bg-nonary-active: var(--nonary-shade);
+    --bg-nonary-subtle: var(--nonary-highlight);
+    --bg-nonary-disabled: var(--nonary-subtle);
+
+    --bg-denary-base: var(--denary);
+    --bg-denary-hover: var(--denary-tint);
+    --bg-denary-active: var(--denary-shade);
+    --bg-denary-subtle: var(--denary-highlight);
+    --bg-denary-disabled: var(--denary-subtle);
+
+    /* === TEXT ON COLORED BACKGROUNDS - All 10 colors === */
+    --text-on-primary: var(--white);
+    --text-on-primary-muted: color-mix(in oklab, var(--white), transparent 30%);
+
+    --text-on-secondary: var(--white);
+    --text-on-secondary-muted: color-mix(in oklab, var(--white), transparent 30%);
+
+    --text-on-tertiary: var(--primary-depth);
+    --text-on-tertiary-muted: color-mix(in oklab, var(--primary-depth), transparent 30%);
+
+    --text-on-quaternary: var(--white);
+    --text-on-quaternary-muted: color-mix(in oklab, var(--white), transparent 30%);
+
+    --text-on-quinary: var(--white);
+    --text-on-quinary-muted: color-mix(in oklab, var(--white), transparent 30%);
+
+    --text-on-senary: var(--white);
+    --text-on-senary-muted: color-mix(in oklab, var(--white), transparent 30%);
+
+    --text-on-septenary: var(--white);
+    --text-on-septenary-muted: color-mix(in oklab, var(--white), transparent 30%);
+
+    --text-on-octonary: var(--white);
+    --text-on-octonary-muted: color-mix(in oklab, var(--white), transparent 30%);
+
+    --text-on-nonary: var(--white);
+    --text-on-nonary-muted: color-mix(in oklab, var(--white), transparent 30%);
+
+    --text-on-denary: var(--white);
+    --text-on-denary-muted: color-mix(in oklab, var(--white), transparent 30%);
+
+    /* === BORDERS - All 10 colors === */
+    --border-primary-base: var(--primary);
+    --border-primary-light: var(--primary-tint);
+    --border-primary-subtle: var(--primary-highlight);
+    --border-primary-strong: var(--primary-shade);
+
+    --border-secondary-base: var(--secondary);
+    --border-secondary-light: var(--secondary-tint);
+    --border-secondary-subtle: var(--secondary-highlight);
+    --border-secondary-strong: var(--secondary-shade);
+
+    --border-tertiary-base: var(--tertiary-shade); /* darker for visibility */
+    --border-tertiary-light: var(--tertiary-tint);
+    --border-tertiary-subtle: var(--tertiary-highlight);
+    --border-tertiary-strong: var(--tertiary-shade-deep);
+
+    --border-quaternary-base: var(--quaternary);
+    --border-quaternary-light: var(--quaternary-tint);
+    --border-quaternary-subtle: var(--quaternary-highlight);
+    --border-quaternary-strong: var(--quaternary-shade);
+
+    --border-quinary-base: var(--quinary);
+    --border-quinary-light: var(--quinary-tint);
+    --border-quinary-subtle: var(--quinary-highlight);
+    --border-quinary-strong: var(--quinary-shade);
+
+    --border-senary-base: var(--senary);
+    --border-senary-light: var(--senary-tint);
+    --border-senary-subtle: var(--senary-highlight);
+    --border-senary-strong: var(--senary-shade);
+
+    --border-septenary-base: var(--septenary);
+    --border-septenary-light: var(--septenary-tint);
+    --border-septenary-subtle: var(--septenary-highlight);
+    --border-septenary-strong: var(--septenary-shade);
+
+    --border-octonary-base: var(--octonary);
+    --border-octonary-light: var(--octonary-tint);
+    --border-octonary-subtle: var(--octonary-highlight);
+    --border-octonary-strong: var(--octonary-shade);
+
+    --border-nonary-base: var(--nonary);
+    --border-nonary-light: var(--nonary-tint);
+    --border-nonary-subtle: var(--nonary-highlight);
+    --border-nonary-strong: var(--nonary-shade);
+
+    --border-denary-base: var(--denary);
+    --border-denary-light: var(--denary-tint);
+    --border-denary-subtle: var(--denary-highlight);
+    --border-denary-strong: var(--denary-shade);
+
+    /* === FOCUS RINGS - All 10 colors === */
+    --focus-ring-primary: 0 0 0 3px color-mix(in oklab, var(--primary), transparent 70%);
+    --focus-ring-secondary: 0 0 0 3px color-mix(in oklab, var(--secondary), transparent 70%);
+    --focus-ring-tertiary: 0 0 0 3px color-mix(in oklab, var(--tertiary), transparent 70%);
+    --focus-ring-quaternary: 0 0 0 3px color-mix(in oklab, var(--quaternary), transparent 70%);
+    --focus-ring-quinary: 0 0 0 3px color-mix(in oklab, var(--quinary), transparent 70%);
+    --focus-ring-senary: 0 0 0 3px color-mix(in oklab, var(--senary), transparent 70%);
+    --focus-ring-septenary: 0 0 0 3px color-mix(in oklab, var(--septenary), transparent 70%);
+    --focus-ring-octonary: 0 0 0 3px color-mix(in oklab, var(--octonary), transparent 70%);
+    --focus-ring-nonary: 0 0 0 3px color-mix(in oklab, var(--nonary), transparent 70%);
+    --focus-ring-denary: 0 0 0 3px color-mix(in oklab, var(--denary), transparent 70%);
+
+    /* === HOVER OVERLAYS - All 10 colors === */
+    --hover-overlay-primary: color-mix(in oklab, var(--primary), transparent 85%);
+    --hover-overlay-secondary: color-mix(in oklab, var(--secondary), transparent 85%);
+    --hover-overlay-tertiary: color-mix(in oklab, var(--tertiary), transparent 85%);
+    --hover-overlay-quaternary: color-mix(in oklab, var(--quaternary), transparent 85%);
+    --hover-overlay-quinary: color-mix(in oklab, var(--quinary), transparent 85%);
+    --hover-overlay-senary: color-mix(in oklab, var(--senary), transparent 85%);
+    --hover-overlay-septenary: color-mix(in oklab, var(--septenary), transparent 85%);
+    --hover-overlay-octonary: color-mix(in oklab, var(--octonary), transparent 85%);
+    --hover-overlay-nonary: color-mix(in oklab, var(--nonary), transparent 85%);
+    --hover-overlay-denary: color-mix(in oklab, var(--denary), transparent 85%);
+    --hover-overlay-light: color-mix(in oklab, var(--white), transparent 85%);
+    --hover-overlay-dark: color-mix(in oklab, var(--black), transparent 85%);
+
+    /* === GLASS OVERLAYS - All 10 colors === */
+    --primary-glass-overlay: color-mix(in oklab, var(--primary), transparent 70%);
+    --secondary-glass-overlay: color-mix(in oklab, var(--secondary), transparent 75%);
+    --tertiary-glass-overlay: color-mix(in oklab, var(--tertiary), transparent 80%);
+    --quaternary-glass-overlay: color-mix(in oklab, var(--quaternary), transparent 75%);
+    --quinary-glass-overlay: color-mix(in oklab, var(--quinary), transparent 85%);
+    --senary-glass-overlay: color-mix(in oklab, var(--senary), transparent 75%);
+    --septenary-glass-overlay: color-mix(in oklab, var(--septenary), transparent 75%);
+    --octonary-glass-overlay: color-mix(in oklab, var(--octonary), transparent 75%);
+    --nonary-glass-overlay: color-mix(in oklab, var(--nonary), transparent 75%);
+    --denary-glass-overlay: color-mix(in oklab, var(--denary), transparent 75%);
+
+    --glass-primary-light: color-mix(in oklab, var(--primary), transparent 85%);
+    --glass-primary-medium: var(--primary-glass-overlay);
+    --glass-primary-strong: color-mix(in oklab, var(--primary), transparent 50%);
+
+    --glass-secondary-light: color-mix(in oklab, var(--secondary), transparent 85%);
+    --glass-secondary-medium: var(--secondary-glass-overlay);
+    --glass-secondary-strong: color-mix(in oklab, var(--secondary), transparent 50%);
+
+    --glass-tertiary-light: color-mix(in oklab, var(--tertiary), transparent 90%);
+    --glass-tertiary-medium: var(--tertiary-glass-overlay);
+    --glass-tertiary-strong: color-mix(in oklab, var(--tertiary), transparent 60%);
+
+    --glass-quaternary-light: color-mix(in oklab, var(--quaternary), transparent 85%);
+    --glass-quaternary-medium: var(--quaternary-glass-overlay);
+    --glass-quaternary-strong: color-mix(in oklab, var(--quaternary), transparent 50%);
+
+    --glass-quinary-light: color-mix(in oklab, var(--quinary), transparent 90%);
+    --glass-quinary-medium: var(--quinary-glass-overlay);
+    --glass-quinary-strong: color-mix(in oklab, var(--quinary), transparent 60%);
+
+    --glass-blur: blur(12px);
+    --glass-blur-hero: blur(20px);
+
+    /* === ELEVATIONS - All 10 colors === */
+    --elevation-primary-sm: 0 2px 8px color-mix(in oklab, var(--primary), transparent 75%);
+    --elevation-primary-md: 0 4px 20px color-mix(in oklab, var(--primary), transparent 60%);
+    --elevation-primary-lg: 0 8px 40px color-mix(in oklab, var(--primary), transparent 50%);
+
+    --elevation-secondary-sm: 0 2px 8px color-mix(in oklab, var(--secondary), transparent 75%);
+    --elevation-secondary-md: 0 6px 25px color-mix(in oklab, var(--secondary), transparent 70%);
+    --elevation-secondary-lg: 0 8px 40px color-mix(in oklab, var(--secondary), transparent 50%);
+
+    --elevation-tertiary-sm: 0 2px 8px color-mix(in oklab, var(--tertiary), transparent 75%);
+    --elevation-tertiary-md: 0 4px 20px color-mix(in oklab, var(--tertiary), transparent 60%);
+    --elevation-tertiary-lg: 0 8px 40px color-mix(in oklab, var(--tertiary), transparent 50%);
+
+    --elevation-quaternary-sm: 0 2px 8px color-mix(in oklab, var(--quaternary), transparent 75%);
+    --elevation-quaternary-md: 0 6px 25px color-mix(in oklab, var(--quaternary), transparent 70%);
+    --elevation-quaternary-lg: 0 8px 40px color-mix(in oklab, var(--quaternary), transparent 50%);
+
+    --elevation-quinary-sm: 0 2px 8px color-mix(in oklab, var(--quinary), transparent 75%);
+    --elevation-quinary-md: 0 6px 25px color-mix(in oklab, var(--quinary), transparent 70%);
+    --elevation-quinary-lg: 0 8px 40px color-mix(in oklab, var(--quinary), transparent 50%);
+
+    --elevation-senary-sm: 0 2px 8px color-mix(in oklab, var(--senary), transparent 75%);
+    --elevation-senary-md: 0 4px 20px color-mix(in oklab, var(--senary), transparent 60%);
+    --elevation-senary-lg: 0 8px 40px color-mix(in oklab, var(--senary), transparent 50%);
+
+    --elevation-septenary-sm: 0 2px 8px color-mix(in oklab, var(--septenary), transparent 75%);
+    --elevation-septenary-md: 0 4px 20px color-mix(in oklab, var(--septenary), transparent 60%);
+    --elevation-septenary-lg: 0 8px 40px color-mix(in oklab, var(--septenary), transparent 50%);
+
+    --elevation-octonary-sm: 0 2px 8px color-mix(in oklab, var(--octonary), transparent 75%);
+    --elevation-octonary-md: 0 4px 20px color-mix(in oklab, var(--octonary), transparent 60%);
+    --elevation-octonary-lg: 0 8px 40px color-mix(in oklab, var(--octonary), transparent 50%);
+
+    --elevation-nonary-sm: 0 2px 8px color-mix(in oklab, var(--nonary), transparent 75%);
+    --elevation-nonary-md: 0 4px 20px color-mix(in oklab, var(--nonary), transparent 60%);
+    --elevation-nonary-lg: 0 8px 40px color-mix(in oklab, var(--nonary), transparent 50%);
+
+    --elevation-denary-sm: 0 2px 8px color-mix(in oklab, var(--denary), transparent 75%);
+    --elevation-denary-md: 0 4px 20px color-mix(in oklab, var(--denary), transparent 60%);
+    --elevation-denary-lg: 0 8px 40px color-mix(in oklab, var(--denary), transparent 50%);
+
+    /* Neutral elevations */
+    --elevation-neutral-sm: 0 1px 3px color-mix(in oklab, var(--black), transparent 88%);
+    --elevation-neutral-md: 0 4px 12px color-mix(in oklab, var(--black), transparent 85%);
+    --elevation-neutral-lg: 0 8px 30px color-mix(in oklab, var(--black), transparent 80%);
+
+    /* === GLOBAL SEMANTIC TOKENS === */
+    --surface-primary: var(--bg-primary-base);
+    --surface-primary-hover: var(--bg-primary-hover);
+    --surface-secondary: var(--bg-secondary-base);
+    --surface-secondary-hover: var(--bg-secondary-hover);
+    --surface-subtle: var(--tertiary-highlight);
+    --surface-muted: var(--tertiary-subtle);
+
+    --text-primary: var(--primary-depth);
+    --text-secondary: var(--primary-shade);
+    --text-muted: var(--primary-shadow-tint);
+    --text-inverse: var(--white);
+    --text-accent: var(--secondary);
+
+    --border-default: var(--primary-highlight);
+    --border-strong: var(--primary-tint);
+    --border-subtle: var(--primary-subtle);
+
+    /* === STATUS COLORS === */
+    --status-success: var(--quinary);
+    --status-success-bg: var(--quinary-highlight);
+    --status-success-border: var(--quinary-tint);
+
+    --status-warning: var(--tertiary-shade-deep);
+    --status-warning-bg: var(--tertiary-highlight);
+    --status-warning-border: var(--tertiary-tint);
+
+    --status-error: var(--secondary);
+    --status-error-bg: var(--secondary-highlight);
+    --status-error-border: var(--secondary-tint);
+
+    --status-info: var(--quaternary);
+    --status-info-bg: var(--quaternary-highlight);
+    --status-info-border: var(--quaternary-tint);
+
+    /* === GRADIENTS === */
+    --gradient-primary-subtle: linear-gradient(135deg, var(--primary), var(--primary-tint));
+    --gradient-primary-vibrant: linear-gradient(135deg, var(--primary), var(--primary-shade));
+    --gradient-secondary-subtle: linear-gradient(135deg, var(--secondary), var(--secondary-tint));
+    --gradient-secondary-vibrant: linear-gradient(135deg, var(--secondary), var(--secondary-shade));
+
+    --gradient-hero-warm: linear-gradient(135deg, var(--primary), var(--secondary), var(--tertiary));
+    --gradient-hero-cool: linear-gradient(135deg, var(--primary), var(--quaternary), var(--quinary));
+    --gradient-accent-flow: linear-gradient(90deg, var(--secondary), var(--quaternary));
+
+    /* === CONIC GRADIENTS === */
+    --conic-primary-rainbow: conic-gradient(
+            var(--primary) 0deg,
+            var(--secondary) 72deg,
+            var(--tertiary) 144deg,
+            var(--quaternary) 216deg,
+            var(--quinary) 288deg,
+            var(--primary) 360deg
+    );
+    --conic-primary-subtle: conic-gradient(
+            var(--primary),
+            var(--primary-tint) 180deg,
+            var(--primary) 360deg
+    );
+    --conic-secondary-flow: conic-gradient(
+            var(--secondary),
+            var(--secondary-tint) 120deg,
+            var(--secondary-shade) 240deg,
+            var(--secondary) 360deg
+    );
+
+    /* === MOTION === */
+    --motion-hover: translateY(-2px);
+    --motion-active: scale(0.98);
+
+    --x-radius: 8px;
+    --x-radius-sm: 4px;
+    --x-radius-lg: 16px;
+
+    --x-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --x-shadow-hover: 0 4px 12px rgba(0,0,0,0.15);
+
+    --x-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --x-border-light: var(--primary-highlight, #e5e7eb);
+}

@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Dual-Mode Color Tokens (Primary → Denary)
+   Modes:
+   - 5-token minimal (Primary–Quinary): core functional roles
+   - 10-token extended (Primary–Denary): adds semantic/aesthetic enhancers
+   --------------------------------------------------------------------------
+   Toggle by setting a data attribute on <html> or :root:
+     <html data-palette="5">   // minimal
+     <html data-palette="10">  // extended
+   ========================================================================== */
+
+/* ---------- BASE (shared neutrals, text, surfaces) ------------------------ */
+:root {
+    --white: #ffffff;
+    --black: #000000;
+}
+
+/* ==========================================================================
+   5‑TOKEN MODE (Primary–Quinary) — DEFAULT
+   Primary: main background layer
+   Secondary: foreground/surface accent
+   Tertiary: borders/structure
+   Quaternary: accent (calm emphasis)
+   Quinary: emphasis/positive tone
+   ========================================================================== */
+:root,
+:root[data-palette="5"] {
+    /* Core palette */
+    --primary:   #fb93c2; /*  Background layer */
+    --secondary: #ed78dc; /*  Foreground/surface layer */
+    --tertiary:  #ed78dc; /*  Borders/structure layer */
+    --quaternary:#a966f5; /*  Accent layer */
+    --quinary:   #9b64f4; /*  Emphasis layer */
+}
+
+/* ==========================================================================
+   10‑TOKEN MODE (Primary–Denary) — EXTENDED
+   Adds: Senary (utility), Septenary (danger), Octonary (info),
+         Nonary (neutral/warning), Denary (explicit text anchor)
+   ========================================================================== */
+:root[data-palette="10"] {
+    /* Enhancers / semantics */
+    --senary:    #8e62f3; /* utility overlay */
+    --septenary: #9f9be4; /* danger */
+    --octonary:  #a2b1f6; /* info (blue) */
+    --nonary:    #a4caf7; /* warning / neutral accent */
+    --denary:    #a5e5f8; /* text anchor on light surfaces */
+}

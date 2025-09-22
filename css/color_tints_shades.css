@@ -1,0 +1,103 @@
+:root {
+    /* Tints (lighter) - 12%, 25%, 44%, 60% white mix */
+    --primary-tint:        color-mix(in oklab, var(--primary), white 12%);
+    --primary-tint-light:  color-mix(in oklab, var(--primary), white 25%);
+    --primary-highlight:   color-mix(in oklab, var(--primary), white 44%);
+    --primary-subtle:      color-mix(in oklab, var(--primary), white 60%);
+
+    --secondary-tint:      color-mix(in oklab, var(--secondary), white 12%);
+    --secondary-tint-light: color-mix(in oklab, var(--secondary), white 25%);
+    --secondary-highlight: color-mix(in oklab, var(--secondary), white 44%);
+    --secondary-subtle:    color-mix(in oklab, var(--secondary), white 60%);
+
+    --tertiary-tint:       color-mix(in oklab, var(--tertiary), white 12%);
+    --tertiary-tint-light: color-mix(in oklab, var(--tertiary), white 25%);
+    --tertiary-highlight:  color-mix(in oklab, var(--tertiary), white 44%);
+    --tertiary-subtle:     color-mix(in oklab, var(--tertiary), white 60%);
+
+    --quaternary-tint:     color-mix(in oklab, var(--quaternary), white 12%);
+    --quaternary-tint-light: color-mix(in oklab, var(--quaternary), white 25%);
+    --quaternary-highlight: color-mix(in oklab, var(--quaternary), white 44%);
+    --quaternary-subtle:   color-mix(in oklab, var(--quaternary), white 60%);
+
+    --quinary-tint:        color-mix(in oklab, var(--quinary), white 12%);
+    --quinary-tint-light:  color-mix(in oklab, var(--quinary), white 25%);
+    --quinary-highlight:   color-mix(in oklab, var(--quinary), white 44%);
+    --quinary-subtle:      color-mix(in oklab, var(--quinary), white 60%);
+
+    --senary-tint:     color-mix(in oklab, var(--senary), white 12%);
+    --senary-tint-light:     color-mix(in oklab, var(--senary), white 25%);
+    --senary-highlight:   color-mix(in oklab, var(--senary), white 44%);
+    --senary-subtle:     color-mix(in oklab, var(--senary), white 60%);
+
+    --septenary-tint:     color-mix(in oklab, var(--septenary), white 12%);
+    --septenary-tint-light: color-mix(in oklab, var(--septenary), white 25%);
+    --septenary-highlight: color-mix(in oklab, var(--septenary), white 44%);
+    --septenary-subtle:     color-mix(in oklab, var(--septenary), white 60%);
+
+    --octonary-tint:     color-mix(in oklab, var(--octonary), white 12%);
+    --octonary-tint-light: color-mix(in oklab, var(--octonary), white 25%);
+    --octonary-highlight: color-mix(in oklab, var(--octonary), white 44%);
+    --octonary-subtle:     color-mix(in oklab, var(--octonary), white 60%);
+
+    --nonary-tint:     color-mix(in oklab, var(--nonary), white 12%);
+    --nonary-tint-light: color-mix(in oklab, var(--nonary), white 25%);
+    --nonary-highlight: color-mix(in oklab, var(--nonary), white 44%);
+    --nonary-subtle:     color-mix(in oklab, var(--nonary), white 60%);
+
+    --denary-tint:     color-mix(in oklab, var(--denary), white 12%);
+    --denary-tint-light: color-mix(in oklab, var(--denary), white 25%);
+    --denary-highlight: color-mix(in oklab, var(--denary), white 44%);
+    --denary-subtle:     color-mix(in oklab, var(--denary), white 60%);
+
+    /* Shades (darker) - 20%, 35%, 50%, 70% black mix */
+    --primary-shade:       color-mix(in oklab, var(--primary), black 20%);
+    --primary-shade-deep:  color-mix(in oklab, var(--primary), black 35%);
+    --primary-depth:       color-mix(in oklab, var(--primary), black 50%);
+    --primary-shadow-tint: color-mix(in oklab, var(--primary), black 70%);
+
+    --secondary-shade:     color-mix(in oklab, var(--secondary), black 20%);
+    --secondary-shade-deep: color-mix(in oklab, var(--secondary), black 35%);
+    --secondary-depth:     color-mix(in oklab, var(--secondary), black 50%);
+    --secondary-shadow-tint: color-mix(in oklab, var(--secondary), black 70%);
+
+    --tertiary-shade:      color-mix(in oklab, var(--tertiary), black 20%);
+    --tertiary-shade-deep: color-mix(in oklab, var(--tertiary), black 35%);
+    --tertiary-depth:      color-mix(in oklab, var(--tertiary), black 50%);
+    --tertiary-shadow-tint: color-mix(in oklab, var(--tertiary), black 70%);
+
+    --quaternary-shade:    color-mix(in oklab, var(--quaternary), black 20%);
+    --quaternary-shade-deep: color-mix(in oklab, var(--quaternary), black 35%);
+    --quaternary-depth:    color-mix(in oklab, var(--quaternary), black 50%);
+    --quaternary-shadow-tint: color-mix(in oklab, var(--quaternary), black 70%);
+
+    --quinary-shade:       color-mix(in oklab, var(--quinary), black 20%);
+    --quinary-shade-deep:  color-mix(in oklab, var(--quinary), black 35%);
+    --quinary-depth:       color-mix(in oklab, var(--quinary), black 50%);
+    --quinary-shadow-tint: color-mix(in oklab, var(--quinary), black 70%);
+
+    --senary-shade:     color-mix(in oklab, var(--senary), black 20%);
+    --senary-shade-deep:     color-mix(in oklab, var(--senary), black 35%);
+    --senary-depth:     color-mix(in oklab, var(--senary), black 50%);
+    --senary-shadow-tint:     color-mix(in oklab, var(--senary), black 70%);
+
+    --septenary-shade:     color-mix(in oklab, var(--septenary), black 20%);
+    --septenary-shade-deep:     color-mix(in oklab, var(--septenary), black 35%);
+    --septenary-depth:     color-mix(in oklab, var(--septenary), black 50%);
+    --septenary-shadow-tint:     color-mix(in oklab, var(--septenary), black 70%);
+
+    --octonary-shade:     color-mix(in oklab, var(--octonary), black 20%);
+    --octonary-shade-deep:     color-mix(in oklab, var(--octonary), black 35%);
+    --octonary-depth:     color-mix(in oklab, var(--octonary), black 50%);
+    --octonary-shadow-tint:     color-mix(in oklab, var(--octonary), black 70%);
+
+    --nonary-shade:     color-mix(in oklab, var(--nonary), black 20%);
+    --nonary-shade-deep:     color-mix(in oklab, var(--nonary), black 35%);
+    --nonary-depth:     color-mix(in oklab, var(--nonary), black 50%);
+    --nonary-shadow-tint:     color-mix(in oklab, var(--nonary), black 70%);
+
+    --denary-shade:     color-mix(in oklab, var(--denary), black 20%);
+    --denary-shade-deep:     color-mix(in oklab, var(--denary), black 35%);
+    --denary-depth:     color-mix(in oklab, var(--denary), black 50%);
+    --denary-shadow-tint:     color-mix(in oklab, var(--denary), black 70%);
+}
