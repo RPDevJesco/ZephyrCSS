@@ -1,4 +1,4 @@
-# Advanced 10-Color CSS Framework
+# ZephyrCSS - An unopologetically Opinionated yet not restrictive Semantic Design Framework
 
 A comprehensive, semantic color system that scales from 1 essential color to 10 extended colors, providing everything you need for modern web interfaces.
 
@@ -121,7 +121,7 @@ Example usage:
 ## 📁 File Structure
 
 ```
-css-framework/
+ZephyrCSS/
 ├── color_token.css         # Core color definitions & mode switching
 ├── color_tints_shades.css  # Automatic color variations
 ├── colors.css              # Complete component color system
@@ -277,16 +277,6 @@ This framework embodies several key principles:
 3. **Scalability** - Works for simple 5-color needs and complex 10-color systems
 4. **Accessibility First** - Built with contrast and usability in mind
 5. **Real-World Tested** - Every color works in actual interface contexts
-
-## 🔮 Future Considerations
-
-Areas for potential enhancement:
-
-- Dark mode variations using the same harmonic principles
-- Additional semantic mappings for specific industries
-- Integration with CSS custom property animations
-- Extended accessibility features like reduced motion support
-
 ---
 
 **Remember**: Great color systems aren't just about having the right colors—they're about having colors that work beautifully together in the real world. Visual harmony trumps logical order every time.
