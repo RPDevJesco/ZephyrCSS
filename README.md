@@ -1,4 +1,4 @@
-# ZephyrCSS - An unopologetically Opinionated yet not restrictive Semantic Design Framework
+# ZephyrCSS - An unapologetically Opinionated yet not restrictive Semantic Design Framework
 
 A comprehensive, semantic color system that scales from 1 essential color to 10 extended colors, providing everything you need for modern web interfaces.
 
