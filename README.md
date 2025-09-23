@@ -63,6 +63,25 @@ Toggle between modes using the `data-palette` attribute:
 9. **Nonary** (`#BABB74`) - Neutral accent, pending states, subtle emphasis
 10. **Denary** (`#E76F51`) - Text anchor, readable text on light backgrounds
 
+#### Using a 1 to 3 color palette
+
+Since each core color from primary to denary have a designated role, the hard requirement colors are primary through tertiary.
+```css
+/* Core Colors (1-3) */
+--primary:    #264653; /* Deep teal - Background layer */
+--secondary:  #E9C46A; /* Warm yellow - Foreground/surface layer */
+--tertiary:   #287271; /* Teal green - Borders/structure layer */
+--quaternary: transparent; /* Accent layer */
+--quinary:    transparent; /* Emphasis layer */
+
+/* Extended Colors (6-10) */
+--senary:    transparent /* Utility overlay */
+--septenary: transparent; /* Danger/warning */
+--octonary:  transparent; /* Info states */
+--nonary:    transparent; /* Neutral accent */
+--denary:    transparent; /* Text anchor */
+```
+
 ## 🎯 Color Variations System
 
 Each color automatically generates a complete set of variations using CSS `color-mix()`:
