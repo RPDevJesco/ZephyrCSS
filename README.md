@@ -1,6 +1,6 @@
 # Advanced 10-Color CSS Framework
 
-A comprehensive, semantic color system that scales from 5 essential colors to 10 extended colors, providing everything you need for modern web interfaces.
+A comprehensive, semantic color system that scales from 1 essential color to 10 extended colors, providing everything you need for modern web interfaces.
 
 ## 🎨 Philosophy: Visual Harmony Over Logical Order
 
