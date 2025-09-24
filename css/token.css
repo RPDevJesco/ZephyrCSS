@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Dual-Mode Color Tokens (Primary → Denary)
+   Modes:
+   - 5-token minimal (Primary–Quinary): core functional roles
+   - 10-token extended (Primary–Denary): adds semantic/aesthetic enhancers
+   --------------------------------------------------------------------------
+   Toggle by setting a data attribute on <html> or :root:
+     <html data-palette="5">   // minimal
+     <html data-palette="10">  // extended
+   ========================================================================== */
+
+/* ---------- BASE (shared neutrals, text, surfaces) ------------------------ */
+:root {
+    --white: #ffffff;
+    --black: #000000;
+}
+
+/* ==========================================================================
+   5‑TOKEN MODE (Primary–Quinary) — DEFAULT
+   Primary: main background layer
+   Secondary: foreground/surface accent
+   Tertiary: borders/structure
+   Quaternary: accent (calm emphasis)
+   Quinary: emphasis/positive tone
+   ========================================================================== */
+:root,
+:root[data-palette="5"] {
+    /* Core palette */
+    --primary: #264653; /*  Background layer */
+    --secondary: #E9C46A; /*  Foreground/surface layer */
+    --tertiary: #287271; /*  Borders/structure layer */
+    --quaternary: #EFB366; /*  Accent layer */
+    --quinary: #2A9D8F; /*  Emphasis layer */
+}
+
+/* ==========================================================================
+   10‑TOKEN MODE (Primary–Denary) — EXTENDED
+   Adds: Senary (utility), Septenary (danger), Octonary (info),
+         Nonary (neutral/warning), Denary (explicit text anchor)
+   ========================================================================== */
+:root[data-palette="10"] {
+    /* Enhancers / semantics */
+    --senary: #F4A261; /* utility overlay */
+    --septenary: #8AB17D; /* danger */
+    --octonary: #EE8959; /* info (blue) */
+    --nonary: #BABB74; /* warning / neutral accent */
+    --denary: #E76F51; /* text anchor on light surfaces */
+}

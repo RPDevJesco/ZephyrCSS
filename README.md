@@ -141,12 +141,13 @@ Example usage:
 
 ```
 ZephyrCSS/
-├── color_token.css         # Core color definitions & mode switching
-├── color_tints_shades.css  # Automatic color variations
-├── colors.css              # Complete component color system
-├── layout.css              # Layout utilities & grid system
-├── site.css                # Main import file
-└── index.html              # Complete showcase & documentation
+├── token.css                  # Core color definitions
+├── color_token.css            # Override Core color definitions & mode switching
+├── color_tints_shades.css     # Automatic color variations
+├── colors.css                 # Complete component color system
+├── layout.css                 # Layout utilities & grid system
+├── site.css                   # Main import file
+└── index.html                 # Complete showcase & documentation
 ```
 
 ## 🚀 Quick Start

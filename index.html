@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-palette="10">
+<html lang="en" data-palette="5">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -308,7 +308,7 @@
 <!-- Palette Toggle -->
 <div class="palette-toggle">
     <button id="togglePalette" class="btn btn-accent">
-        Switch to 5-Color Mode
+        Switch to 10-Color Mode
     </button>
 </div>
 
@@ -1390,7 +1390,7 @@
 // Palette toggle functionality
 const toggleButton = document.getElementById('togglePalette');
 const html = document.documentElement;
-let is10Color = true;
+let is10Color = false;
 
 toggleButton.addEventListener('click', () => {
     if (is10Color) {

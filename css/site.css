@@ -1,3 +1,5 @@
+@layer override;
+@import url('token.css') layer(override); /* Core color palette tokens */
 @import url('color_token.css'); /* Core color palette tokens */
 @import url('color_tints_shades.css'); /* Color shades, tints and highlights */
 @import url('colors.css'); /* Extended color system with variations */
