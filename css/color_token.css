@@ -1,16 +1,15 @@
 /**
  This is the root color token that should be modified as it uses CSS3 layer system.
-
  */
 @layer override {
     :root,
     :root[data-palette="5"] {
-        /* Core palette */
-        --primary: #064789; /*  Background layer */
-        --secondary: #427aa1; /*  Foreground/surface layer */
-        --tertiary: #ebf2fa; /*  Borders/structure layer */
-        --quaternary: transparent; /*  Accent layer */
-        --quinary: transparent; /*  Emphasis layer */
+        /* Core palette https://coolors.co/palette/f2dfd7-fef9ff-d4c1ec-9f9fed-736ced Ethereal Hues*/
+        --primary: #B0F2B4; /*  Background layer */
+        --secondary: #F2BAC9; /*  Foreground/surface layer */
+        --tertiary: #BAF2E9; /*  Borders/structure layer */
+        --quaternary: #F2E2BA; /*  Accent layer */
+        --quinary: #BAD7F2; /*  Emphasis layer */
     }
 
     /* ==========================================================================
