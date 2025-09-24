@@ -1,15 +1,15 @@
 /**
  This is the root color token that should be modified as it uses CSS3 layer system.
  */
-@layer override {
+@layer dual {
     :root,
     :root[data-palette="5"] {
-        /* Core palette https://coolors.co/palette/f2dfd7-fef9ff-d4c1ec-9f9fed-736ced Ethereal Hues*/
-        --primary: #B0F2B4; /*  Background layer */
-        --secondary: #F2BAC9; /*  Foreground/surface layer */
-        --tertiary: #BAF2E9; /*  Borders/structure layer */
-        --quaternary: #F2E2BA; /*  Accent layer */
-        --quinary: #BAD7F2; /*  Emphasis layer */
+        /* Core palette */
+        --primary: #42047e; /*  Background layer */
+        --secondary: #07f49e; /*  Foreground/surface layer */
+        --tertiary: transparent; /*  Borders/structure layer */
+        --quaternary: transparent; /*  Accent layer */
+        --quinary: transparent; /*  Emphasis layer */
     }
 
     /* ==========================================================================
@@ -24,5 +24,31 @@
         --octonary: transparent; /* info (blue) */
         --nonary: transparent; /* warning / neutral accent */
         --denary: transparent; /* text anchor on light surfaces */
+    }
+}
+
+@layer override {
+    :root,
+    :root[data-palette="5"] {
+        /* Core palette https://coolors.co/palette/e8f9c8-def7e1-bcf0c2-8be595-56da65-99d770-ffb775-ff9f77-ff8477-ff6478 Lively Spring Spectrum*/
+        --primary: #E8F9C8; /*  Background layer */
+        --secondary: #99D770; /*  Foreground/surface layer */
+        --tertiary: #DEF7E1; /*  Borders/structure layer */
+        --quaternary: #FFB775; /*  Accent layer */
+        --quinary: #BCF0C2; /*  Emphasis layer */
+    }
+
+    /* ==========================================================================
+       10‑TOKEN MODE (Primary–Denary) — EXTENDED
+       Adds: Senary (utility), Septenary (danger), Octonary (info),
+             Nonary (neutral/warning), Denary (explicit text anchor)
+       ========================================================================== */
+    :root[data-palette="10"] {
+        /* Enhancers / semantics */
+        --senary: #FF9F77; /* utility overlay */
+        --septenary: #8BE595; /* danger */
+        --octonary: #FF8477; /* info (blue) */
+        --nonary: #56DA65; /* warning / neutral accent */
+        --denary: #FF6478; /* text anchor on light surfaces */
     }
 }
