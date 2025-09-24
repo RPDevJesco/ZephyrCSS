@@ -1,5 +1,5 @@
-@layer override, dual;
-@import url('token.css') layer(dual); /* Core color palette tokens */
+@layer override, dual; /* remove layers or re-order to see them all in action  */
+@import url('token.css') /* layer(dual)*/;  /*  uncomment the layer to see them in action. Core color palette tokens */
 @import url('color_token.css'); /* Core color palette tokens */
 @import url('color_tints_shades.css'); /* Color shades, tints and highlights */
 @import url('colors.css'); /* Extended color system with variations */
