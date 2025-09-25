@@ -10,8 +10,8 @@
             margin: 0;
             padding: 0;
             font-family: system-ui, -apple-system, sans-serif;
-            background: var(--bg-primary-base);
-            color: var(--text-base);
+            background: var(--white);
+            color: var(--black);
             line-height: 1.6;
         }
 
@@ -85,7 +85,7 @@
 
         .btn-primary {
             background: var(--bg-primary-base);
-            color: var(--text-on-primary);
+            
             border: 1px solid var(--border-primary-base);
         }
         .btn-primary:hover {
@@ -104,7 +104,7 @@
 
         .btn-secondary {
             background: var(--bg-secondary-base);
-            color: var(--text-on-secondary);
+            
             border: 1px solid var(--border-secondary-base);
         }
         .btn-secondary:hover {
@@ -123,7 +123,7 @@
 
         .btn-accent {
             background: var(--bg-quaternary-base);
-            color: var(--text-on-quaternary);
+           
             border: 1px solid var(--border-quaternary-base);
         }
         .btn-accent:hover {
@@ -134,7 +134,7 @@
 
         .btn-emphasis {
             background: var(--bg-quinary-base);
-            color: var(--text-on-quinary);
+           
             border: 1px solid var(--border-quinary-base);
         }
         .btn-emphasis:hover {
@@ -154,25 +154,25 @@
         .alert-success {
             background: var(--status-success-bg);
             border-color: var(--status-success);
-            color: var(--text-on-quinary);
+           
         }
 
         .alert-warning {
             background: var(--status-warning-bg);
             border-color: var(--status-warning);
-            color: var(--text-on-tertiary);
+           
         }
 
         .alert-error {
             background: var(--status-error-bg);
             border-color: var(--status-error);
-            color: var(--text-on-secondary);
+            
         }
 
         .alert-info {
             background: var(--status-info-bg);
             border-color: var(--status-info);
-            color: var(--text-on-quaternary);
+           
         }
 
         /* Badge Components */
@@ -187,25 +187,25 @@
 
         .badge-utility {
             background: var(--bg-senary-subtle);
-            color: var(--text-on-senary);
+           
             border-color: var(--border-senary-subtle);
         }
 
         .badge-danger {
             background: var(--bg-septenary-subtle);
-            color: var(--text-on-septenary);
+           
             border-color: var(--border-septenary-subtle);
         }
 
         .badge-info {
             background: var(--bg-octonary-subtle);
-            color: var(--text-on-octonary);
+           
             border-color: var(--border-octonary-subtle);
         }
 
         .badge-neutral {
             background: var(--bg-nonary-subtle);
-            color: var(--text-on-nonary);
+           
             border-color: var(--border-nonary-subtle);
         }
 
@@ -231,18 +231,18 @@
 
         .nav-link {
             padding: 0.75rem 1rem;
-            color: var(--text-on-tertiary);
+           
             text-decoration: none;
             border-radius: var(--x-radius-sm);
             transition: var(--x-transition);
         }
         .nav-link:hover {
             background: var(--hover-overlay-tertiary);
-            color: var(--text-on-tertiary);
+           
         }
         .nav-link.active {
             background: var(--bg-tertiary-subtle);
-            color: var(--text-on-tertiary);
+           
         }
 
         /* Form Elements */
@@ -251,7 +251,7 @@
             border: 1px solid var(--border-tertiary-base);
             border-radius: var(--x-radius);
             background: var(--bg-tertiary-subtle);
-            color: var(--text-on-tertiary);
+           
             transition: var(--x-transition);
         }
         .form-input:focus {
@@ -333,10 +333,10 @@
 <section class="section">
     <div class="container">
         <div class="glass-card p-8 text-center">
-            <h1 class="m-0 mb-4" style="color: var(--text-on-primary);">
+            <h1 class="m-0 mb-4">
                 Advanced Color System Showcase
             </h1>
-            <p class="mb-6" style="color: var(--text-on-primary-muted);">
+            <p class="mb-6">
                 Demonstrating a comprehensive 10-color palette with proper variations,
                 tints, shades, and semantic usage across real UI components.
             </p>
@@ -360,64 +360,64 @@
             <h3>Core Functional Colors (1-5)</h3>
             <div class="grid grid-cols-1 gap-6">
                 <div class="card card-primary p-6">
-                    <h4 style="color: var(--text-primary);">1. Primary - Background Layer</h4>
-                    <p style="color: var(--text-secondary);">
+                    <h4 >1. Primary - Background Layer</h4>
+                    <p>
                         Main background layer using --bg-primary-subtle with --border-primary-subtle.
                         Hover: --bg-primary-hover and --border-primary-light. Active: --bg-primary-active.
                     </p>
                     <div class="flex gap-3">
                         <button class="btn btn-primary">Primary Action</button>
-                        <span class="badge" style="background: var(--primary-tint); color: var(--text-on-primary); border-color: var(--primary-tint);">Primary Badge</span>
+                        <span class="badge" style="background: var(--primary-tint); border-color: var(--primary-tint);">Primary Badge</span>
                     </div>
                 </div>
 
                 <div class="card card-secondary p-6">
-                    <h4 style="color: var(--text-primary);">2. Secondary - Foreground/Surface</h4>
-                    <p style="color: var(--text-secondary);">
+                    <h4>2. Secondary - Foreground/Surface</h4>
+                    <p>
                         Foreground and surface accent layer using --bg-secondary-subtle.
                         Perfect for elevated surfaces and content areas.
                     </p>
                     <div class="flex gap-3">
                         <button class="btn btn-secondary">Secondary Action</button>
-                        <span class="badge" style="background: var(--secondary-tint); color: var(--text-on-secondary); border-color: var(--secondary-tint);">Secondary Badge</span>
+                        <span class="badge" style="background: var(--secondary-tint); border-color: var(--secondary-tint);">Secondary Badge</span>
                     </div>
                 </div>
 
                 <div class="card" style="background: var(--bg-tertiary-subtle); border: 1px solid var(--border-tertiary-subtle); box-shadow: var(--elevation-tertiary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-tertiary-hover)'; this.style.borderColor='var(--border-tertiary-light)'; this.style.boxShadow='var(--elevation-tertiary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-tertiary-subtle)'; this.style.borderColor='var(--border-tertiary-subtle)'; this.style.boxShadow='var(--elevation-tertiary-sm)'; this.style.transform='none';">
                     <div class="p-6">
-                        <h4 style="color: var(--text-primary);">3. Tertiary - Borders/Structure</h4>
-                        <p style="color: var(--text-secondary);">
+                        <h4>3. Tertiary - Borders/Structure</h4>
+                        <p>
                             Borders and structural elements using --bg-tertiary-subtle.
                             Essential for form elements, dividers, and layout structure.
                         </p>
                         <div class="flex gap-3">
-                            <button class="btn" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-base);">Tertiary Action</button>
-                            <span class="badge" style="background: var(--tertiary-tint); color: var(--text-on-tertiary); border-color: var(--tertiary-tint);">Structure Badge</span>
+                            <button class="btn" style="background: var(--bg-tertiary-base); border: 1px solid var(--border-tertiary-base);">Tertiary Action</button>
+                            <span class="badge" style="background: var(--tertiary-tint); border-color: var(--tertiary-tint);">Structure Badge</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="card card-accent p-6">
-                    <h4 style="color: var(--text-primary);">4. Quaternary - Accent (Calm Emphasis)</h4>
-                    <p style="color: var(--text-secondary);">
+                    <h4>4. Quaternary - Accent (Calm Emphasis)</h4>
+                    <p>
                         Calm accent layer using --bg-quaternary-subtle.
                         Perfect for highlighting without overwhelming, info states.
                     </p>
                     <div class="flex gap-3">
                         <button class="btn btn-accent">Accent Action</button>
-                        <span class="badge" style="background: var(--quaternary-tint); color: var(--text-on-quaternary); border-color: var(--quaternary-tint);">Accent Badge</span>
+                        <span class="badge" style="background: var(--quaternary-tint); border-color: var(--quaternary-tint);">Accent Badge</span>
                     </div>
                 </div>
 
                 <div class="card card-emphasis p-6">
-                    <h4 style="color: var(--text-primary);">5. Quinary - Emphasis/Positive</h4>
-                    <p style="color: var(--text-secondary);">
+                    <h4>5. Quinary - Emphasis/Positive</h4>
+                    <p>
                         Emphasis and positive tone using --bg-quinary-subtle.
                         Used for success states, CTAs, and important positive actions.
                     </p>
                     <div class="flex gap-3">
                         <button class="btn btn-emphasis">Emphasis Action</button>
-                        <span class="badge" style="background: var(--quinary-tint); color: var(--text-on-quinary); border-color: var(--quinary-tint);">Success Badge</span>
+                        <span class="badge" style="background: var(--quinary-tint); border-color: var(--quinary-tint);">Success Badge</span>
                     </div>
                 </div>
             </div>
@@ -429,13 +429,13 @@
             <div class="grid grid-cols-1 gap-6">
                 <div class="card" style="background: var(--bg-senary-subtle); border: 1px solid var(--border-senary-subtle); box-shadow: var(--elevation-senary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-senary-hover)'; this.style.borderColor='var(--border-senary-light)'; this.style.boxShadow='var(--elevation-senary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-senary-subtle)'; this.style.borderColor='var(--border-senary-subtle)'; this.style.boxShadow='var(--elevation-senary-sm)'; this.style.transform='none';">
                     <div class="p-6">
-                        <h4 style="color: var(--text-primary);">6. Senary - Utility Overlay</h4>
-                        <p style="color: var(--text-secondary);">
+                        <h4>6. Senary - Utility Overlay</h4>
+                        <p >
                             Utility overlay layer using --bg-senary-subtle.
                             Perfect for tool tips, utility menus, and overlay content.
                         </p>
                         <div class="flex gap-3">
-                            <button class="btn" style="background: var(--bg-senary-base); color: var(--text-on-senary); border: 1px solid var(--border-senary-base);">Utility Action</button>
+                            <button class="btn" style="background: var(--bg-senary-base); border: 1px solid var(--border-senary-base);">Utility Action</button>
                             <span class="badge badge-utility">Utility Badge</span>
                         </div>
                     </div>
@@ -443,13 +443,13 @@
 
                 <div class="card" style="background: var(--bg-septenary-subtle); border: 1px solid var(--border-septenary-subtle); box-shadow: var(--elevation-septenary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-septenary-hover)'; this.style.borderColor='var(--border-septenary-light)'; this.style.boxShadow='var(--elevation-septenary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-septenary-subtle)'; this.style.borderColor='var(--border-septenary-subtle)'; this.style.boxShadow='var(--elevation-septenary-sm)'; this.style.transform='none';">
                     <div class="p-6">
-                        <h4 style="color: var(--text-primary);">7. Septenary - Danger</h4>
-                        <p style="color: var(--text-secondary);">
+                        <h4>7. Septenary - Danger</h4>
+                        <p>
                             Danger and error states using --bg-septenary-subtle.
                             Essential for destructive actions, errors, and critical warnings.
                         </p>
                         <div class="flex gap-3">
-                            <button class="btn" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-base);">Danger Action</button>
+                            <button class="btn" style="background: var(--bg-septenary-base); border: 1px solid var(--border-septenary-base);">Danger Action</button>
                             <span class="badge badge-danger">Danger Badge</span>
                         </div>
                     </div>
@@ -457,13 +457,13 @@
 
                 <div class="card" style="background: var(--bg-octonary-subtle); border: 1px solid var(--border-octonary-subtle); box-shadow: var(--elevation-octonary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-octonary-hover)'; this.style.borderColor='var(--border-octonary-light)'; this.style.boxShadow='var(--elevation-octonary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-octonary-subtle)'; this.style.borderColor='var(--border-octonary-subtle)'; this.style.boxShadow='var(--elevation-octonary-sm)'; this.style.transform='none';">
                     <div class="p-6">
-                        <h4 style="color: var(--text-primary);">8. Octonary - Info (Blue)</h4>
-                        <p style="color: var(--text-secondary);">
+                        <h4>8. Octonary - Info (Blue)</h4>
+                        <p>
                             Information and neutral positive states using --bg-octonary-subtle.
                             Perfect for informational messages, help text, and guidance.
                         </p>
                         <div class="flex gap-3">
-                            <button class="btn" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-base);">Info Action</button>
+                            <button class="btn" style="background: var(--bg-octonary-base); border: 1px solid var(--border-octonary-base);">Info Action</button>
                             <span class="badge badge-info">Info Badge</span>
                         </div>
                     </div>
@@ -471,13 +471,13 @@
 
                 <div class="card" style="background: var(--bg-nonary-subtle); border: 1px solid var(--border-nonary-subtle); box-shadow: var(--elevation-nonary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-nonary-hover)'; this.style.borderColor='var(--border-nonary-light)'; this.style.boxShadow='var(--elevation-nonary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-nonary-subtle)'; this.style.borderColor='var(--border-nonary-subtle)'; this.style.boxShadow='var(--elevation-nonary-sm)'; this.style.transform='none';">
                     <div class="p-6">
-                        <h4 style="color: var(--text-primary);">9. Nonary - Warning/Neutral Accent</h4>
-                        <p style="color: var(--text-secondary);">
+                        <h4>9. Nonary - Warning/Neutral Accent</h4>
+                        <p>
                             Warning and neutral accent using --bg-nonary-subtle.
                             Used for caution states, pending actions, and neutral emphasis.
                         </p>
                         <div class="flex gap-3">
-                            <button class="btn" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-base);">Warning Action</button>
+                            <button class="btn" style="background: var(--bg-nonary-base); border: 1px solid var(--border-nonary-base);">Warning Action</button>
                             <span class="badge badge-neutral">Warning Badge</span>
                         </div>
                     </div>
@@ -485,14 +485,14 @@
 
                 <div class="card" style="background: var(--bg-denary-subtle); border: 1px solid var(--border-denary-subtle); box-shadow: var(--elevation-denary-sm); border-radius: var(--x-radius); transition: var(--x-transition);" onmouseover="this.style.background='var(--bg-denary-hover)'; this.style.borderColor='var(--border-denary-light)'; this.style.boxShadow='var(--elevation-denary-md)'; this.style.transform='var(--motion-hover)';" onmouseout="this.style.background='var(--bg-denary-subtle)'; this.style.borderColor='var(--border-denary-subtle)'; this.style.boxShadow='var(--elevation-denary-sm)'; this.style.transform='none';">
                     <div class="p-6">
-                        <h4 style="color: var(--text-primary);">10. Denary - Text Anchor</h4>
-                        <p style="color: var(--text-secondary);">
+                        <h4>10. Denary - Text Anchor</h4>
+                        <p>
                             Text anchor on light surfaces using --bg-denary-subtle.
                             Essential for readable text on light backgrounds and content areas.
                         </p>
                         <div class="flex gap-3">
-                            <button class="btn" style="background: var(--bg-denary-base); color: var(--text-on-denary); border: 1px solid var(--border-denary-base);">Text Action</button>
-                            <span class="badge" style="background: var(--denary-tint); color: var(--text-on-denary); border-color: var(--denary-tint);">Text Badge</span>
+                            <button class="btn" style="background: var(--bg-denary-base); border: 1px solid var(--border-denary-base);">Text Action</button>
+                            <span class="badge" style="background: var(--denary-tint); border-color: var(--denary-tint);">Text Badge</span>
                         </div>
                     </div>
                 </div>
@@ -534,10 +534,10 @@
                 <div>
                     <h4>3. Tertiary</h4>
                     <div class="flex flex-col gap-3">
-                        <button class="btn" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-base);">Default</button>
-                        <button class="btn" style="background: var(--bg-tertiary-hover); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-light);">Hover</button>
-                        <button class="btn" style="background: var(--bg-tertiary-active); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-strong);">Active</button>
-                        <button class="btn" style="background: var(--bg-tertiary-disabled); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                        <button class="btn" style="background: var(--bg-tertiary-base); border: 1px solid var(--border-tertiary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-tertiary-hover); border: 1px solid var(--border-tertiary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-tertiary-active); border: 1px solid var(--border-tertiary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-tertiary-disabled); border: 1px solid var(--border-tertiary-subtle); opacity: 0.6;" disabled>Disabled</button>
                     </div>
                 </div>
 
@@ -570,50 +570,50 @@
                 <div>
                     <h4>6. Senary</h4>
                     <div class="flex flex-col gap-3">
-                        <button class="btn" style="background: var(--bg-senary-base); color: var(--text-on-senary); border: 1px solid var(--border-senary-base);">Default</button>
-                        <button class="btn" style="background: var(--bg-senary-hover); color: var(--text-on-senary); border: 1px solid var(--border-senary-light);">Hover</button>
-                        <button class="btn" style="background: var(--bg-senary-active); color: var(--text-on-senary); border: 1px solid var(--border-senary-strong);">Active</button>
-                        <button class="btn" style="background: var(--bg-senary-disabled); color: var(--text-on-senary); border: 1px solid var(--border-senary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                        <button class="btn" style="background: var(--bg-senary-base); border: 1px solid var(--border-senary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-senary-hover); border: 1px solid var(--border-senary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-senary-active); border: 1px solid var(--border-senary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-senary-disabled); border: 1px solid var(--border-senary-subtle); opacity: 0.6;" disabled>Disabled</button>
                     </div>
                 </div>
 
                 <div>
                     <h4>7. Septenary</h4>
                     <div class="flex flex-col gap-3">
-                        <button class="btn" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-base);">Default</button>
-                        <button class="btn" style="background: var(--bg-septenary-hover); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-light);">Hover</button>
-                        <button class="btn" style="background: var(--bg-septenary-active); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-strong);">Active</button>
-                        <button class="btn" style="background: var(--bg-septenary-disabled); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                        <button class="btn" style="background: var(--bg-septenary-base); border: 1px solid var(--border-septenary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-septenary-hover); border: 1px solid var(--border-septenary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-septenary-active); border: 1px solid var(--border-septenary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-septenary-disabled); border: 1px solid var(--border-septenary-subtle); opacity: 0.6;" disabled>Disabled</button>
                     </div>
                 </div>
 
                 <div>
                     <h4>8. Octonary</h4>
                     <div class="flex flex-col gap-3">
-                        <button class="btn" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-base);">Default</button>
-                        <button class="btn" style="background: var(--bg-octonary-hover); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-light);">Hover</button>
-                        <button class="btn" style="background: var(--bg-octonary-active); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-strong);">Active</button>
-                        <button class="btn" style="background: var(--bg-octonary-disabled); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                        <button class="btn" style="background: var(--bg-octonary-base); border: 1px solid var(--border-octonary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-octonary-hover); border: 1px solid var(--border-octonary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-octonary-active); border: 1px solid var(--border-octonary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-octonary-disabled); border: 1px solid var(--border-octonary-subtle); opacity: 0.6;" disabled>Disabled</button>
                     </div>
                 </div>
 
                 <div>
                     <h4>9. Nonary</h4>
                     <div class="flex flex-col gap-3">
-                        <button class="btn" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-base);">Default</button>
-                        <button class="btn" style="background: var(--bg-nonary-hover); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-light);">Hover</button>
-                        <button class="btn" style="background: var(--bg-nonary-active); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-strong);">Active</button>
-                        <button class="btn" style="background: var(--bg-nonary-disabled); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                        <button class="btn" style="background: var(--bg-nonary-base); border: 1px solid var(--border-nonary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-nonary-hover); border: 1px solid var(--border-nonary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-nonary-active); border: 1px solid var(--border-nonary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-nonary-disabled); border: 1px solid var(--border-nonary-subtle); opacity: 0.6;" disabled>Disabled</button>
                     </div>
                 </div>
 
                 <div>
                     <h4>10. Denary</h4>
                     <div class="flex flex-col gap-3">
-                        <button class="btn" style="background: var(--bg-denary-base); color: var(--text-on-denary); border: 1px solid var(--border-denary-base);">Default</button>
-                        <button class="btn" style="background: var(--bg-denary-hover); color: var(--text-on-denary); border: 1px solid var(--border-denary-light);">Hover</button>
-                        <button class="btn" style="background: var(--bg-denary-active); color: var(--text-on-denary); border: 1px solid var(--border-denary-strong);">Active</button>
-                        <button class="btn" style="background: var(--bg-denary-disabled); color: var(--text-on-denary); border: 1px solid var(--border-denary-subtle); opacity: 0.6;" disabled>Disabled</button>
+                        <button class="btn" style="background: var(--bg-denary-base); border: 1px solid var(--border-denary-base);">Default</button>
+                        <button class="btn" style="background: var(--bg-denary-hover); border: 1px solid var(--border-denary-light);">Hover</button>
+                        <button class="btn" style="background: var(--bg-denary-active); border: 1px solid var(--border-denary-strong);">Active</button>
+                        <button class="btn" style="background: var(--bg-denary-disabled); border: 1px solid var(--border-denary-subtle); opacity: 0.6;" disabled>Disabled</button>
                     </div>
                 </div>
             </div>
@@ -626,14 +626,14 @@
             <div class="flex gap-3 flex-wrap">
                 <button class="btn btn-primary" style="box-shadow: var(--focus-ring-primary);">Primary Focus</button>
                 <button class="btn btn-secondary" style="box-shadow: var(--focus-ring-secondary);">Secondary Focus</button>
-                <button class="btn" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-base); box-shadow: var(--focus-ring-tertiary);">Tertiary Focus</button>
+                <button class="btn" style="background: var(--bg-tertiary-base); border: 1px solid var(--border-tertiary-base); box-shadow: var(--focus-ring-tertiary);">Tertiary Focus</button>
                 <button class="btn btn-accent" style="box-shadow: var(--focus-ring-quaternary);">Quaternary Focus</button>
                 <button class="btn btn-emphasis" style="box-shadow: var(--focus-ring-quinary);">Quinary Focus</button>
-                <button class="btn" style="background: var(--bg-senary-base); color: var(--text-on-senary); border: 1px solid var(--border-senary-base); box-shadow: var(--focus-ring-senary);">Senary Focus</button>
-                <button class="btn" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-base); box-shadow: var(--focus-ring-septenary);">Septenary Focus</button>
-                <button class="btn" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-base); box-shadow: var(--focus-ring-octonary);">Octonary Focus</button>
-                <button class="btn" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-base); box-shadow: var(--focus-ring-nonary);">Nonary Focus</button>
-                <button class="btn" style="background: var(--bg-denary-base); color: var(--text-on-denary); border: 1px solid var(--border-denary-base); box-shadow: var(--focus-ring-denary);">Denary Focus</button>
+                <button class="btn" style="background: var(--bg-senary-base); border: 1px solid var(--border-senary-base); box-shadow: var(--focus-ring-senary);">Senary Focus</button>
+                <button class="btn" style="background: var(--bg-septenary-base); border: 1px solid var(--border-septenary-base); box-shadow: var(--focus-ring-septenary);">Septenary Focus</button>
+                <button class="btn" style="background: var(--bg-octonary-base); border: 1px solid var(--border-octonary-base); box-shadow: var(--focus-ring-octonary);">Octonary Focus</button>
+                <button class="btn" style="background: var(--bg-nonary-base); border: 1px solid var(--border-nonary-base); box-shadow: var(--focus-ring-nonary);">Nonary Focus</button>
+                <button class="btn" style="background: var(--bg-denary-base); border: 1px solid var(--border-denary-base); box-shadow: var(--focus-ring-denary);">Denary Focus</button>
             </div>
         </div>
     </div>
@@ -649,15 +649,15 @@
         <div class="mb-8">
             <h3>Status Alerts & Notifications</h3>
             <div class="grid grid-cols-1 gap-4">
-                <div class="alert" style="background: var(--bg-primary-subtle); border-left: 4px solid var(--primary); color: var(--text-primary); padding: 1rem; border-radius: var(--x-radius);">
+                <div class="alert" style="background: var(--bg-primary-subtle); border-left: 4px solid var(--primary); padding: 1rem; border-radius: var(--x-radius);">
                     <strong>Primary Alert:</strong> Main background layer notification using primary color variations.
                 </div>
 
-                <div class="alert" style="background: var(--bg-secondary-subtle); border-left: 4px solid var(--secondary); color: var(--text-primary); padding: 1rem; border-radius: var(--x-radius);">
+                <div class="alert" style="background: var(--bg-secondary-subtle); border-left: 4px solid var(--secondary); padding: 1rem; border-radius: var(--x-radius);">
                     <strong>Secondary Alert:</strong> Foreground/surface accent notification for elevated content.
                 </div>
 
-                <div class="alert" style="background: var(--bg-tertiary-subtle); border-left: 4px solid var(--tertiary-shade); color: var(--text-on-tertiary); padding: 1rem; border-radius: var(--x-radius);">
+                <div class="alert" style="background: var(--bg-tertiary-subtle); border-left: 4px solid var(--tertiary-shade); padding: 1rem; border-radius: var(--x-radius);">
                     <strong>Tertiary Alert:</strong> Structural information using border/structure layer colors.
                 </div>
 
@@ -669,23 +669,23 @@
                     <strong>Quinary Alert:</strong> Success and positive emphasis using quinary color variations.
                 </div>
 
-                <div class="alert" style="background: var(--bg-senary-subtle); border-left: 4px solid var(--senary); color: var(--text-on-senary); padding: 1rem; border-radius: var(--x-radius);">
+                <div class="alert" style="background: var(--bg-senary-subtle); border-left: 4px solid var(--senary); padding: 1rem; border-radius: var(--x-radius);">
                     <strong>Senary Alert:</strong> Utility overlay information for tool tips and secondary content.
                 </div>
 
-                <div class="alert" style="background: var(--bg-septenary-subtle); border-left: 4px solid var(--septenary); color: var(--text-on-septenary); padding: 1rem; border-radius: var(--x-radius);">
+                <div class="alert" style="background: var(--bg-septenary-subtle); border-left: 4px solid var(--septenary); padding: 1rem; border-radius: var(--x-radius);">
                     <strong>Septenary Alert:</strong> Danger and critical warnings using septenary color variations.
                 </div>
 
-                <div class="alert" style="background: var(--bg-octonary-subtle); border-left: 4px solid var(--octonary); color: var(--text-on-octonary); padding: 1rem; border-radius: var(--x-radius);">
+                <div class="alert" style="background: var(--bg-octonary-subtle); border-left: 4px solid var(--octonary); padding: 1rem; border-radius: var(--x-radius);">
                     <strong>Octonary Alert:</strong> Informational content using info blue color variations.
                 </div>
 
-                <div class="alert" style="background: var(--bg-nonary-subtle); border-left: 4px solid var(--nonary); color: var(--text-on-nonary); padding: 1rem; border-radius: var(--x-radius);">
+                <div class="alert" style="background: var(--bg-nonary-subtle); border-left: 4px solid var(--nonary); padding: 1rem; border-radius: var(--x-radius);">
                     <strong>Nonary Alert:</strong> Warning and neutral accent notifications.
                 </div>
 
-                <div class="alert" style="background: var(--bg-denary-subtle); border-left: 4px solid var(--denary); color: var(--text-on-denary); padding: 1rem; border-radius: var(--x-radius);">
+                <div class="alert" style="background: var(--bg-denary-subtle); border-left: 4px solid var(--denary); padding: 1rem; border-radius: var(--x-radius);">
                     <strong>Denary Alert:</strong> Text anchor notifications for content-heavy messages.
                 </div>
             </div>
@@ -698,11 +698,11 @@
                 <div>
                     <h4>Core Functional Badges (1-5)</h4>
                     <div class="flex gap-3 flex-wrap">
-                        <span class="badge" style="background: var(--primary-tint); color: var(--text-on-primary); border-color: var(--primary-tint);">Primary Badge</span>
-                        <span class="badge" style="background: var(--secondary-tint); color: var(--text-on-secondary); border-color: var(--secondary-tint);">Secondary Badge</span>
-                        <span class="badge" style="background: var(--tertiary-tint); color: var(--text-on-tertiary); border-color: var(--tertiary-tint);">Tertiary Badge</span>
-                        <span class="badge" style="background: var(--quaternary-tint); color: var(--text-on-quaternary); border-color: var(--quaternary-tint);">Quaternary Badge</span>
-                        <span class="badge" style="background: var(--quinary-tint); color: var(--text-on-quinary); border-color: var(--quinary-tint);">Quinary Badge</span>
+                        <span class="badge" style="background: var(--primary-tint);border-color: var(--primary-tint);">Primary Badge</span>
+                        <span class="badge" style="background: var(--secondary-tint); border-color: var(--secondary-tint);">Secondary Badge</span>
+                        <span class="badge" style="background: var(--tertiary-tint); border-color: var(--tertiary-tint);">Tertiary Badge</span>
+                        <span class="badge" style="background: var(--quaternary-tint); border-color: var(--quaternary-tint);">Quaternary Badge</span>
+                        <span class="badge" style="background: var(--quinary-tint); border-color: var(--quinary-tint);">Quinary Badge</span>
                     </div>
                 </div>
 
@@ -713,7 +713,7 @@
                         <span class="badge badge-danger">Septenary Danger</span>
                         <span class="badge badge-info">Octonary Info</span>
                         <span class="badge badge-neutral">Nonary Warning</span>
-                        <span class="badge" style="background: var(--denary-tint); color: var(--text-on-denary); border-color: var(--denary-tint);">Denary Text</span>
+                        <span class="badge" style="background: var(--denary-tint); border-color: var(--denary-tint);">Denary Text</span>
                     </div>
                 </div>
             </div>
@@ -725,101 +725,101 @@
             <div class="grid grid-cols-5 gap-4">
                 <!-- Primary Column -->
                 <div class="p-4" style="background: var(--bg-primary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-primary-subtle);">
-                    <h5 style="color: var(--text-primary);">Primary</h5>
+                    <h5>Primary</h5>
                     <div class="flex flex-col gap-2">
                         <button class="btn btn-primary" style="font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-primary-base); border-color: var(--border-primary-base); color: var(--text-on-primary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
-                        <span class="badge" style="background: var(--primary-highlight); color: var(--text-on-primary); border-color: var(--primary-highlight); font-size: 0.625rem;">Badge</span>
+                        <div class="form-input" style="background: var(--bg-primary-base); border-color: var(--border-primary-base); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--primary-highlight); border-color: var(--primary-highlight); font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
 
                 <!-- Secondary Column -->
                 <div class="p-4" style="background: var(--bg-secondary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-secondary-subtle);">
-                    <h5 style="color: var(--text-primary);">Secondary</h5>
+                    <h5>Secondary</h5>
                     <div class="flex flex-col gap-2">
                         <button class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-secondary-base); border-color: var(--border-secondary-base); color: var(--text-on-secondary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
-                        <span class="badge" style="background: var(--secondary-highlight); color: var(--text-on-secondary); border-color: var(--secondary-highlight); font-size: 0.625rem;">Badge</span>
+                        <div class="form-input" style="background: var(--bg-secondary-base); border-color: var(--border-secondary-base); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--secondary-highlight); border-color: var(--secondary-highlight); font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
 
                 <!-- Tertiary Column -->
                 <div class="p-4" style="background: var(--bg-tertiary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-tertiary-strong);">
-                    <h5 style="color: var(--text-on-tertiary);">Tertiary</h5>
+                    <h5>Tertiary</h5>
                     <div class="flex flex-col gap-2">
-                        <button class="btn" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border: 1px solid var(--border-tertiary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-tertiary-active); border-color: var(--border-tertiary-base); color: var(--text-on-tertiary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
-                        <span class="badge" style="background: var(--tertiary-highlight); color: var(--text-on-tertiary); border-color: var(--tertiary-highlight); font-size: 0.625rem;">Badge</span>
+                        <button class="btn" style="background: var(--bg-tertiary-base); border: 1px solid var(--border-tertiary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-tertiary-active); border-color: var(--border-tertiary-base);font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--tertiary-highlight); border-color: var(--tertiary-highlight); font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
 
                 <!-- Quaternary Column -->
                 <div class="p-4" style="background: var(--bg-quaternary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-quaternary-subtle);">
-                    <h5 style="color: var(--text-primary);">Quaternary</h5>
+                    <h5>Quaternary</h5>
                     <div class="flex flex-col gap-2">
                         <button class="btn btn-accent" style="font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-quaternary-base); border-color: var(--border-quaternary-base); color: var(--text-on-quaternary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
-                        <span class="badge" style="background: var(--quaternary-highlight); color: var(--text-on-quaternary); border-color: var(--quaternary-highlight); font-size: 0.625rem;">Badge</span>
+                        <div class="form-input" style="background: var(--bg-quaternary-base); border-color: var(--border-quaternary-base); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--quaternary-highlight); border-color: var(--quaternary-highlight); font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
 
                 <!-- Quinary Column -->
                 <div class="p-4" style="background: var(--bg-quinary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-quinary-subtle);">
-                    <h5 style="color: var(--text-primary);">Quinary</h5>
+                    <h5>Quinary</h5>
                     <div class="flex flex-col gap-2">
                         <button class="btn btn-emphasis" style="font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-quinary-base); border-color: var(--border-quinary-base); color: var(--text-on-quinary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
-                        <span class="badge" style="background: var(--quinary-highlight); color: var(--text-on-quinary); border-color: var(--quinary-highlight); font-size: 0.625rem;">Badge</span>
+                        <div class="form-input" style="background: var(--bg-quinary-base); border-color: var(--border-quinary-base); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--quinary-highlight); border-color: var(--quinary-highlight); font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
 
                 <!-- Senary Column -->
                 <div class="p-4" style="background: var(--bg-senary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-senary-subtle);">
-                    <h5 style="color: var(--text-primary);">Senary</h5>
+                    <h5>Senary</h5>
                     <div class="flex flex-col gap-2">
-                        <button class="btn" style="background: var(--bg-senary-base); color: var(--text-on-senary); border: 1px solid var(--border-senary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-senary-base); border-color: var(--border-senary-base); color: var(--text-on-senary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <button class="btn" style="background: var(--bg-senary-base); border: 1px solid var(--border-senary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-senary-base); border-color: var(--border-senary-base); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
                         <span class="badge badge-utility" style="font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
 
                 <!-- Septenary Column -->
                 <div class="p-4" style="background: var(--bg-septenary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-septenary-subtle);">
-                    <h5 style="color: var(--text-primary);">Septenary</h5>
+                    <h5>Septenary</h5>
                     <div class="flex flex-col gap-2">
-                        <button class="btn" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border: 1px solid var(--border-septenary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-septenary-base); border-color: var(--border-septenary-base); color: var(--text-on-septenary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <button class="btn" style="background: var(--bg-septenary-base); border: 1px solid var(--border-septenary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-septenary-base); border-color: var(--border-septenary-base); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
                         <span class="badge badge-danger" style="font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
 
                 <!-- Octonary Column -->
                 <div class="p-4" style="background: var(--bg-octonary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-octonary-subtle);">
-                    <h5 style="color: var(--text-primary);">Octonary</h5>
+                    <h5>Octonary</h5>
                     <div class="flex flex-col gap-2">
-                        <button class="btn" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border: 1px solid var(--border-octonary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-octonary-base); border-color: var(--border-octonary-base); color: var(--text-on-octonary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <button class="btn" style="background: var(--bg-octonary-base); border: 1px solid var(--border-octonary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-octonary-base); border-color: var(--border-octonary-base); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
                         <span class="badge badge-info" style="font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
 
                 <!-- Nonary Column -->
                 <div class="p-4" style="background: var(--bg-nonary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-nonary-subtle);">
-                    <h5 style="color: var(--text-primary);">Nonary</h5>
+                    <h5>Nonary</h5>
                     <div class="flex flex-col gap-2">
-                        <button class="btn" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border: 1px solid var(--border-nonary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-nonary-base); border-color: var(--border-nonary-base); color: var(--text-on-nonary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <button class="btn" style="background: var(--bg-nonary-base); border: 1px solid var(--border-nonary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-nonary-base); border-color: var(--border-nonary-base); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
                         <span class="badge badge-neutral" style="font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
 
                 <!-- Denary Column -->
                 <div class="p-4" style="background: var(--bg-denary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-denary-subtle);">
-                    <h5 style="color: var(--text-primary);">Denary</h5>
+                    <h5>Denary</h5>
                     <div class="flex flex-col gap-2">
-                        <button class="btn" style="background: var(--bg-denary-base); color: var(--text-on-denary); border: 1px solid var(--border-denary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
-                        <div class="form-input" style="background: var(--bg-denary-base); border-color: var(--border-denary-base); color: var(--text-on-denary); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
-                        <span class="badge" style="background: var(--denary-highlight); color: var(--text-on-denary); border-color: var(--denary-highlight); font-size: 0.625rem;">Badge</span>
+                        <button class="btn" style="background: var(--bg-denary-base); border: 1px solid var(--border-denary-base); font-size: 0.75rem; padding: 0.5rem;">Button</button>
+                        <div class="form-input" style="background: var(--bg-denary-base); border-color: var(--border-denary-base); font-size: 0.75rem; padding: 0.5rem;">Input Field</div>
+                        <span class="badge" style="background: var(--denary-highlight); border-color: var(--denary-highlight); font-size: 0.625rem;">Badge</span>
                     </div>
                 </div>
             </div>
@@ -830,34 +830,34 @@
             <h3>Glass Effects - All Colors</h3>
             <div class="grid grid-cols-5 gap-4">
                 <div class="p-4 text-center" style="background: var(--glass-primary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-primary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-primary);">Primary Glass</h6>
+                    <h6>Primary Glass</h6>
                 </div>
                 <div class="p-4 text-center" style="background: var(--glass-secondary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-secondary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-secondary);">Secondary Glass</h6>
+                    <h6>Secondary Glass</h6>
                 </div>
                 <div class="p-4 text-center" style="background: var(--glass-tertiary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-tertiary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-tertiary);">Tertiary Glass</h6>
+                    <h6>Tertiary Glass</h6>
                 </div>
                 <div class="p-4 text-center" style="background: var(--glass-quaternary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-quaternary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-quaternary);">Quaternary Glass</h6>
+                    <h6>Quaternary Glass</h6>
                 </div>
                 <div class="p-4 text-center" style="background: var(--glass-quinary-medium); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-quinary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-quinary);">Quinary Glass</h6>
+                    <h6>Quinary Glass</h6>
                 </div>
                 <div class="p-4 text-center" style="background: var(--senary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-senary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-senary);">Senary Glass</h6>
+                    <h6>Senary Glass</h6>
                 </div>
                 <div class="p-4 text-center" style="background: var(--septenary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-septenary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-septenary);">Septenary Glass</h6>
+                    <h6>Septenary Glass</h6>
                 </div>
                 <div class="p-4 text-center" style="background: var(--octonary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-octonary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-octonary);">Octonary Glass</h6>
+                    <h6>Octonary Glass</h6>
                 </div>
                 <div class="p-4 text-center" style="background: var(--nonary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-nonary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-nonary);">Nonary Glass</h6>
+                    <h6>Nonary Glass</h6>
                 </div>
                 <div class="p-4 text-center" style="background: var(--denary-glass-overlay); backdrop-filter: var(--glass-blur); border: 1px solid var(--border-denary-subtle); border-radius: var(--x-radius-lg);">
-                    <h6 style="color: var(--text-on-denary);">Denary Glass</h6>
+                    <h6>Denary Glass</h6>
                 </div>
             </div>
         </div>
@@ -878,50 +878,50 @@
                 <div class="mb-6">
                     <h4>Primary - Background Layer</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--primary); color: var(--text-on-primary);">Base</div>
-                        <div class="color-swatch" style="background: var(--primary-tint); color: var(--text-on-primary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--primary-highlight); color: var(--text-on-primary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--primary-shade); color: var(--text-on-primary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--primary); ">Base</div>
+                        <div class="color-swatch" style="background: var(--primary-tint); ">Tint</div>
+                        <div class="color-swatch" style="background: var(--primary-highlight); ">Highlight</div>
+                        <div class="color-swatch" style="background: var(--primary-shade); ">Shade</div>
                     </div>
                 </div>
 
                 <div class="mb-6">
                     <h4>Secondary - Foreground/Surface</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--secondary); color: var(--text-on-secondary);">Base</div>
-                        <div class="color-swatch" style="background: var(--secondary-tint); color: var(--text-on-secondary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--secondary-highlight); color: var(--text-on-secondary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--secondary-shade); color: var(--text-on-secondary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--secondary); ">Base</div>
+                        <div class="color-swatch" style="background: var(--secondary-tint); ">Tint</div>
+                        <div class="color-swatch" style="background: var(--secondary-highlight); ">Highlight</div>
+                        <div class="color-swatch" style="background: var(--secondary-shade); ">Shade</div>
                     </div>
                 </div>
 
                 <div class="mb-6">
                     <h4>Tertiary - Borders/Structure</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--tertiary); color: var(--text-on-tertiary);">Base</div>
-                        <div class="color-swatch" style="background: var(--tertiary-tint); color: var(--text-on-tertiary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--tertiary-highlight); color: var(--text-on-tertiary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--tertiary-shade); color: var(--text-on-tertiary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--tertiary);">Base</div>
+                        <div class="color-swatch" style="background: var(--tertiary-tint);">Tint</div>
+                        <div class="color-swatch" style="background: var(--tertiary-highlight);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--tertiary-shade);">Shade</div>
                     </div>
                 </div>
 
                 <div class="mb-6">
                     <h4>Quaternary - Accent</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--quaternary); color: var(--text-on-quaternary);">Base</div>
-                        <div class="color-swatch" style="background: var(--quaternary-tint); color: var(--text-on-quaternary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--quaternary-highlight); color: var(--text-on-quaternary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--quaternary-shade); color: var(--text-on-quaternary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--quaternary);">Base</div>
+                        <div class="color-swatch" style="background: var(--quaternary-tint);">Tint</div>
+                        <div class="color-swatch" style="background: var(--quaternary-highlight);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--quaternary-shade);">Shade</div>
                     </div>
                 </div>
 
                 <div class="mb-6">
                     <h4>Quinary - Emphasis</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--quinary); color: var(--text-on-quinary);">Base</div>
-                        <div class="color-swatch" style="background: var(--quinary-tint); color: var(--text-on-quinary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--quinary-highlight); color: var(--text-on-quinary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--quinary-shade); color: var(--text-on-quinary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--quinary);">Base</div>
+                        <div class="color-swatch" style="background: var(--quinary-tint);">Tint</div>
+                        <div class="color-swatch" style="background: var(--quinary-highlight);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--quinary-shade);">Shade</div>
                     </div>
                 </div>
             </div>
@@ -933,50 +933,50 @@
                 <div class="mb-6">
                     <h4>Senary - Utility Overlay</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--senary); color: var(--text-on-senary);">Base</div>
-                        <div class="color-swatch" style="background: var(--senary-tint); color: var(--text-on-senary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--senary-highlight); color: var(--text-on-senary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--senary-shade); color: var(--text-on-senary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--senary);">Base</div>
+                        <div class="color-swatch" style="background: var(--senary-tint);">Tint</div>
+                        <div class="color-swatch" style="background: var(--senary-highlight);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--senary-shade);">Shade</div>
                     </div>
                 </div>
 
                 <div class="mb-6">
                     <h4>Septenary - Danger</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--septenary); color: var(--text-on-septenary);">Base</div>
-                        <div class="color-swatch" style="background: var(--septenary-tint); color: var(--text-on-septenary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--septenary-highlight); color: var(--text-on-septenary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--septenary-shade); color: var(--text-on-septenary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--septenary);">Base</div>
+                        <div class="color-swatch" style="background: var(--septenary-tint);">Tint</div>
+                        <div class="color-swatch" style="background: var(--septenary-highlight);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--septenary-shade);">Shade</div>
                     </div>
                 </div>
 
                 <div class="mb-6">
                     <h4>Octonary - Info Blue</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--octonary); color: var(--text-on-octonary);">Base</div>
-                        <div class="color-swatch" style="background: var(--octonary-tint); color: var(--text-on-octonary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--octonary-highlight); color: var(--text-on-octonary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--octonary-shade); color: var(--text-on-octonary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--octonary);">Base</div>
+                        <div class="color-swatch" style="background: var(--octonary-tint);">Tint</div>
+                        <div class="color-swatch" style="background: var(--octonary-highlight);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--octonary-shade);">Shade</div>
                     </div>
                 </div>
 
                 <div class="mb-6">
                     <h4>Nonary - Warning/Neutral</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--nonary); color: var(--text-on-nonary);">Base</div>
-                        <div class="color-swatch" style="background: var(--nonary-tint); color: var(--text-on-nonary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--nonary-highlight); color: var(--text-on-nonary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--nonary-shade); color: var(--text-on-nonary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--nonary);">Base</div>
+                        <div class="color-swatch" style="background: var(--nonary-tint);">Tint</div>
+                        <div class="color-swatch" style="background: var(--nonary-highlight);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--nonary-shade);">Shade</div>
                     </div>
                 </div>
 
                 <div class="mb-6">
                     <h4>Denary - Text Anchor</h4>
                     <div class="color-demo">
-                        <div class="color-swatch" style="background: var(--denary); color: var(--text-on-denary);">Base</div>
-                        <div class="color-swatch" style="background: var(--denary-tint); color: var(--text-on-denary);">Tint</div>
-                        <div class="color-swatch" style="background: var(--denary-highlight); color: var(--text-on-denary);">Highlight</div>
-                        <div class="color-swatch" style="background: var(--denary-shade); color: var(--text-on-denary);">Shade</div>
+                        <div class="color-swatch" style="background: var(--denary);">Base</div>
+                        <div class="color-swatch" style="background: var(--denary-tint);">Tint</div>
+                        <div class="color-swatch" style="background: var(--denary-highlight);">Highlight</div>
+                        <div class="color-swatch" style="background: var(--denary-shade);">Shade</div>
                     </div>
                 </div>
             </div>
@@ -998,13 +998,13 @@
                     <div>
                         <h4>Primary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-primary-base); color: var(--text-on-primary); border-radius: var(--x-radius); box-shadow: var(--elevation-primary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-primary-base);  border-radius: var(--x-radius); box-shadow: var(--elevation-primary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-primary-base); color: var(--text-on-primary); border-radius: var(--x-radius); box-shadow: var(--elevation-primary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-primary-base);  border-radius: var(--x-radius); box-shadow: var(--elevation-primary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-primary-base); color: var(--text-on-primary); border-radius: var(--x-radius); box-shadow: var(--elevation-primary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-primary-base);  border-radius: var(--x-radius); box-shadow: var(--elevation-primary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1013,13 +1013,13 @@
                     <div>
                         <h4>Secondary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-secondary-base); color: var(--text-on-secondary); border-radius: var(--x-radius); box-shadow: var(--elevation-secondary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-secondary-base);  border-radius: var(--x-radius); box-shadow: var(--elevation-secondary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-secondary-base); color: var(--text-on-secondary); border-radius: var(--x-radius); box-shadow: var(--elevation-secondary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-secondary-base);  border-radius: var(--x-radius); box-shadow: var(--elevation-secondary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-secondary-base); color: var(--text-on-secondary); border-radius: var(--x-radius); box-shadow: var(--elevation-secondary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-secondary-base);  border-radius: var(--x-radius); box-shadow: var(--elevation-secondary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1028,13 +1028,13 @@
                     <div>
                         <h4>Tertiary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border-radius: var(--x-radius); box-shadow: var(--elevation-tertiary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-tertiary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-tertiary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border-radius: var(--x-radius); box-shadow: var(--elevation-tertiary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-tertiary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-tertiary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-tertiary-base); color: var(--text-on-tertiary); border-radius: var(--x-radius); box-shadow: var(--elevation-tertiary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-tertiary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-tertiary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1043,13 +1043,13 @@
                     <div>
                         <h4>Quaternary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-quaternary-base); color: var(--text-on-quaternary); border-radius: var(--x-radius); box-shadow: var(--elevation-quaternary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-quaternary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-quaternary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-quaternary-base); color: var(--text-on-quaternary); border-radius: var(--x-radius); box-shadow: var(--elevation-quaternary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-quaternary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-quaternary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-quaternary-base); color: var(--text-on-quaternary); border-radius: var(--x-radius); box-shadow: var(--elevation-quaternary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-quaternary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-quaternary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1058,13 +1058,13 @@
                     <div>
                         <h4>Quinary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-quinary-base); color: var(--text-on-quinary); border-radius: var(--x-radius); box-shadow: var(--elevation-quinary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-quinary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-quinary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-quinary-base); color: var(--text-on-quinary); border-radius: var(--x-radius); box-shadow: var(--elevation-quinary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-quinary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-quinary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-quinary-base); color: var(--text-on-quinary); border-radius: var(--x-radius); box-shadow: var(--elevation-quinary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-quinary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-quinary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1079,13 +1079,13 @@
                     <div>
                         <h4>Senary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-senary-base); color: var(--text-on-senary); border-radius: var(--x-radius); box-shadow: var(--elevation-senary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-senary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-senary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-senary-base); color: var(--text-on-senary); border-radius: var(--x-radius); box-shadow: var(--elevation-senary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-senary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-senary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-senary-base); color: var(--text-on-senary); border-radius: var(--x-radius); box-shadow: var(--elevation-senary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-senary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-senary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1094,13 +1094,13 @@
                     <div>
                         <h4>Septenary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border-radius: var(--x-radius); box-shadow: var(--elevation-septenary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-septenary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-septenary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border-radius: var(--x-radius); box-shadow: var(--elevation-septenary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-septenary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-septenary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-septenary-base); color: var(--text-on-septenary); border-radius: var(--x-radius); box-shadow: var(--elevation-septenary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-septenary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-septenary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1109,13 +1109,13 @@
                     <div>
                         <h4>Octonary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border-radius: var(--x-radius); box-shadow: var(--elevation-octonary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-octonary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-octonary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border-radius: var(--x-radius); box-shadow: var(--elevation-octonary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-octonary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-octonary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-octonary-base); color: var(--text-on-octonary); border-radius: var(--x-radius); box-shadow: var(--elevation-octonary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-octonary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-octonary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1124,13 +1124,13 @@
                     <div>
                         <h4>Nonary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border-radius: var(--x-radius); box-shadow: var(--elevation-nonary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-nonary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-nonary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border-radius: var(--x-radius); box-shadow: var(--elevation-nonary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-nonary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-nonary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-nonary-base); color: var(--text-on-nonary); border-radius: var(--x-radius); box-shadow: var(--elevation-nonary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-nonary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-nonary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1139,13 +1139,13 @@
                     <div>
                         <h4>Denary Elevations</h4>
                         <div class="flex gap-4 items-end">
-                            <div class="p-4 text-center" style="background: var(--bg-denary-base); color: var(--text-on-denary); border-radius: var(--x-radius); box-shadow: var(--elevation-denary-sm);">
+                            <div class="p-4 text-center" style="background: var(--bg-denary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-denary-sm);">
                                 <div class="text-sm">Small</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-denary-base); color: var(--text-on-denary); border-radius: var(--x-radius); box-shadow: var(--elevation-denary-md);">
+                            <div class="p-4 text-center" style="background: var(--bg-denary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-denary-md);">
                                 <div class="text-sm">Medium</div>
                             </div>
-                            <div class="p-4 text-center" style="background: var(--bg-denary-base); color: var(--text-on-denary); border-radius: var(--x-radius); box-shadow: var(--elevation-denary-lg);">
+                            <div class="p-4 text-center" style="background: var(--bg-denary-base); border-radius: var(--x-radius); box-shadow: var(--elevation-denary-lg);">
                                 <div class="text-sm">Large</div>
                             </div>
                         </div>
@@ -1168,15 +1168,15 @@
             <div class="grid grid-cols-1 gap-6">
                 <!-- Primary Form -->
                 <div class="card card-primary p-6">
-                    <h4 style="color: var(--text-primary);">Primary Form Theme</h4>
+                    <h4 >Primary Form Theme</h4>
                     <form class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Primary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-primary-active); border-color: var(--border-primary-base); color: var(--text-primary);" placeholder="Primary themed input">
+                            <label class="block mb-2" >Primary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-primary-active); border-color: var(--border-primary-base); " placeholder="Primary themed input">
                         </div>
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Primary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-primary-active); border-color: var(--border-primary-base); color: var(--text-primary);">
+                            <label class="block mb-2" >Primary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-primary-active); border-color: var(--border-primary-base); ">
                                 <option>Primary Option 1</option>
                                 <option>Primary Option 2</option>
                             </select>
@@ -1186,15 +1186,15 @@
 
                 <!-- Secondary Form -->
                 <div class="card card-secondary p-6">
-                    <h4 style="color: var(--text-primary);">Secondary Form Theme</h4>
+                    <h4 >Secondary Form Theme</h4>
                     <form class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Secondary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-secondary-active); border-color: var(--border-secondary-base); color: var(--text-primary);" placeholder="Secondary themed input">
+                            <label class="block mb-2" >Secondary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-secondary-active); border-color: var(--border-secondary-base); " placeholder="Secondary themed input">
                         </div>
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Secondary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-secondary-active); border-color: var(--border-secondary-base); color: var(--text-primary);">
+                            <label class="block mb-2" >Secondary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-secondary-active); border-color: var(--border-secondary-base); ">
                                 <option>Secondary Option 1</option>
                                 <option>Secondary Option 2</option>
                             </select>
@@ -1208,11 +1208,11 @@
                     <form class="grid grid-cols-2 gap-4">
                         <div>
                             <label class="block mb-2" style="color: var(--text-on-tertiary);">Tertiary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-tertiary-active); border-color: var(--border-tertiary-strong); color: var(--text-on-tertiary);" placeholder="Tertiary themed input">
+                            <input type="text" class="form-input full-width" style="background: var(--bg-tertiary-active); border-color: var(--border-tertiary-strong);" placeholder="Tertiary themed input">
                         </div>
                         <div>
                             <label class="block mb-2" style="color: var(--text-on-tertiary);">Tertiary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-tertiary-active); border-color: var(--border-tertiary-strong); color: var(--text-on-tertiary);">
+                            <select class="form-input full-width" style="background: var(--bg-tertiary-active); border-color: var(--border-tertiary-strong);">
                                 <option>Tertiary Option 1</option>
                                 <option>Tertiary Option 2</option>
                             </select>
@@ -1222,15 +1222,15 @@
 
                 <!-- Quaternary Form -->
                 <div class="card card-accent p-6">
-                    <h4 style="color: var(--text-primary);">Quaternary Form Theme</h4>
+                    <h4 >Quaternary Form Theme</h4>
                     <form class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Quaternary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-quaternary-active); border-color: var(--border-quaternary-base); color: var(--text-primary);" placeholder="Quaternary themed input">
+                            <label class="block mb-2" >Quaternary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-quaternary-active); border-color: var(--border-quaternary-base); " placeholder="Quaternary themed input">
                         </div>
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Quaternary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-quaternary-active); border-color: var(--border-quaternary-base); color: var(--text-primary);">
+                            <label class="block mb-2" >Quaternary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-quaternary-active); border-color: var(--border-quaternary-base); ">
                                 <option>Quaternary Option 1</option>
                                 <option>Quaternary Option 2</option>
                             </select>
@@ -1240,15 +1240,15 @@
 
                 <!-- Quinary Form -->
                 <div class="card card-emphasis p-6">
-                    <h4 style="color: var(--text-primary);">Quinary Form Theme</h4>
+                    <h4 >Quinary Form Theme</h4>
                     <form class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Quinary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-quinary-active); border-color: var(--border-quinary-base); color: var(--text-primary);" placeholder="Quinary themed input">
+                            <label class="block mb-2" >Quinary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-quinary-active); border-color: var(--border-quinary-base); " placeholder="Quinary themed input">
                         </div>
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Quinary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-quinary-active); border-color: var(--border-quinary-base); color: var(--text-primary);">
+                            <label class="block mb-2" >Quinary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-quinary-active); border-color: var(--border-quinary-base); ">
                                 <option>Quinary Option 1</option>
                                 <option>Quinary Option 2</option>
                             </select>
@@ -1264,15 +1264,15 @@
             <div class="grid grid-cols-1 gap-6">
                 <!-- Senary Form -->
                 <div class="card" style="background: var(--bg-senary-subtle); border: 1px solid var(--border-senary-subtle); box-shadow: var(--elevation-senary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
-                    <h4 style="color: var(--text-primary);">Senary Form Theme</h4>
+                    <h4 >Senary Form Theme</h4>
                     <form class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Senary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-senary-active); border-color: var(--border-senary-base); color: var(--text-primary);" placeholder="Senary themed input">
+                            <label class="block mb-2" >Senary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-senary-active); border-color: var(--border-senary-base); " placeholder="Senary themed input">
                         </div>
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Senary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-senary-active); border-color: var(--border-senary-base); color: var(--text-primary);">
+                            <label class="block mb-2" >Senary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-senary-active); border-color: var(--border-senary-base); ">
                                 <option>Senary Option 1</option>
                                 <option>Senary Option 2</option>
                             </select>
@@ -1282,15 +1282,15 @@
 
                 <!-- Septenary Form -->
                 <div class="card" style="background: var(--bg-septenary-subtle); border: 1px solid var(--border-septenary-subtle); box-shadow: var(--elevation-septenary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
-                    <h4 style="color: var(--text-primary);">Septenary Form Theme</h4>
+                    <h4 >Septenary Form Theme</h4>
                     <form class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Septenary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-septenary-active); border-color: var(--border-septenary-base); color: var(--text-primary);" placeholder="Septenary themed input">
+                            <label class="block mb-2" >Septenary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-septenary-active); border-color: var(--border-septenary-base); " placeholder="Septenary themed input">
                         </div>
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Septenary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-septenary-active); border-color: var(--border-septenary-base); color: var(--text-primary);">
+                            <label class="block mb-2" >Septenary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-septenary-active); border-color: var(--border-septenary-base); ">
                                 <option>Septenary Option 1</option>
                                 <option>Septenary Option 2</option>
                             </select>
@@ -1300,15 +1300,15 @@
 
                 <!-- Octonary Form -->
                 <div class="card" style="background: var(--bg-octonary-subtle); border: 1px solid var(--border-octonary-subtle); box-shadow: var(--elevation-octonary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
-                    <h4 style="color: var(--text-primary);">Octonary Form Theme</h4>
+                    <h4 >Octonary Form Theme</h4>
                     <form class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Octonary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-octonary-active); border-color: var(--border-octonary-base); color: var(--text-primary);" placeholder="Octonary themed input">
+                            <label class="block mb-2" >Octonary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-octonary-active); border-color: var(--border-octonary-base); " placeholder="Octonary themed input">
                         </div>
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Octonary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-octonary-active); border-color: var(--border-octonary-base); color: var(--text-primary);">
+                            <label class="block mb-2" >Octonary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-octonary-active); border-color: var(--border-octonary-base); ">
                                 <option>Octonary Option 1</option>
                                 <option>Octonary Option 2</option>
                             </select>
@@ -1318,15 +1318,15 @@
 
                 <!-- Nonary Form -->
                 <div class="card" style="background: var(--bg-nonary-subtle); border: 1px solid var(--border-nonary-subtle); box-shadow: var(--elevation-nonary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
-                    <h4 style="color: var(--text-primary);">Nonary Form Theme</h4>
+                    <h4 >Nonary Form Theme</h4>
                     <form class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Nonary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-nonary-active); border-color: var(--border-nonary-base); color: var(--text-primary);" placeholder="Nonary themed input">
+                            <label class="block mb-2" >Nonary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-nonary-active); border-color: var(--border-nonary-base); " placeholder="Nonary themed input">
                         </div>
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Nonary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-nonary-active); border-color: var(--border-nonary-base); color: var(--text-primary);">
+                            <label class="block mb-2" >Nonary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-nonary-active); border-color: var(--border-nonary-base); ">
                                 <option>Nonary Option 1</option>
                                 <option>Nonary Option 2</option>
                             </select>
@@ -1336,15 +1336,15 @@
 
                 <!-- Denary Form -->
                 <div class="card" style="background: var(--bg-denary-subtle); border: 1px solid var(--border-denary-subtle); box-shadow: var(--elevation-denary-sm); border-radius: var(--x-radius); padding: 1.5rem;">
-                    <h4 style="color: var(--text-primary);">Denary Form Theme</h4>
+                    <h4 >Denary Form Theme</h4>
                     <form class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Denary Input</label>
-                            <input type="text" class="form-input full-width" style="background: var(--bg-denary-active); border-color: var(--border-denary-base); color: var(--text-primary);" placeholder="Denary themed input">
+                            <label class="block mb-2" >Denary Input</label>
+                            <input type="text" class="form-input full-width" style="background: var(--bg-denary-active); border-color: var(--border-denary-base); " placeholder="Denary themed input">
                         </div>
                         <div>
-                            <label class="block mb-2" style="color: var(--text-primary);">Denary Select</label>
-                            <select class="form-input full-width" style="background: var(--bg-denary-active); border-color: var(--border-denary-base); color: var(--text-primary);">
+                            <label class="block mb-2" >Denary Select</label>
+                            <select class="form-input full-width" style="background: var(--bg-denary-active); border-color: var(--border-denary-base); ">
                                 <option>Denary Option 1</option>
                                 <option>Denary Option 2</option>
                             </select>
@@ -1361,24 +1361,24 @@
 
             <div class="grid grid-cols-2 gap-6">
                 <div class="p-6" style="background: var(--bg-primary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-primary-subtle);">
-                    <h4 style="color: var(--text-primary);">Focus Ring Examples</h4>
+                    <h4 >Focus Ring Examples</h4>
                     <div class="grid gap-4">
-                        <input type="text" placeholder="Primary Focus" style="padding: 0.75rem; border: 1px solid var(--border-primary-base); border-radius: var(--x-radius); background: var(--bg-primary-active); color: var(--text-primary); box-shadow: var(--focus-ring-primary);">
-                        <input type="text" placeholder="Secondary Focus" style="padding: 0.75rem; border: 1px solid var(--border-secondary-base); border-radius: var(--x-radius); background: var(--bg-secondary-active); color: var(--text-primary); box-shadow: var(--focus-ring-secondary);">
-                        <input type="text" placeholder="Tertiary Focus" style="padding: 0.75rem; border: 1px solid var(--border-tertiary-base); border-radius: var(--x-radius); background: var(--bg-tertiary-active); color: var(--text-on-tertiary); box-shadow: var(--focus-ring-tertiary);">
-                        <input type="text" placeholder="Quaternary Focus" style="padding: 0.75rem; border: 1px solid var(--border-quaternary-base); border-radius: var(--x-radius); background: var(--bg-quaternary-active); color: var(--text-primary); box-shadow: var(--focus-ring-quaternary);">
-                        <input type="text" placeholder="Quinary Focus" style="padding: 0.75rem; border: 1px solid var(--border-quinary-base); border-radius: var(--x-radius); background: var(--bg-quinary-active); color: var(--text-primary); box-shadow: var(--focus-ring-quinary);">
+                        <input type="text" placeholder="Primary Focus" style="padding: 0.75rem; border: 1px solid var(--border-primary-base); border-radius: var(--x-radius); background: var(--bg-primary-active);  box-shadow: var(--focus-ring-primary);">
+                        <input type="text" placeholder="Secondary Focus" style="padding: 0.75rem; border: 1px solid var(--border-secondary-base); border-radius: var(--x-radius); background: var(--bg-secondary-active);  box-shadow: var(--focus-ring-secondary);">
+                        <input type="text" placeholder="Tertiary Focus" style="padding: 0.75rem; border: 1px solid var(--border-tertiary-base); border-radius: var(--x-radius); background: var(--bg-tertiary-active); box-shadow: var(--focus-ring-tertiary);">
+                        <input type="text" placeholder="Quaternary Focus" style="padding: 0.75rem; border: 1px solid var(--border-quaternary-base); border-radius: var(--x-radius); background: var(--bg-quaternary-active);  box-shadow: var(--focus-ring-quaternary);">
+                        <input type="text" placeholder="Quinary Focus" style="padding: 0.75rem; border: 1px solid var(--border-quinary-base); border-radius: var(--x-radius); background: var(--bg-quinary-active);  box-shadow: var(--focus-ring-quinary);">
                     </div>
                 </div>
 
                 <div class="p-6" style="background: var(--bg-secondary-subtle); border-radius: var(--x-radius); border: 1px solid var(--border-secondary-subtle);">
-                    <h4 style="color: var(--text-primary);">Extended Focus Rings</h4>
+                    <h4 >Extended Focus Rings</h4>
                     <div class="grid gap-4">
-                        <input type="text" placeholder="Senary Focus" style="padding: 0.75rem; border: 1px solid var(--border-senary-base); border-radius: var(--x-radius); background: var(--bg-senary-active); color: var(--text-primary); box-shadow: var(--focus-ring-senary);">
-                        <input type="text" placeholder="Septenary Focus" style="padding: 0.75rem; border: 1px solid var(--border-septenary-base); border-radius: var(--x-radius); background: var(--bg-septenary-active); color: var(--text-primary); box-shadow: var(--focus-ring-septenary);">
-                        <input type="text" placeholder="Octonary Focus" style="padding: 0.75rem; border: 1px solid var(--border-octonary-base); border-radius: var(--x-radius); background: var(--bg-octonary-active); color: var(--text-primary); box-shadow: var(--focus-ring-octonary);">
-                        <input type="text" placeholder="Nonary Focus" style="padding: 0.75rem; border: 1px solid var(--border-nonary-base); border-radius: var(--x-radius); background: var(--bg-nonary-active); color: var(--text-primary); box-shadow: var(--focus-ring-nonary);">
-                        <input type="text" placeholder="Denary Focus" style="padding: 0.75rem; border: 1px solid var(--border-denary-base); border-radius: var(--x-radius); background: var(--bg-denary-active); color: var(--text-primary); box-shadow: var(--focus-ring-denary);">
+                        <input type="text" placeholder="Senary Focus" style="padding: 0.75rem; border: 1px solid var(--border-senary-base); border-radius: var(--x-radius); background: var(--bg-senary-active);  box-shadow: var(--focus-ring-senary);">
+                        <input type="text" placeholder="Septenary Focus" style="padding: 0.75rem; border: 1px solid var(--border-septenary-base); border-radius: var(--x-radius); background: var(--bg-septenary-active);  box-shadow: var(--focus-ring-septenary);">
+                        <input type="text" placeholder="Octonary Focus" style="padding: 0.75rem; border: 1px solid var(--border-octonary-base); border-radius: var(--x-radius); background: var(--bg-octonary-active);  box-shadow: var(--focus-ring-octonary);">
+                        <input type="text" placeholder="Nonary Focus" style="padding: 0.75rem; border: 1px solid var(--border-nonary-base); border-radius: var(--x-radius); background: var(--bg-nonary-active);  box-shadow: var(--focus-ring-nonary);">
+                        <input type="text" placeholder="Denary Focus" style="padding: 0.75rem; border: 1px solid var(--border-denary-base); border-radius: var(--x-radius); background: var(--bg-denary-active);  box-shadow: var(--focus-ring-denary);">
                     </div>
                 </div>
             </div>
