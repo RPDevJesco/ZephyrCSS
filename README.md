@@ -2,6 +2,36 @@
 
 A comprehensive, semantic color system that scales from 1 essential color to 10 extended colors, providing everything you need for modern web interfaces.
 
+## ✨ What's New in v2.0
+
+### OKLCH Color Foundation
+ZephyrCSS now uses the modern OKLCH color space as its foundation, providing:
+- **Perceptually uniform colors** - More natural color transitions
+- **Better dark mode support** - Automatic lightness inversion
+- **Enhanced color manipulation** - Precise control over hue, chroma, and lightness
+- **Future-proof architecture** - Built on cutting-edge CSS standards
+
+### Semantic Aliases
+Use intent-based names alongside priority-based names:
+```css
+/* Both work! */
+--success: var(--quinary);     /* Semantic name */
+--quinary: /* ... */;          /* Priority name */
+```
+
+### Multi-Theme Support
+Switch between multiple pre-built themes at runtime:
+```html
+<html data-theme="enchanted-forest">  <!-- Default -->
+<html data-theme="ocean-breeze">      <!-- Cool blues -->
+<html data-theme="sunset-warmth">     <!-- Warm sunset -->
+<html data-theme="lively-spring">     <!-- Fresh greens -->
+<html data-theme="monochrome-pro">    <!-- Professional grayscale -->
+```
+
+### Automatic Dark Mode
+Respects system preferences with `prefers-color-scheme: dark` - no configuration needed!
+
 ## 🎨 Philosophy: Visual Harmony Over Logical Order
 
 One of the key insights in developing this framework was discovering that **visual harmony doesn't always follow logical color order**. When building color palettes, the temptation is to arrange colors in a sequential, logical progression. However, we found that creating truly harmonious palettes requires a more thoughtful approach to color relationships.
@@ -30,6 +60,27 @@ Instead of following a strict chromatic progression, these colors were selected 
 
 ## 🏗️ Architecture
 
+### Modern OKLCH Foundation
+
+ZephyrCSS v2.0 is built on OKLCH (Oklab Lightness Chroma Hue), providing superior color manipulation:
+
+```css
+/* Instead of hex values: */
+--primary: #264653;
+
+/* We now define components: */
+--primary-l: 35%;    /* Lightness */
+--primary-c: 0.05;   /* Chroma (saturation) */
+--primary-h: 196;    /* Hue (0-360) */
+--primary: oklch(var(--primary-l) var(--primary-c) var(--primary-h));
+```
+
+**Benefits:**
+- **Dark mode**: Simply invert lightness values automatically
+- **Consistency**: Perceptually uniform color space
+- **Control**: Adjust saturation globally by tweaking chroma
+- **Predictability**: More intuitive color relationships
+
 ### Dual-Mode System
 
 The framework operates in two modes:
@@ -47,21 +98,69 @@ Toggle between modes using the `data-palette` attribute:
 <html data-palette="10">
 ```
 
+### Theme System
+
+Switch between pre-built themes or create your own:
+
+```html
+<!-- Use a pre-built theme -->
+<html data-theme="ocean-breeze" data-palette="10">
+
+<!-- Or use default theme -->
+<html data-palette="10">
+```
+
+**Available Themes:**
+- `enchanted-forest` (default) - Earthy teal and warm accents
+- `ocean-breeze` - Cool blues with aqua accents
+- `sunset-warmth` - Warm sunset purples and oranges
+- `lively-spring` - Fresh spring greens
+- `monochrome-pro` - Professional grayscale with subtle blue undertones
+
 ### Color Hierarchy & Semantic Roles
 
+ZephyrCSS uses **priority-based naming** (Primary → Denary) where colors are ordered by visual prominence, not chromatic sequence. This represents "most visible → least visible" in typical UI layouts.
+
 #### Core Colors (1-5)
-1. **Primary** (`#264653`) - Main background layer, foundational UI elements
-2. **Secondary** (`#E9C46A`) - Foreground/surface accent, elevated content
-3. **Tertiary** (`#287271`) - Borders/structure, form elements, dividers
-4. **Quaternary** (`#EFB366`) - Calm accent, secondary actions, info states
-5. **Quinary** (`#2A9D8F`) - Emphasis/positive tone, CTAs, success states
+1. **Primary** - Main background layer, foundational UI elements
+2. **Secondary** - Foreground/surface accent, elevated content
+3. **Tertiary** - Borders/structure, form elements, dividers
+4. **Quaternary** - Calm accent, secondary actions, info states
+5. **Quinary** - Emphasis/positive tone, CTAs, success states
 
 #### Extended Colors (6-10)
-6. **Senary** (`#F4A261`) - Utility overlay, tooltips, helper content
-7. **Septenary** (`#8AB17D`) - Danger/warning states, destructive actions
-8. **Octonary** (`#EE8959`) - Info states, notifications, guidance
-9. **Nonary** (`#BABB74`) - Neutral accent, pending states, subtle emphasis
-10. **Denary** (`#E76F51`) - Text anchor, readable text on light backgrounds
+6. **Senary** - Utility overlay, tooltips, helper content
+7. **Septenary** - Danger/warning states, destructive actions
+8. **Octonary** - Info states, notifications, guidance
+9. **Nonary** - Neutral accent, pending states, subtle emphasis
+10. **Denary** - Text anchor, readable text on light backgrounds
+
+### Semantic Aliases (New in v2.0!)
+
+Use intent-based names for better code readability:
+
+```css
+/* Priority-based (original) */
+--quinary: oklch(60% 0.10 175);
+--septenary: oklch(65% 0.09 130);
+--octonary: oklch(68% 0.16 40);
+--nonary: oklch(70% 0.08 95);
+
+/* Semantic aliases (new) */
+--success: var(--quinary);
+--danger: var(--septenary);
+--info: var(--octonary);
+--warning: var(--nonary);
+--neutral: var(--tertiary);
+--accent: var(--quaternary);
+```
+
+**Use whichever naming makes sense for your context:**
+```css
+/* Both are valid! */
+.alert-success { background: var(--bg-success-base); }
+.alert-success { background: var(--bg-quinary-base); }
+```
 
 #### Using a 1 to 3 color palette
 
@@ -141,41 +240,73 @@ Example usage:
 
 ```
 ZephyrCSS/
-├── token.css                  # Core color definitions
-├── color_token.css            # Override Core color definitions & mode switching
-├── color_tints_shades.css     # Automatic color variations
-├── colors.css                 # Complete component color system
-├── layout.css                 # Layout utilities & grid system
-├── site.css                   # Main import file
+├── css/
+│   ├── token_oklch.css        # OKLCH color foundation (NEW)
+│   ├── themes.css             # Pre-built theme system (NEW)
+│   ├── semantic_aliases.css   # Intent-based color names (NEW)
+│   ├── token.css              # Legacy hex color definitions (maintained)
+│   ├── color_token.css        # Color overrides & mode switching
+│   ├── color_tints_shades.css # Automatic color variations
+│   ├── colors.css             # Complete component color system
+│   ├── layout.css             # Layout utilities & grid system
+│   └── site.css               # Main import file with layer architecture
 └── index.html                 # Complete showcase & documentation
+```
+
+### Import Order & Layers
+
+The framework uses CSS `@layer` for organized customization:
+
+```css
+@layer themes, semantic-aliases, override, dual;
+
+1. token_oklch.css     → OKLCH foundation
+2. themes.css          → Named theme variants
+3. semantic_aliases.css → Intent-based names
+4. token.css           → Legacy compatibility (layer: dual)
+5. color_token.css     → Color overrides
+6. color_tints_shades.css → Variations
+7. colors.css          → Component tokens
+8. layout.css          → Layout system
 ```
 
 ## 🚀 Quick Start
 
 1. **Include the framework:**
 ```html
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="css/site.css">
 ```
 
-2. **Set your preferred mode:**
+2. **Set your preferred mode and theme:**
 ```html
-<html data-palette="10"> <!-- or data-palette="5" -->
+<html data-palette="10" data-theme="enchanted-forest">
+<!-- Palette: "5" or "10" -->
+<!-- Theme: "enchanted-forest", "ocean-breeze", "sunset-warmth", etc. -->
 ```
 
-3. **Use semantic color classes:**
+3. **Use semantic color classes (now with aliases!):**
 ```html
-<!-- Cards -->
+<!-- Cards with priority-based names -->
 <div class="card card-primary p-6">
     <h3>Primary Content</h3>
     <button class="btn btn-emphasis">Action</button>
 </div>
 
-<!-- Status alerts -->
-<div class="alert alert-success">Success message</div>
-<div class="alert alert-warning">Warning message</div>
+<!-- Status alerts with semantic names -->
+<div style="background: var(--bg-success-base)">Success message</div>
+<div style="background: var(--bg-danger-base)">Error message</div>
+<div style="background: var(--bg-warning-base)">Warning message</div>
+<div style="background: var(--bg-info-base)">Info message</div>
 
-<!-- Form elements -->
-<input class="form-input" type="text" placeholder="Styled input">
+<!-- Both naming conventions work -->
+<button style="background: var(--quinary)">Success Button</button>
+<button style="background: var(--success)">Success Button (same!)</button>
+```
+
+4. **Dark mode works automatically:**
+```css
+/* No configuration needed! */
+/* Framework respects prefers-color-scheme: dark */
 ```
 
 ## 🎨 Real-World Usage Examples
@@ -257,23 +388,72 @@ This approach led to the much more cohesive "Enchanted Forest Hues" palette we u
 
 ## 🔧 Customization
 
-### Creating Your Own Palette
+### Creating Your Own Theme
 
-To adapt this framework with your own colors:
+With the new theme system, creating custom themes is easier:
+
+```css
+/* In themes.css or your own override file */
+@layer themes {
+    :root[data-theme="my-brand"] {
+        /* Define OKLCH components */
+        --primary-l: 40%;
+        --primary-c: 0.12;
+        --primary-h: 280;
+        
+        --secondary-l: 75%;
+        --secondary-c: 0.15;
+        --secondary-h: 50;
+        
+        /* ... define all 10 colors */
+    }
+}
+```
+
+Then use your theme:
+```html
+<html data-theme="my-brand" data-palette="10">
+```
+
+### Creating Your Own Palette (Legacy Method)
+
+To adapt this framework with your own colors using the legacy system:
 
 1. **Replace the color values** in `color_token.css`
 2. **Maintain the semantic structure** (don't change the variable names)
 3. **Test all variations** using the included showcase page
 4. **Validate accessibility** with tools like WebAIM Color Contrast Checker
 
+### Advanced Customization with OKLCH
+
+Fine-tune colors by adjusting individual components:
+
+```css
+/* Increase saturation across all colors */
+:root {
+    --primary-c: calc(var(--primary-c) * 1.2);
+    --secondary-c: calc(var(--secondary-c) * 1.2);
+}
+
+/* Create custom dark mode lightness values */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-l: 70%;  /* Lighter in dark mode */
+        --secondary-l: 40%; /* Darker in dark mode */
+    }
+}
+```
+
 ### Extended Customization
 
 The framework is designed to be modular. You can:
 
+- Create new themes in `themes.css`
+- Add semantic aliases in `semantic_aliases.css`
 - Modify tint/shade percentages in `color_tints_shades.css`
 - Add new component variations in `colors.css`
 - Extend the layout system in `layout.css`
-- Create new semantic mappings for your specific use case
+- Override at specific layers using `@layer override`
 
 ## 🎭 Examples & Showcase
 

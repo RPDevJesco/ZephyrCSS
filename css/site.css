@@ -1,9 +1,28 @@
-/* remove layers or re-order to see them all in action  */
-@layer override;
-@layer dual;
+/* ==========================================================================
+   ZephyrCSS - Semantic Theming Framework
+   Layer-based architecture for flexible theme customization
+   ========================================================================== */
 
-@import url('token.css') /* layer(dual)*/;  /*  uncomment the layer to see them in action. Core color palette tokens */
-@import url('color_token.css'); /* Core color palette tokens */
-@import url('color_tints_shades.css'); /* Color shades, tints and highlights */
-@import url('colors.css'); /* Extended color system with variations */
-@import url('layout.css'); /* Layout utilities and grid systems */
+/* Define layer order (first = lowest priority, last = highest priority) */
+@layer base, themes, semantic-aliases, override, dual;
+
+/* OKLCH Foundation - Modern color space for better manipulation */
+@import url('token_oklch.css') layer(base);
+
+/* Theme System - Named themes for runtime switching */
+@import url('themes.css');
+
+/* Semantic Aliases - Intent-based names alongside priority names */
+@import url('semantic_aliases.css');
+
+/* User Customization Layer - Override colors here if needed */
+@import url('color_token.css');
+
+/* Color Variations - Tints, shades, and highlights */
+@import url('color_tints_shades.css');
+
+/* Component Color System - Extended system with variations */
+@import url('colors.css');
+
+/* Layout Utilities - Grid and spacing systems */
+@import url('layout.css');
