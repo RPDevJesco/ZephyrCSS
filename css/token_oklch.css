@@ -1,0 +1,89 @@
+/* ==========================================================================
+   OKLCH Color Foundation
+   Modern color space foundation for better color manipulation and theming
+   Benefits:
+   - Perceptually uniform color space
+   - Easier dark mode (invert lightness)
+   - Better color manipulation
+   - More predictable results
+   ========================================================================== */
+
+:root {
+    /* Neutrals */
+    --white: oklch(100% 0 0);
+    --black: oklch(0% 0 0);
+
+    /* OKLCH Components for each color */
+    /* Primary - Deep teal - Background layer */
+    --primary-l: 35%;
+    --primary-c: 0.05;
+    --primary-h: 196;
+
+    /* Secondary - Warm yellow - Foreground/surface layer */
+    --secondary-l: 80%;
+    --secondary-c: 0.12;
+    --secondary-h: 85;
+
+    /* Tertiary - Teal green - Borders/structure layer */
+    --tertiary-l: 45%;
+    --tertiary-c: 0.08;
+    --tertiary-h: 180;
+
+    /* Quaternary - Soft orange - Accent layer */
+    --quaternary-l: 75%;
+    --quaternary-c: 0.15;
+    --quaternary-h: 70;
+
+    /* Quinary - Aqua green - Emphasis layer */
+    --quinary-l: 60%;
+    --quinary-c: 0.10;
+    --quinary-h: 175;
+
+    /* Senary - Coral orange - Utility overlay */
+    --senary-l: 72%;
+    --senary-c: 0.14;
+    --senary-h: 50;
+
+    /* Septenary - Sage green - Danger/warning */
+    --septenary-l: 65%;
+    --septenary-c: 0.09;
+    --septenary-h: 130;
+
+    /* Octonary - Burnt orange - Info states */
+    --octonary-l: 68%;
+    --octonary-c: 0.16;
+    --octonary-h: 40;
+
+    /* Nonary - Olive green - Neutral accent */
+    --nonary-l: 70%;
+    --nonary-c: 0.08;
+    --nonary-h: 95;
+
+    /* Denary - Terra cotta - Text anchor */
+    --denary-l: 65%;
+    --denary-c: 0.18;
+    --denary-h: 25;
+}
+
+/* ==========================================================================
+   5-TOKEN MODE (Primary–Quinary) — DEFAULT
+   ========================================================================== */
+:root,
+:root[data-palette="5"] {
+    --primary: oklch(var(--primary-l) var(--primary-c) var(--primary-h));
+    --secondary: oklch(var(--secondary-l) var(--secondary-c) var(--secondary-h));
+    --tertiary: oklch(var(--tertiary-l) var(--tertiary-c) var(--tertiary-h));
+    --quaternary: oklch(var(--quaternary-l) var(--quaternary-c) var(--quaternary-h));
+    --quinary: oklch(var(--quinary-l) var(--quinary-c) var(--quinary-h));
+}
+
+/* ==========================================================================
+   10-TOKEN MODE (Primary–Denary) — EXTENDED
+   ========================================================================== */
+:root[data-palette="10"] {
+    --senary: oklch(var(--senary-l) var(--senary-c) var(--senary-h));
+    --septenary: oklch(var(--septenary-l) var(--septenary-c) var(--septenary-h));
+    --octonary: oklch(var(--octonary-l) var(--octonary-c) var(--octonary-h));
+    --nonary: oklch(var(--nonary-l) var(--nonary-c) var(--nonary-h));
+    --denary: oklch(var(--denary-l) var(--denary-c) var(--denary-h));
+}

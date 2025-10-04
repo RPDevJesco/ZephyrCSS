@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Semantic Aliases Layer
+   Provides intent-based names alongside priority-based names
+   Best of both worlds: developers can use either naming convention
+   ========================================================================== */
+
+@layer semantic-aliases {
+    :root {
+        /* State aliases - map to priority-based colors */
+        --success: var(--quinary);
+        --success-l: var(--quinary-l);
+        --success-c: var(--quinary-c);
+        --success-h: var(--quinary-h);
+
+        --danger: var(--septenary);
+        --danger-l: var(--septenary-l);
+        --danger-c: var(--septenary-c);
+        --danger-h: var(--septenary-h);
+
+        --warning: var(--nonary);
+        --warning-l: var(--nonary-l);
+        --warning-c: var(--nonary-c);
+        --warning-h: var(--nonary-h);
+
+        --info: var(--octonary);
+        --info-l: var(--octonary-l);
+        --info-c: var(--octonary-c);
+        --info-h: var(--octonary-h);
+
+        --neutral: var(--tertiary);
+        --neutral-l: var(--tertiary-l);
+        --neutral-c: var(--tertiary-c);
+        --neutral-h: var(--tertiary-h);
+
+        --accent: var(--quaternary);
+        --accent-l: var(--quaternary-l);
+        --accent-c: var(--quaternary-c);
+        --accent-h: var(--quaternary-h);
+
+        --emphasis: var(--quinary);
+        --emphasis-l: var(--quinary-l);
+        --emphasis-c: var(--quinary-c);
+        --emphasis-h: var(--quinary-h);
+
+        /* Tints and shades for semantic colors */
+        --success-tint: color-mix(in oklab, var(--success), white 12%);
+        --success-tint-light: color-mix(in oklab, var(--success), white 25%);
+        --success-highlight: color-mix(in oklab, var(--success), white 44%);
+        --success-subtle: color-mix(in oklab, var(--success), white 60%);
+        --success-shade: color-mix(in oklab, var(--success), black 20%);
+        --success-shade-deep: color-mix(in oklab, var(--success), black 35%);
+
+        --danger-tint: color-mix(in oklab, var(--danger), white 12%);
+        --danger-tint-light: color-mix(in oklab, var(--danger), white 25%);
+        --danger-highlight: color-mix(in oklab, var(--danger), white 44%);
+        --danger-subtle: color-mix(in oklab, var(--danger), white 60%);
+        --danger-shade: color-mix(in oklab, var(--danger), black 20%);
+        --danger-shade-deep: color-mix(in oklab, var(--danger), black 35%);
+
+        --warning-tint: color-mix(in oklab, var(--warning), white 12%);
+        --warning-tint-light: color-mix(in oklab, var(--warning), white 25%);
+        --warning-highlight: color-mix(in oklab, var(--warning), white 44%);
+        --warning-subtle: color-mix(in oklab, var(--warning), white 60%);
+        --warning-shade: color-mix(in oklab, var(--warning), black 20%);
+        --warning-shade-deep: color-mix(in oklab, var(--warning), black 35%);
+
+        --info-tint: color-mix(in oklab, var(--info), white 12%);
+        --info-tint-light: color-mix(in oklab, var(--info), white 25%);
+        --info-highlight: color-mix(in oklab, var(--info), white 44%);
+        --info-subtle: color-mix(in oklab, var(--info), white 60%);
+        --info-shade: color-mix(in oklab, var(--info), black 20%);
+        --info-shade-deep: color-mix(in oklab, var(--info), black 35%);
+
+        /* Background system for semantic colors */
+        --bg-success-base: var(--success);
+        --bg-success-hover: var(--success-tint);
+        --bg-success-active: var(--success-shade);
+        --bg-success-subtle: var(--success-highlight);
+
+        --bg-danger-base: var(--danger);
+        --bg-danger-hover: var(--danger-tint);
+        --bg-danger-active: var(--danger-shade);
+        --bg-danger-subtle: var(--danger-highlight);
+
+        --bg-warning-base: var(--warning);
+        --bg-warning-hover: var(--warning-tint);
+        --bg-warning-active: var(--warning-shade);
+        --bg-warning-subtle: var(--warning-highlight);
+
+        --bg-info-base: var(--info);
+        --bg-info-hover: var(--info-tint);
+        --bg-info-active: var(--info-shade);
+        --bg-info-subtle: var(--info-highlight);
+
+        /* Border system for semantic colors */
+        --border-success-base: var(--success);
+        --border-success-light: var(--success-tint);
+        --border-success-subtle: var(--success-highlight);
+
+        --border-danger-base: var(--danger);
+        --border-danger-light: var(--danger-tint);
+        --border-danger-subtle: var(--danger-highlight);
+
+        --border-warning-base: var(--warning);
+        --border-warning-light: var(--warning-tint);
+        --border-warning-subtle: var(--warning-highlight);
+
+        --border-info-base: var(--info);
+        --border-info-light: var(--info-tint);
+        --border-info-subtle: var(--info-highlight);
+
+        /* Text on semantic backgrounds */
+        --text-on-success: var(--white);
+        --text-on-danger: var(--white);
+        --text-on-warning: var(--white);
+        --text-on-info: var(--white);
+    }
+}

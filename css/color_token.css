@@ -1,54 +1,31 @@
 /**
- This is the root color token that should be modified as it uses CSS3 layer system.
+ * User Customization Override Layer
+ * 
+ * This file is designed for users to override the default theme colors.
+ * You can either:
+ * 1. Define your own OKLCH components and let the system generate variations
+ * 2. Override specific color values directly
+ * 
+ * NOTE: The previous color palettes have been moved to the themes system.
+ * Use data-theme="lively-spring" to access the Lively Spring Spectrum palette.
+ * 
+ * Example customization:
+ * 
+ * @layer override {
+ *     :root {
+ *         --primary-l: 40%;
+ *         --primary-c: 0.12;
+ *         --primary-h: 280;
+ *     }
+ * }
  */
-@layer dual {
-    :root,
-    :root[data-palette="5"] {
-        /* Core palette */
-        --primary: #42047e; /*  Background layer */
-        --secondary: #07f49e; /*  Foreground/surface layer */
-        --tertiary: transparent; /*  Borders/structure layer */
-        --quaternary: transparent; /*  Accent layer */
-        --quinary: transparent; /*  Emphasis layer */
-    }
-
-    /* ==========================================================================
-       10‑TOKEN MODE (Primary–Denary) — EXTENDED
-       Adds: Senary (utility), Septenary (danger), Octonary (info),
-             Nonary (neutral/warning), Denary (explicit text anchor)
-       ========================================================================== */
-    :root[data-palette="10"] {
-        /* Enhancers / semantics */
-        --senary: transparent; /* utility overlay */
-        --septenary: transparent; /* danger */
-        --octonary: transparent; /* info (blue) */
-        --nonary: transparent; /* warning / neutral accent */
-        --denary: transparent; /* text anchor on light surfaces */
-    }
-}
 
 @layer override {
-    :root,
-    :root[data-palette="5"] {
-        /* Core palette https://coolors.co/palette/e8f9c8-def7e1-bcf0c2-8be595-56da65-99d770-ffb775-ff9f77-ff8477-ff6478 Lively Spring Spectrum*/
-        --primary: #E8F9C8; /*  Background layer */
-        --secondary: #99D770; /*  Foreground/surface layer */
-        --tertiary: #DEF7E1; /*  Borders/structure layer */
-        --quaternary: #FFB775; /*  Accent layer */
-        --quinary: #BCF0C2; /*  Emphasis layer */
+    /* Add your custom color overrides here */
+    /* Example:
+    :root {
+        --primary: oklch(50% 0.15 200);
+        --secondary: oklch(70% 0.12 150);
     }
-
-    /* ==========================================================================
-       10‑TOKEN MODE (Primary–Denary) — EXTENDED
-       Adds: Senary (utility), Septenary (danger), Octonary (info),
-             Nonary (neutral/warning), Denary (explicit text anchor)
-       ========================================================================== */
-    :root[data-palette="10"] {
-        /* Enhancers / semantics */
-        --senary: #FF9F77; /* utility overlay */
-        --septenary: #8BE595; /* danger */
-        --octonary: #FF8477; /* info (blue) */
-        --nonary: #56DA65; /* warning / neutral accent */
-        --denary: #FF6478; /* text anchor on light surfaces */
-    }
+    */
 }

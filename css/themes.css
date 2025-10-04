@@ -1,0 +1,237 @@
+/* ==========================================================================
+   Theme System
+   Multiple named themes that can be switched at runtime
+   Each theme uses the same priority-based structure (Primary → Denary)
+   ========================================================================== */
+
+@layer themes {
+    /* ==========================================================================
+       Theme: Enchanted Forest (Original Default)
+       ========================================================================== */
+    :root[data-theme="enchanted-forest"],
+    :root:not([data-theme]) {
+        --primary-l: 35%;
+        --primary-c: 0.05;
+        --primary-h: 196;
+
+        --secondary-l: 80%;
+        --secondary-c: 0.12;
+        --secondary-h: 85;
+
+        --tertiary-l: 45%;
+        --tertiary-c: 0.08;
+        --tertiary-h: 180;
+
+        --quaternary-l: 75%;
+        --quaternary-c: 0.15;
+        --quaternary-h: 70;
+
+        --quinary-l: 60%;
+        --quinary-c: 0.10;
+        --quinary-h: 175;
+
+        --senary-l: 72%;
+        --senary-c: 0.14;
+        --senary-h: 50;
+
+        --septenary-l: 65%;
+        --septenary-c: 0.09;
+        --septenary-h: 130;
+
+        --octonary-l: 68%;
+        --octonary-c: 0.16;
+        --octonary-h: 40;
+
+        --nonary-l: 70%;
+        --nonary-c: 0.08;
+        --nonary-h: 95;
+
+        --denary-l: 65%;
+        --denary-c: 0.18;
+        --denary-h: 25;
+    }
+
+    /* ==========================================================================
+       Theme: Ocean Breeze
+       Cool blue tones with aqua accents
+       ========================================================================== */
+    :root[data-theme="ocean-breeze"] {
+        --primary-l: 40%;
+        --primary-c: 0.08;
+        --primary-h: 210;
+
+        --secondary-l: 70%;
+        --secondary-c: 0.12;
+        --secondary-h: 200;
+
+        --tertiary-l: 50%;
+        --tertiary-c: 0.06;
+        --tertiary-h: 220;
+
+        --quaternary-l: 65%;
+        --quaternary-c: 0.10;
+        --quaternary-h: 190;
+
+        --quinary-l: 55%;
+        --quinary-c: 0.12;
+        --quinary-h: 180;
+
+        --senary-l: 72%;
+        --senary-c: 0.14;
+        --senary-h: 200;
+
+        --septenary-l: 65%;
+        --septenary-c: 0.09;
+        --septenary-h: 10;
+
+        --octonary-l: 68%;
+        --octonary-c: 0.14;
+        --octonary-h: 220;
+
+        --nonary-l: 70%;
+        --nonary-c: 0.08;
+        --nonary-h: 50;
+
+        --denary-l: 45%;
+        --denary-c: 0.10;
+        --denary-h: 230;
+    }
+
+    /* ==========================================================================
+       Theme: Sunset Warmth
+       Warm sunset colors with purple accents
+       ========================================================================== */
+    :root[data-theme="sunset-warmth"] {
+        --primary-l: 45%;
+        --primary-c: 0.12;
+        --primary-h: 280;
+
+        --secondary-l: 75%;
+        --secondary-c: 0.18;
+        --secondary-h: 40;
+
+        --tertiary-l: 55%;
+        --tertiary-c: 0.10;
+        --tertiary-h: 290;
+
+        --quaternary-l: 70%;
+        --quaternary-c: 0.16;
+        --quaternary-h: 50;
+
+        --quinary-l: 60%;
+        --quinary-c: 0.14;
+        --quinary-h: 30;
+
+        --senary-l: 68%;
+        --senary-c: 0.16;
+        --senary-h: 60;
+
+        --septenary-l: 55%;
+        --septenary-c: 0.14;
+        --septenary-h: 10;
+
+        --octonary-l: 65%;
+        --octonary-c: 0.12;
+        --octonary-h: 270;
+
+        --nonary-l: 72%;
+        --nonary-c: 0.10;
+        --nonary-h: 45;
+
+        --denary-l: 50%;
+        --denary-c: 0.15;
+        --denary-h: 320;
+    }
+
+    /* ==========================================================================
+       Theme: Lively Spring (From color_token.css)
+       Fresh spring greens with warm accents
+       ========================================================================== */
+    :root[data-theme="lively-spring"] {
+        --primary-l: 92%;
+        --primary-c: 0.08;
+        --primary-h: 110;
+
+        --secondary-l: 75%;
+        --secondary-c: 0.12;
+        --secondary-h: 100;
+
+        --tertiary-l: 90%;
+        --tertiary-c: 0.06;
+        --tertiary-h: 125;
+
+        --quaternary-l: 80%;
+        --quaternary-c: 0.14;
+        --quaternary-h: 60;
+
+        --quinary-l: 88%;
+        --quinary-c: 0.10;
+        --quinary-h: 140;
+
+        --senary-l: 78%;
+        --senary-c: 0.15;
+        --senary-h: 45;
+
+        --septenary-l: 82%;
+        --septenary-c: 0.11;
+        --septenary-h: 130;
+
+        --octonary-l: 76%;
+        --octonary-c: 0.16;
+        --octonary-h: 20;
+
+        --nonary-l: 72%;
+        --nonary-c: 0.13;
+        --nonary-h: 135;
+
+        --denary-l: 70%;
+        --denary-c: 0.18;
+        --denary-h: 10;
+    }
+
+    /* ==========================================================================
+       Theme: Monochrome Pro
+       Professional grayscale with subtle blue undertones
+       ========================================================================== */
+    :root[data-theme="monochrome-pro"] {
+        --primary-l: 25%;
+        --primary-c: 0.02;
+        --primary-h: 220;
+
+        --secondary-l: 85%;
+        --secondary-c: 0.03;
+        --secondary-h: 220;
+
+        --tertiary-l: 45%;
+        --tertiary-c: 0.02;
+        --tertiary-h: 220;
+
+        --quaternary-l: 65%;
+        --quaternary-c: 0.03;
+        --quaternary-h: 220;
+
+        --quinary-l: 55%;
+        --quinary-c: 0.08;
+        --quinary-h: 150;
+
+        --senary-l: 75%;
+        --senary-c: 0.02;
+        --senary-h: 220;
+
+        --septenary-l: 60%;
+        --septenary-c: 0.10;
+        --septenary-h: 10;
+
+        --octonary-l: 65%;
+        --octonary-c: 0.08;
+        --octonary-h: 220;
+
+        --nonary-l: 70%;
+        --nonary-c: 0.08;
+        --nonary-h: 50;
+
+        --denary-l: 35%;
+        --denary-c: 0.04;
+        --denary-h: 220;
+    }
+}
