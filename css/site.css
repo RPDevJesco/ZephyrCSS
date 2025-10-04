@@ -10,13 +10,13 @@
 @import url('token_oklch.css') layer(base);
 
 /* Theme System - Named themes for runtime switching */
-@import url('themes.css');
+@import url('themes.css') layer(themes);
 
 /* Semantic Aliases - Intent-based names alongside priority names */
-@import url('semantic_aliases.css');
+@import url('semantic_aliases.css') layer(semantic-aliases);
 
 /* User Customization Layer - Override colors here if needed */
-@import url('color_token.css');
+@import url('color_token.css') layer(override);
 
 /* Color Variations - Tints, shades, and highlights */
 @import url('color_tints_shades.css');
@@ -26,3 +26,73 @@
 
 /* Layout Utilities - Grid and spacing systems */
 @import url('layout.css');
+
+/* ==========================================================================
+   Dark Mode Support (Unlayered - Highest Priority)
+   These rules are intentionally NOT in a layer so they override all layered
+   styles, ensuring dark mode works correctly regardless of theme or overrides
+   ========================================================================== */
+
+/* Automatic Dark Mode (OS Preference) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-l: 65%;
+        --secondary-l: 45%;
+        --tertiary-l: 70%;
+        --quaternary-l: 50%;
+        --quinary-l: 55%;
+        --senary-l: 48%;
+        --septenary-l: 60%;
+        --octonary-l: 52%;
+        --nonary-l: 55%;
+        --denary-l: 58%;
+    }
+    
+    :root,
+    :root[data-palette="5"] {
+        --primary: oklch(var(--primary-l) var(--primary-c) var(--primary-h));
+        --secondary: oklch(var(--secondary-l) var(--secondary-c) var(--secondary-h));
+        --tertiary: oklch(var(--tertiary-l) var(--tertiary-c) var(--tertiary-h));
+        --quaternary: oklch(var(--quaternary-l) var(--quaternary-c) var(--quaternary-h));
+        --quinary: oklch(var(--quinary-l) var(--quinary-c) var(--quinary-h));
+    }
+    
+    :root[data-palette="10"] {
+        --senary: oklch(var(--senary-l) var(--senary-c) var(--senary-h));
+        --septenary: oklch(var(--septenary-l) var(--septenary-c) var(--septenary-h));
+        --octonary: oklch(var(--octonary-l) var(--octonary-c) var(--octonary-h));
+        --nonary: oklch(var(--nonary-l) var(--nonary-c) var(--nonary-h));
+        --denary: oklch(var(--denary-l) var(--denary-c) var(--denary-h));
+    }
+}
+
+/* Manual Dark Mode Toggle (data-color-scheme attribute) */
+:root[data-color-scheme="dark"] {
+    --primary-l: 65%;
+    --secondary-l: 45%;
+    --tertiary-l: 70%;
+    --quaternary-l: 50%;
+    --quinary-l: 55%;
+    --senary-l: 48%;
+    --septenary-l: 60%;
+    --octonary-l: 52%;
+    --nonary-l: 55%;
+    --denary-l: 58%;
+}
+
+:root[data-color-scheme="dark"],
+:root[data-color-scheme="dark"][data-palette="5"] {
+    --primary: oklch(var(--primary-l) var(--primary-c) var(--primary-h));
+    --secondary: oklch(var(--secondary-l) var(--secondary-c) var(--secondary-h));
+    --tertiary: oklch(var(--tertiary-l) var(--tertiary-c) var(--tertiary-h));
+    --quaternary: oklch(var(--quaternary-l) var(--quaternary-c) var(--quaternary-h));
+    --quinary: oklch(var(--quinary-l) var(--quinary-c) var(--quinary-h));
+}
+
+:root[data-color-scheme="dark"][data-palette="10"] {
+    --senary: oklch(var(--senary-l) var(--senary-c) var(--senary-h));
+    --septenary: oklch(var(--septenary-l) var(--septenary-c) var(--septenary-h));
+    --octonary: oklch(var(--octonary-l) var(--octonary-c) var(--octonary-h));
+    --nonary: oklch(var(--nonary-l) var(--nonary-c) var(--nonary-h));
+    --denary: oklch(var(--denary-l) var(--denary-c) var(--denary-h));
+}

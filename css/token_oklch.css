@@ -66,26 +66,6 @@
 }
 
 /* ==========================================================================
-   Dark Mode Variants
-   Automatically adjusts lightness for dark mode while preserving hue/chroma
-   ========================================================================== */
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* Invert lightness for dark mode */
-        --primary-l: 65%;
-        --secondary-l: 45%;
-        --tertiary-l: 70%;
-        --quaternary-l: 50%;
-        --quinary-l: 55%;
-        --senary-l: 48%;
-        --septenary-l: 60%;
-        --octonary-l: 52%;
-        --nonary-l: 55%;
-        --denary-l: 58%;
-    }
-}
-
-/* ==========================================================================
    5-TOKEN MODE (Primary–Quinary) — DEFAULT
    ========================================================================== */
 :root,

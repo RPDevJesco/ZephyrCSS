@@ -303,11 +303,67 @@ The framework uses CSS `@layer` for organized customization:
 <button style="background: var(--success)">Success Button (same!)</button>
 ```
 
-4. **Dark mode works automatically:**
-```css
-/* No configuration needed! */
-/* Framework respects prefers-color-scheme: dark */
+4. **Dark mode support (NEW!):**
+```html
+<!-- Automatic (respects OS preference) -->
+<html data-palette="10">
+
+<!-- Manual override -->
+<html data-palette="10" data-color-scheme="dark">
+<html data-palette="10" data-color-scheme="light">
 ```
+
+```javascript
+// Toggle dark mode with JavaScript (important-comment)
+function toggleDarkMode() {
+    const root = document.documentElement;
+    const current = root.getAttribute('data-color-scheme') || 'light';
+    root.setAttribute('data-color-scheme', current === 'dark' ? 'light' : 'dark');
+}
+```
+
+### Dark Mode
+
+ZephyrCSS v2.0 supports both automatic and manual dark mode:
+
+**Automatic Dark Mode (OS Preference)**
+The framework automatically detects and respects your operating system's color scheme preference using `@media (prefers-color-scheme: dark)`. No configuration needed!
+
+**Manual Dark Mode Toggle**
+Override the automatic detection using the `data-color-scheme` attribute:
+
+```html
+<!-- Force light mode -->
+<html data-color-scheme="light" data-palette="10">
+
+<!-- Force dark mode -->
+<html data-color-scheme="dark" data-palette="10">
+```
+
+**JavaScript Toggle Example**
+```javascript
+function toggleDarkMode() {
+    const root = document.documentElement;
+    const currentScheme = root.getAttribute('data-color-scheme');
+    const newScheme = currentScheme === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-color-scheme', newScheme);
+    
+    localStorage.setItem('color-scheme', newScheme);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const savedScheme = localStorage.getItem('color-scheme');
+    if (savedScheme) {
+        document.documentElement.setAttribute('data-color-scheme', savedScheme);
+    }
+});
+```
+
+**How Dark Mode Works**
+In dark mode, the OKLCH lightness values are inverted while preserving hue and chroma:
+- Light backgrounds become darker (e.g., 80% → 45%)
+- Dark accents become lighter (e.g., 35% → 65%)
+- Colors remain harmonious and accessible
 
 ## 🎨 Real-World Usage Examples
 
